@@ -13,7 +13,7 @@ namespace JevKrayPersonalSite.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult AboutMe()
         {
             return View();
         }
