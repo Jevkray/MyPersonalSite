@@ -1,196 +1,240 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 40px;
-  background-color: #262626;
-  color: #e1c9b4 !important;
-  font-family: 'Josefin Sans', sans-serif !important;
-}
-
-footer {
-  background: linear-gradient(45deg, #e1c9b4, #2e6d9c);
-  color: #1C1714 !important;
-  font-family: 'Josefin Sans', sans-serif !important;
-}
-
-/*mostly for _layout css preset*/
-
-.header-back-color {
-  background: linear-gradient(45deg, #2e6d9c, #e1c9b4) !important;
-}
-
-.header-text-color {
-  font-family: 'Josefin Sans', sans-serif !important;
-  color: #ffffff !important;
-}
-
-.content-end {
-  justify-content: flex-end !important; 
-}
-
-.text-w600 {
-  font-weight: 600;
-}
-
-.text-size-brand {
-  font-size: 2rem;
-}
-
-.text-size-navbar {
-  font-size: 1rem;
-}
-
-.container-wt-margin {
-  margin-left: 0%;
-  margin-right: 0%;
-}
-
-.padding-12 {
-  padding: 12px;
-}
-
-.padding-top4 {
-  padding-top: 4px;
-}
-
-.padding-but4 {
-  padding-bottom: 4px;
-}
-
-.padding-l12-r18 {
-  padding-left: 12px;
-  padding-right: 18px;
-}
-
-.navbar-b4{
-  font-weight: 600;
-  padding-bottom: 4;
-  color: #262626 !important;
-  bottom: auto;
-}
-
-.pb-3-wt-padding {
-  padding: 0% !important;
-}
-
-.margin-off {
-  margin: 0 !important;
-}
-
-.palette-text {
-  color: #2e6d9c!important;
-}
-
-.photo-am {
-  float: left;
-  width: 40%;
-  display: inline-block !important;
-
-}
-
-.text-am {
-  float: left;
-  width: 60%;
-  height: 100%;
-  text-align: center;
-  display: inline-block !important;
-}
-
-.text-am-small {
-  padding: 1rem 3rem 1rem 3rem;
-  font-size: 2rem;
-}
-
-.block-am {
-  width: 100%;
-  height: 100%;
-  display: inline-block !important;
-  overflow: hidden;
-}
-
-.remove-padding-down {
-  padding-bottom: 0% !important;
-}
-
-.remove-padding {
-  padding:0%;
-}
-
-.fixed-padding-down5_6 {
-  padding-bottom: 5.6px !important;
-}
-
-.underline-one {
-	color: #ffffff; /* Цвет обычной ссылки */
-    position: relative;
-    cursor: pointer;
-    text-decoration: none; /* Убираем подчеркивание */
-    -webkit-transition: all 1s ease;
-            transition: all 1s ease; 
-}
-
-.underline-one:hover {
-  color: #e1c9b4;
-}
-
-.underline-one:after {
-	content: "";
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: -3px;
+  html::-webkit-scrollbar {
     width: 0;
-    height: 2px; /* Высота линии */
-    background-color:#e1c9b4; /* Цвет подчеркивания при исчезании линии*/
-    transition: width 0.5s; /* Время эффекта */
-}
+    font-size: 14px;
+  }
 
-.underline-one:hover:after {
-	content: "";
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  }
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    margin-bottom: 40px;
+    background-color: #262626;
+    color: #e1c9b4 !important;
+    font-family: 'Josefin Sans', sans-serif !important;
+  }
+
+  footer {
+    background: linear-gradient(45deg, #e1c9b4, #2e6d9c);
+    color: #1C1714 !important;
+    font-family: 'Josefin Sans', sans-serif !important;
+  }
+
+  /*mostly for _layout css preset*/
+
+  .header-back-color {
+    background: linear-gradient(45deg, #2e6d9c, #e1c9b4) !important;
+  }
+
+  .header-text-color {
+    font-family: 'Josefin Sans', sans-serif !important;
+    color: #ffffff !important;
+  }
+
+  .content-end {
+    justify-content: flex-end !important; 
+  }
+
+  .text-w600 {
+    font-weight: 600;
+  }
+
+  .text-size-brand {
+    font-size: 2rem;
+  }
+
+  .text-size-navbar {
+    font-size: 1rem;
+  }
+
+  .container-wt-margin {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .padding-12 {
+    padding: 12px;
+  }
+
+  .padding-top4 {
+    padding-top: 4px;
+  }
+
+  .padding-but4 {
+    padding-bottom: 4px;
+  }
+
+  .padding-l12-r18 {
+    padding-left: 12px;
+    padding-right: 18px;
+  }
+
+  .navbar-b4{
+    font-weight: 600;
+    padding-bottom: 4;
+    color: #262626 !important;
+    bottom: auto;
+  }
+
+  .pb-3-wt-padding {
+    padding: 0% !important;
+  }
+
+  .margin-off {
+    margin: 0 !important;
+  }
+
+  .palette-text {
+    color: #2e6d9c!important;
+  }
+
+  .photo-am {
+    float: left;
+    width: 40%;
+    display: inline-block !important;
+
+  }
+
+  .text-am {
+    float: left;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    display: inline-block !important;
+  }
+
+  .text-am-small {
+    padding: 1rem 3rem 1rem 3rem;
+    font-size: 2rem;
+  }
+
+  .block-am {
     width: 100%;
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    height: 2px; /* Высота линии */
-    background-color:#e1c9b4; /* Цвет подчеркивания при появлении линии*/
-    transition: width 0.5s;  /* Время эффекта */
-}
+    height: 100%;
+    display: inline-block !important;
+    overflow: hidden;
+  }
 
-.image-am {
-  float: left;
-  object-fit: cover; 
-  width: 100%; 
-  height: 100%; 
-  transform: scale(-1, 1); 
-  border: 2px solid ; 
-  -webkit-border-image: -webkit-linear-gradient(45deg, #2e6d9c, #e1c9b4);
-  border-image-slice: 1;
-  border-radius: 2px 2px 2px 2px;
-}
+  .remove-padding-down {
+    padding-bottom: 0% !important;
+  }
 
-.remove-border {
-  border: 0px !important;
-}
+  .remove-padding {
+    padding:0%;
+  }
 
-.style-name-am {
-  margin: 1rem 0 0 0;
-  font-size: 4rem;
-}
+  .fixed-padding-down5_6 {
+    padding-bottom: 5.6px !important;
+  }
+
+  .underline-one {
+    color: #ffffff; /* Цвет обычной ссылки */
+      position: relative;
+      cursor: pointer;
+      text-decoration: none; /* Убираем подчеркивание */
+      -webkit-transition: all 1s ease;
+              transition: all 1s ease; 
+  }
+
+  .underline-one:hover {
+    color: #e1c9b4;
+  }
+
+  .underline-one:after {
+    content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px; /* Высота линии */
+      background-color:#e1c9b4; /* Цвет подчеркивания при исчезании линии*/
+      transition: width 0.5s; /* Время эффекта */
+  }
+
+  .underline-one:hover:after {
+    content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      height: 2px; /* Высота линии */
+      background-color:#e1c9b4; /* Цвет подчеркивания при появлении линии*/
+      transition: width 0.5s;  /* Время эффекта */
+  }
+
+
+  .underline-one-text {
+    background: linear-gradient(0deg, #2e6d9c, #e1c9b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0B2349;
+
+      position: relative; 
+      cursor: pointer;
+      text-decoration: none; /* Убираем подчеркивание */
+      -webkit-transition: all 1s ease;
+              transition: all 1s ease; 
+
+  }
+
+  .underline-one-text:hover {
+    color: #2e6d9c;
+  }
+
+  .underline-one-text:after {
+    content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px; /* Высота линии */
+      background-color:#2e6d9c; /* Цвет подчеркивания при исчезании линии*/
+      transition: width 0.5s; /* Время эффекта */
+  }
+
+  .underline-one-text:hover:after {
+    content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      height: 2px; /* Высота линии */
+      background-color:#2e6d9c; /* Цвет подчеркивания при появлении линии*/
+      transition: width 0.5s;  /* Время эффекта */
+  }
+
+  .image-am {
+    float: left;
+    object-fit: cover; 
+    width: 100%; 
+    height: 100%; 
+    transform: scale(-1, 1); 
+    border: 2px solid ; 
+    -webkit-border-image: -webkit-linear-gradient(45deg, #2e6d9c, #e1c9b4);
+    border-image-slice: 1;
+    border-radius: 2px 2px 2px 2px;
+  }
+
+  .remove-border {
+    border: 0px !important;
+  }
+
+  .style-name-am {
+    margin: 1rem 0 0 0;
+    font-size: 4rem;
+  }
