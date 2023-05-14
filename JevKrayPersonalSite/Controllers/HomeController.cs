@@ -23,6 +23,21 @@ namespace JevKrayPersonalSite.Controllers
             return View();
         }
 
+        public IActionResult Aducation()
+        {
+            return View();
+        }
+
+        public IActionResult Skills()
+        {
+            return View();
+        }
+
+        public IActionResult Contacts()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

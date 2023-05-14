@@ -21,11 +21,13 @@ body {
   margin-bottom: 40px;
   background-color: #262626;
   color: #e1c9b4 !important;
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 
 footer {
   background: linear-gradient(45deg, #e1c9b4, #2e6d9c);
   color: #1C1714 !important;
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 
 /*mostly for _layout css preset*/
@@ -35,7 +37,24 @@ footer {
 }
 
 .header-text-color {
+  font-family: 'Josefin Sans', sans-serif !important;
   color: #ffffff !important;
+}
+
+.content-end {
+  justify-content: flex-end !important; 
+}
+
+.text-w600 {
+  font-weight: 600;
+}
+
+.text-size-brand {
+  font-size: 2rem;
+}
+
+.text-size-navbar {
+  font-size: 1rem;
 }
 
 .container-wt-margin {
@@ -47,9 +66,24 @@ footer {
   padding: 12px;
 }
 
+.padding-top4 {
+  padding-top: 4px;
+}
+
+.padding-but4 {
+  padding-bottom: 4px;
+}
+
 .padding-l12-r18 {
   padding-left: 12px;
   padding-right: 18px;
+}
+
+.navbar-b4{
+  font-weight: 600;
+  padding-bottom: 4;
+  color: #262626 !important;
+  bottom: auto;
 }
 
 .pb-3-wt-padding {
@@ -66,8 +100,8 @@ footer {
 
 .photo-am {
   float: left;
-  display: inline-block !important;
   width: 40%;
+  display: inline-block !important;
 
 }
 
@@ -88,6 +122,10 @@ footer {
 
 .remove-padding-down {
   padding-bottom: 0% !important;
+}
+
+.remove-padding {
+  padding:0%;
 }
 
 .fixed-padding-down5_6 {
@@ -132,6 +170,7 @@ footer {
 }
 
 .image-am {
+  float: left;
   object-fit: cover; 
   width: 100%; 
   height: 100%; 
@@ -145,3 +184,4 @@ footer {
 .remove-border {
   border: 0px !important;
 }
+
