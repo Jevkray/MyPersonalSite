@@ -30,16 +30,20 @@
             </div>
         </nav>  
     </header>
-    <div class="padding-12 container-wt-margin " >
-        <main role="main" class="pb-3">
+    <div class="fixed-padding-down6_4 padding-12 container-wt-margin" >
+        <main role="main" class="remove-padding-down pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer">
-        <div class="container-wt-margin padding-12">
-            &copy; 2023
+    <footer class="border-top footer" style="line-height: 40px !important">
+        <div class="container-wt-margin padding-l-r-12" style="  
+        width: 100%;
+        height: 100%;">
+            <div style="width: 50%; display: inline-block !important; float: center;">&copy; 2023 - JevKrayPersonalSite</div>
+            <div style="width: 50%; display: inline-block !important; float: center; text-align: right;"><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></div>
         </div>
+            
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

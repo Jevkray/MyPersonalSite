@@ -46,6 +46,11 @@ footer {
   padding: 12px;
 }
 
+.padding-l-r-12 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .pb-3-wt-padding {
   padding: 0% !important;
 }
@@ -54,21 +59,20 @@ footer {
   margin: 0 !important;
 }
 
-/*mostly for AboutMe css preset*/
-
 .palette-text {
   color: #94684d !important;
 }
 
 .photo-am {
-  float: right;
+  float: left;
   display: inline-block !important;
-  width: 30%;
+  width: 40%;
 }
 
 .text-am {
   float: left;
-  width: 70%;
+  width: 60%;
+  height: 100%;
   text-align: center;
   display: inline-block !important;
 }
@@ -77,4 +81,13 @@ footer {
   width: 100%;
   height: 100%;
   display: inline-block !important;
+  overflow: hidden;
+}
+
+.remove-padding-down {
+  padding-bottom: 0% !important;
+}
+
+.fixed-padding-down6_4 {
+  padding-bottom: 6.4px !important;
 }
