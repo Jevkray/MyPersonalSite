@@ -236,6 +236,9 @@
   }
 
   .style-name-am {
+    background: linear-gradient(0deg, #2e6d9c, #e1c9b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: #2e6d9c;
     margin: 1rem 0 0 0;
     font-weight: 600;
