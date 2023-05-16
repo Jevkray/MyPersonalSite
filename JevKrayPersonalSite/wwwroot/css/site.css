@@ -177,7 +177,7 @@
 
 
   .underline-one-text {
-    background: linear-gradient(0deg, #2e6d9c, #e1c9b4);
+    background: linear-gradient(0deg, #000000, #e1c9b4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #0B2349;
@@ -191,7 +191,7 @@
   }
 
   .underline-one-text:hover {
-    color: #2e6d9c;
+    color: #e1c9b4;
   }
 
   .underline-one-text:after {
@@ -202,7 +202,7 @@
       bottom: -3px;
       width: 0;
       height: 2px; /* Высота линии */
-      background-color:#2e6d9c; /* Цвет подчеркивания при исчезании линии*/
+      background-color:#e1c9b4; /* Цвет подчеркивания при исчезании линии*/
       transition: width 0.5s; /* Время эффекта */
   }
 
@@ -214,7 +214,7 @@
       left: 0;
       bottom: -3px;
       height: 2px; /* Высота линии */
-      background-color:#2e6d9c; /* Цвет подчеркивания при появлении линии*/
+      background-color:#e1c9b4; /* Цвет подчеркивания при появлении линии*/
       transition: width 0.5s;  /* Время эффекта */
   }
 
@@ -241,6 +241,7 @@
   }
   
   .logos-am {
+    padding: 0rem 3rem 1rem 3rem;
     display: flex !important;
   }
 
