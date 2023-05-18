@@ -284,3 +284,7 @@
     background-color: #262626;
     font-size: 2.5rem;
   }
+
+  .madal-footer-width {
+    width: calc(50% - 0.5rem);
+  }
