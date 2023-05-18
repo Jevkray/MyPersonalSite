@@ -278,3 +278,8 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .text-logo-am {
+    text-align: left;
+    background-color: #262626;
+  }

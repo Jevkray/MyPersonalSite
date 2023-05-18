@@ -12,13 +12,13 @@
             </p>
             <div class="logos-am">
                 <div class="logo-gmail">
-                    <a href="***"><img class="image-logo-am" src="~/pictures/gmail.png"></a>
+                    <button type="button" class="remove-border text-logo-am" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="image-logo-am" src="~/pictures/gmail.png"><a>Gmail</a></button>           
                 </div>
-                <div class="logo-tg" style=>
-                    <a href="https://t.me/eugenekray"><img class="image-logo-am" src="~/pictures/tg.png"></a>
+                <div class="logo-tg">
+                    <a href="https://t.me/eugenekray"><button type="button" class="remove-border text-logo-am"><img class="image-logo-am" src="~/pictures/tg.png">Telegram</button></a>
                 </div>
-                <div class="logo-github" style=>
-                    <a href="https://github.com/Jevkray"><img class="image-logo-am" src="~/pictures/git.png"></a>
+                <div class="logo-github">
+                    <a href="https://github.com/Jevkray"><button type="button" class="remove-border text-logo-am"><img class="image-logo-am" src="~/pictures/git.png">GitHub</button></a>
                 </div>
             </div>
             
@@ -28,6 +28,23 @@
         <p_am class="photo-am margin-off">
             <img class="image-am" src="~/pictures/92729853.jpg">
         </p_am>    
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Заголовок модального окна</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            <button type="button" class="btn btn-primary">Сохранить изменения</button>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 
