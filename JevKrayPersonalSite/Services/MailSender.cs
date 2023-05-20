@@ -12,7 +12,7 @@ namespace JevKrayPersonalSite.Services
         {
             private static string[] ReadTxt()
             {
-                string path = "prdata.txt";
+                string path = "Prdata/prdata.txt";
 
                 using (StreamReader reader = new StreamReader(path))
                 {
