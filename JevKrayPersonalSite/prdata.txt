@@ -1,0 +1,11 @@
+﻿eg.kray.work.stmp@gmail.com
+SemmiTwinsBoss@gmail.com
+smtp.gmail.com
+587
+tdxowwklymkwiood
+
+1 - Smtp-Mail
+2 - Send Mail
+3 - Smtp-host
+4 - Smtp-port
+5 - Smtp-pass
