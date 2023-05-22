@@ -291,7 +291,7 @@ footer {
 }
 
 .madal-footer-width {
-    width: calc(50% - 0.5rem);
+    width: calc(50% - 0.25rem);
 }
 
 .footer-element-logo {
@@ -326,6 +326,121 @@ footer {
 }
 
 .madal-am-c2 {
-    max-width: 60%;
+    max-width: 50%;
     height: 80%
+}
+
+.d-grid-am {
+    display: grid;
+}
+
+
+.text-color-red {
+    color: red;
+}
+
+.madal-am-message {
+    min-height: 100px;
+}
+
+.madal-h-am {
+    background-color: #2e6d9c;
+    color: white;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border: 0px;
+}
+
+.madal-b-am {
+    padding-bottom: 1rem;
+    background-color: #262626;
+    border: 0px;
+}
+
+.madal-f-am {
+    padding: 0rem 1rem 1rem 1rem;
+    background-color: #262626;
+    border: 0px;
+}
+
+.margin-cross {
+    margin-bottom: unset !important;
+}
+
+.madal-button-close {
+    font-size: 1.5rem;
+    margin: 0.25rem 0.25rem 0.25rem 0rem;
+}
+
+.madal-button-send {
+    font-size: 1.5rem;
+    border-color: #2e6d9c;
+    background-color: #2e6d9c;
+    margin: 0.25rem 0rem 0.25rem 0.25rem;
+}
+
+.madal-b-name {
+    padding-bottom: 0.5rem;
+}
+
+.madal-b-name-text {
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: antiquewhite;
+    border-radius: 0.25rem;
+}
+
+.madal-b-name-text:focus {
+    outline: solid;
+    outline-color: #2e6d9c;
+}
+
+.madal-b-email {
+    padding-bottom: 0.5rem;
+}
+
+.madal-b-email-text {
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: antiquewhite;
+    border-radius: 0.25rem;
+}
+
+.madal-b-email-text:focus {
+    outline: solid;
+    outline-color: #2e6d9c;
+}
+
+.madal-b-title {
+    padding-bottom: 0.5rem;
+}
+
+.madal-b-title-text {
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: antiquewhite;
+    border-radius: 0.25rem;
+}
+
+.madal-b-title-text:focus {
+    outline: solid;
+    outline-color: #2e6d9c;
+}
+
+.madal-b-message {
+}
+
+.madal-b-message-text { 
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: antiquewhite;
+    border-radius: 0.25rem;
+}
+
+.madal-b-message-text:focus {
+    outline: solid;
+    outline-color: #2e6d9c;
+}
+
+.modal-title-am {
+    font-size: 2rem;
 }

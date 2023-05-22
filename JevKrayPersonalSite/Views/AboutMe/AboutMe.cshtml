@@ -32,28 +32,28 @@
                 <div class="modal-content">
                     @using (Html.BeginForm("AboutMe"))
                     {
-                        <div class="modal-header">
-                            <h3 class="modal-title" id="exampleModalLabel">Send to Mail</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                        <div class="modal-header madal-h-am">
+                            <h3 class="modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
+                            <button type="button" class="btn-close margin-cross" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                         </div>
-                        <div class="modal-body">
-                            <h4>On this window you can message me</h4>
-                            <div class="name-window">
-                                <input type="text" name="Username" value="Full Name" />
+                        <div class="modal-body madal-b-am">
+                            <h3>On this window you can message me</h3>
+                            <div class="madal-b-name d-grid-am">
+                                <input class="madal-b-name-text" type="text" name="Username" placeholder="Full Name" />
                             </div>
-                            <div class="message-window">
-                                <input type="text" name="Email" value="Email Address" />
+                            <div class="madal-b-email d-grid-am">
+                                <input class="madal-b-email-text" type="text" name="Email" placeholder="Email Address" />
                             </div>
-                            <div class="feedback-window">
-                                <input type="text" name="Title" value="Email Subject" />
+                            <div class="madal-b-title d-grid-am">
+                                <input class="madal-b-title-text" type="text" name="Title" placeholder="Email Subject" />
                             </div>
-                            <div class="message-window">
-                                <input type="text" name="Message" value="Message" />
+                            <div class="madal-b-message d-grid-am">
+                                @Html.TextArea("Message", new { @class="madal-am-message madal-b-message-text", @placeholder="Message" })
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
+                        <div class="modal-footer madal-f-am">
+                            <button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="madal-button-send btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
                         </div>
                     }
                 </div>
