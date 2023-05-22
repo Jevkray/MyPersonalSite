@@ -193,35 +193,11 @@ footer {
     cursor: pointer;
     text-decoration: none; /* Убираем подчеркивание */
     -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    transition: 0.1s linear;
 }
 
     .underline-one-text:hover {
-        color: #2e6d9c;
-    }
-
-    .underline-one-text:after {
-        content: "";
-        display: block;
-        position: absolute;
-        right: 0;
-        bottom: -3px;
-        width: 0;
-        height: 2px; /* Высота линии */
-        background-color: #2e6d9c; /* Цвет подчеркивания при исчезании линии*/
-        transition: width 0.5s; /* Время эффекта */
-    }
-
-    .underline-one-text:hover:after {
-        content: "";
-        width: 100%;
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        height: 2px; /* Высота линии */
-        background-color: #2e6d9c; /* Цвет подчеркивания при появлении линии*/
-        transition: width 0.5s; /* Время эффекта */
+        transform: scale(1.02);
     }
 
 .image-am {
@@ -257,7 +233,7 @@ footer {
 
 .image-logo-am {
     height: auto;
-    width: 30%;
+    width: 20%;
 }
 
 .logo-gmail {
@@ -285,9 +261,11 @@ footer {
 }
 
 .text-logo-am {
-    text-align: left;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
     background-color: #262626;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .madal-footer-width {
@@ -378,6 +356,13 @@ footer {
     margin: 0.25rem 0rem 0.25rem 0.25rem;
 }
 
+    .madal-button-send:hover {
+        font-size: 1.5rem;
+        border-color: #3886c2;
+        background-color: #3886c2;
+        margin: 0.25rem 0rem 0.25rem 0.25rem;
+    }
+
 .madal-b-name {
     padding-bottom: 0.5rem;
 }
@@ -389,10 +374,10 @@ footer {
     border-radius: 0.25rem;
 }
 
-.madal-b-name-text:focus {
-    outline: solid;
-    outline-color: #2e6d9c;
-}
+    .madal-b-name-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
 
 .madal-b-email {
     padding-bottom: 0.5rem;
@@ -405,10 +390,10 @@ footer {
     border-radius: 0.25rem;
 }
 
-.madal-b-email-text:focus {
-    outline: solid;
-    outline-color: #2e6d9c;
-}
+    .madal-b-email-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
 
 .madal-b-title {
     padding-bottom: 0.5rem;
@@ -421,26 +406,34 @@ footer {
     border-radius: 0.25rem;
 }
 
-.madal-b-title-text:focus {
-    outline: solid;
-    outline-color: #2e6d9c;
-}
+    .madal-b-title-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
 
 .madal-b-message {
 }
 
-.madal-b-message-text { 
+.madal-b-message-text {
     font-size: 1.5rem;
     border: 0px;
     background-color: antiquewhite;
     border-radius: 0.25rem;
 }
 
-.madal-b-message-text:focus {
-    outline: solid;
-    outline-color: #2e6d9c;
-}
+    .madal-b-message-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
 
 .modal-title-am {
     font-size: 2rem;
+}
+
+.td-0-none {
+    text-decoration: none;
+}
+
+.va-sub {
+    vertical-align: sub;
 }
