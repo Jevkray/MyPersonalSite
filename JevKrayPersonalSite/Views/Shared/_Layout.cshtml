@@ -31,10 +31,10 @@
                         <li class="nav-item">
                             <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Projects">Projects</a>
                         </li>
-                        <li class="nav-item" style="padding-right: 1rem;">
+                        <li class="nav-item nav-contact">
                             <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts">Contacts</a>
                         </li>
-                        <li class="nav-item" style="border-left:3px solid #262626; padding-left: 1rem;">
+                        <li class="nav-item nav-updates">
                             <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Updates">Updates</a>
                         </li>
                     </ul>
@@ -47,15 +47,14 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer remove-border" style="line-height: 40px !important">
-        <div class="container-wt-margin padding-l12-r18 remove-border" style="width: 100%; height: 100%;">
-            <div style="width: 50%; display: inline-block !important; color: #2e6d9c; text-shadow: -0.5px 0 rgb(0, 0, 0), 0 0.5px #e1c9b4, 0.5px 0 #e1c9b4, 0 -0.5px #e1c9b4;">&copy; 2023 - JevKrayPersonalSite</div>
-            <div style="width: 50%; display: inline-block !important; text-align: right; white-space: nowrap;">
+    <footer class="border-top footer remove-border footer-c1">
+        <div class="container-wt-margin padding-l12-r18 remove-border footer-c2">
+            <div class="footer-element-logo">&copy; 2023 - JevKrayPersonalSite</div>
+            <div class="footer-element-privacy">
                 <a class ="underline-one" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
         </div>
-            
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -63,30 +62,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-
-<!--
-
-<header>
-    <nav class="remove-border margin-off header-back-color header-text-color navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="remove-border container-fluid">
-            <a class="text-w600 text-size-brand remove-padding header-text-color navbar-brand" asp-area="" asp-controller="Home" asp-action="AboutMe">Eugene.</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutMe" >About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>  
-</header>
-
---> 

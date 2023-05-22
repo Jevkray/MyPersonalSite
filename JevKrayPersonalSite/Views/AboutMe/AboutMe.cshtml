@@ -5,20 +5,20 @@
     <div>
         <p_am class="remove-border text-am margin-off">
             <h1 class="style-name-am">Welcome</h1>
-            <p class="text-am-small" style="text-align: center;">
+            <p class="text-am-small text-al-c">
                 My name is Eugene Krasovsky, and I'm .Net Developer. So, I'm 20 Year's old, and I'm from Minsk, Belarus.
                 I hope you like my website and contact me on Telegram or Gmail if u have some questions and offers for me.
                 Also, you can learn about my projects at my GitHub.
             </p>
             <div class="logos-am">
                 <div class="logo-tg">
-                    <a href="https://t.me/eugenekray"><button type="button" class="remove-border text-logo-am underline-one-text"><img class="image-logo-am" src="~/pictures/tg.png"> Telegram</button></a>
+                    <button type="button" class="remove-border text-logo-am underline-one-text"><img class="image-logo-am" src="~/pictures/tg.png"><a class="va-sub td-0-none padding-left-am" href="https://t.me/eugenekray"> Telegram</a></button>
                 </div>
                 <div class="logo-github">
-                    <a href="https://github.com/Jevkray"><button type="button" class="remove-border text-logo-am underline-one-text"><img class="image-logo-am" src="~/pictures/git.png"> GitHub</button></a>
+                    <button type="button" class="remove-border text-logo-am underline-one-text"><img class="image-logo-am" src="~/pictures/git.png"><a class="va-sub td-0-none padding-left-am" href="https://github.com/Jevkray"> GitHub</a></button>
                 </div>
                 <div class="logo-gmail">
-                    <button type="button" class="remove-border text-logo-am underline-one-text" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="image-logo-am" src="~/pictures/gmail.png"><a> Gmail</a></button>
+                    <button type="button" class="remove-border text-logo-am underline-one-text" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="image-logo-am" src="~/pictures/gmail.png"><a class="va-sub padding-left-am"> Gmail</a></button>
                 </div>
             </div>
         </p_am>
@@ -28,32 +28,32 @@
             </p_am>
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" style="max-width: 60%; height: 80%">
-                <div class="modal-content" style="height: 80%">
+            <div class="modal-dialog madal-am-c2">
+                <div class="modal-content">
                     @using (Html.BeginForm("AboutMe"))
                     {
-                        <div class="modal-header">
-                            <h3 class="modal-title" id="exampleModalLabel">Send to Mail</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                        <div class="modal-header madal-h-am">
+                            <h3 class="modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
+                            <button type="button" class="btn-close margin-cross" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                         </div>
-                        <div class="modal-body">
-                            <h4>On this window you can message me</h4>
-                            <div class="name-window">
-                                <input type="text" name="Username" value="Full Name" />
+                        <div class="modal-body madal-b-am">
+                            <h3>On this window you can message me</h3>
+                            <div class="madal-b-name d-grid-am">
+                                <input class="madal-b-name-text" type="text" name="Username" placeholder="Full Name" />
                             </div>
-                            <div class="message-window">
-                                <input type="text" name="Email" value="Email Address" />
+                            <div class="madal-b-email d-grid-am">
+                                <input class="madal-b-email-text" type="text" name="Email" placeholder="Email Address" />
                             </div>
-                            <div class="feedback-window">
-                                <input type="text" name="Title" value="Email Subject" />
+                            <div class="madal-b-title d-grid-am">
+                                <input class="madal-b-title-text" type="text" name="Title" placeholder="Email Subject" />
                             </div>
-                            <div class="message-window">
-                                <input type="text" name="Message" value="Message" />
+                            <div class="madal-b-message d-grid-am">
+                                @Html.TextArea("Message", new { @class="madal-am-message madal-b-message-text", @placeholder="Message" })
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
-                                <input type="submit" class="btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
-                            </div>
+                        </div>
+                        <div class="modal-footer madal-f-am">
+                            <button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="madal-button-send btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
                         </div>
                     }
                 </div>
