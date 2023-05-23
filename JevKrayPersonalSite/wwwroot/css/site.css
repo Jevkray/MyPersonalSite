@@ -260,6 +260,14 @@ footer {
     margin-right: auto;
 }
 
+.logo-linkedin {
+    align-items: center;
+    width: 50%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .text-logo-am {
     text-decoration: none;
     align-items: center;
