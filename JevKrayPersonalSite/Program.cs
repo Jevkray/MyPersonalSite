@@ -1,7 +1,3 @@
-using JevKrayPersonalSite.Services;
-
-GitLogger.GetLog();
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
