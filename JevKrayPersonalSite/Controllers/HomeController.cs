@@ -13,11 +13,6 @@ namespace JevKrayPersonalSite.Controllers
             _logger = logger;
         }
 
-        public IActionResult AboutMe()
-        {
-            return View();
-        }
-
         public IActionResult Privacy()
         {
             return View();
@@ -34,11 +29,6 @@ namespace JevKrayPersonalSite.Controllers
         }
 
         public IActionResult Contacts()
-        {
-            return View();
-        }
-
-        public IActionResult Updates()
         {
             return View();
         }

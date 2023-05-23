@@ -227,7 +227,7 @@ footer {
 }
 
 .logos-am {
-    padding: 0rem 3rem 1rem 3rem;
+    padding: 0rem 3rem 0rem 3rem;
     display: flex !important;
 }
 
@@ -436,4 +436,31 @@ footer {
 
 .va-sub {
     vertical-align: sub;
+}
+
+.updates-block {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.main-block-updates {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.git-view-block {
+    overflow: scroll;
+    overflow: auto;
+}
+
+.text-header-block {
+    background: linear-gradient(0deg, #2e6d9c, #e1c9b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #2e6d9c;
+    margin: 1rem 0 0 0;
+    font-weight: 800;
+    font-size: 200%;
 }
