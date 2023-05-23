@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using JevKrayPersonalSite.Models;
 using System.Diagnostics;
+using JevKrayPersonalSite.Services;
 
 namespace JevKrayPersonalSite.Controllers
 {
@@ -14,6 +15,7 @@ namespace JevKrayPersonalSite.Controllers
         }
         public IActionResult Updates()
         {
+            GitLogger.GetLog();
             var html = System.IO.File.ReadAllText("PrivateData/GitLog.html");
             ViewBag.Html = $"<div>{html}</div>";
             return View();
