@@ -565,3 +565,44 @@ footer {
 .font-1i3 {
     font-size: 1.3rem;
 }
+
+.updates-elements {
+    padding: 0 1rem 0 1rem;
+    border-radius: 20px;
+    background: rgb(27,28,31);
+    margin-bottom: 20px;
+}
+
+.updates-element {
+    padding: 0 1rem 0 1rem;
+    border-radius: 20px;
+    background: #000;
+    margin-bottom: 20px;
+}
+
+.updates-githublink {
+    color: rgb(0,151,178);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+    padding-right: 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+.updates-githublink:hover {
+    color: #ffffff;
+    transform: rotate(0deg) translate3d(1rem);
+}
+
+.font-1_5rem {
+    font-size: 1.5rem;
+}
+
+.padding-left-2rem {
+    padding-left: 2rem;
+}
+
+.color-al-bl {
+    color: white;
+}
