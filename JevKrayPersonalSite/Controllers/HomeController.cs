@@ -18,7 +18,7 @@ namespace JevKrayPersonalSite.Controllers
             return View();
         }
 
-        public IActionResult Aducation()
+        public IActionResult Education()
         {
             return View();
         }
