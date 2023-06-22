@@ -471,16 +471,17 @@ footer {
 }
 
 .a-brand-link {
-    color: #ffffff; 
+    color: rgb(0,151,178); 
     text-decoration: none;
     font-weight: 600;
     font-size: 2rem;
     padding: 0.75rem 0.5rem 0.5rem 0.75rem;
+    -webkit-transition: all 1s ease;
     transition: all 0.4s ease; /* Время изменения цвета */
 }
 
 .a-brand-link:hover {
-    color: rgb(0,151,178);
+    color: #ffffff;
 }
 
 .a-link {
