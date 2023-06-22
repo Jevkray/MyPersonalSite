@@ -1,65 +1,19 @@
-﻿@{
+﻿@model string 
+@{
     ViewData["Title"] = "About Me";
 }
 <div class="block-am">
     <div>
         <p_am class="remove-border text-am margin-off">
-            <h1 class="style-name-am">Welcome</h1>
-            <p class="text-am-small text-al-c">
-                My name is Eugene Krasovsky, and I'm .Net Developer. So, I'm 20 Year's old, and I'm from Minsk, Belarus.
-                I hope you like my website and contact me on Telegram or Gmail if u have some questions and offers for me.
-                Also, you can learn about my projects at my GitHub.
-            </p>
-            <div class="logos-am">
-                <div class="logo-tg">
-                    <button type="button" class="remove-border text-logo-am underline-one-text"><img class="image-logo-am" src="~/pictures/tg.png"><a class="va-sub td-0-none padding-left-am" href="https://t.me/eugenekray"> Telegram</a></button>
-                </div>
-                <div class="logo-github">
-                    <button type="button" class="remove-border text-logo-am underline-one-text"><img class="image-logo-am" src="~/pictures/git.png"><a class="va-sub td-0-none padding-left-am" href="https://github.com/Jevkray"> GitHub</a></button>
-                </div>
-                <div class="logo-gmail">
-                    <button type="button" class="remove-border text-logo-am underline-one-text" data-bs-toggle="modal" data-bs-target="#exampleModal"><img class="image-logo-am" src="~/pictures/gmail.png"><a class="va-sub padding-left-am"> Gmail</a></button>
-                </div>
-                <div class="logo-linkedin">
-                    <button type="button" class="remove-border text-logo-am underline-one-text"><img class="image-logo-am" src="~/pictures/linkedin.png"><a class="va-sub td-0-none padding-left-am" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"> LinkedIn</a></button>
-                </div>
+            <div class="text-am-small">
+                <img class="im-am" src="~/pictures/92729853.jpg">
+                <p>
+                    Я .NET разработчик, занимающийся разработкой веб- и десктоп-приложений. Имею опыт работы с различными языками программирования, однако основным является C#. Работаю с различными архитектурами приложений, такими как MVC, MVVM, трехслойная архитектура с использованием Razor Pages и т.п. Кроме того, владею HTML, CSS и немного JS. У меня также есть опыт работы с реляционными базами данных, такими как MySQL и MSSQL. Имею практические навыки в написании и настройке WinForms приложений. Мой реальный опыт коммерческой разработки составляет 1 год, в течение которого я работал на фрилансе.
+                </p>
             </div>
-        </p_am>
-        <div>
-            <p_am class="photo-am margin-off">
-                <img class="image-am" src="~/pictures/92729853.jpg">
-            </p_am>
-        </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog madal-am-c2">
-                <div class="modal-content">
-                    @using (Html.BeginForm("AboutMe"))
-                    {
-                        <div class="modal-header madal-h-am">
-                            <h3 class="modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
-                            <button type="button" class="btn-close margin-cross" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                        </div>
-                        <div class="modal-body madal-b-am">
-                            <h3>On this window you can message me</h3>
-                            <div class="madal-b-name d-grid-am">
-                                <input class="madal-b-name-text" type="text" name="Username" placeholder="Full Name" />
-                            </div>
-                            <div class="madal-b-email d-grid-am">
-                                <input class="madal-b-email-text" type="text" name="Email" placeholder="Email Address" />
-                            </div>
-                            <div class="madal-b-title d-grid-am">
-                                <input class="madal-b-title-text" type="text" name="Title" placeholder="Email Subject" />
-                            </div>
-                            <div class="madal-b-message d-grid-am">
-                                @Html.TextArea("Message", new { @class="madal-am-message madal-b-message-text", @placeholder="Message" })
-                            </div>
-                        </div>
-                        <div class="modal-footer madal-f-am">
-                            <button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="madal-button-send btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
     </div>
+</div>
+
+@if (Model != null){
+    <div>@Model</div>
+}
