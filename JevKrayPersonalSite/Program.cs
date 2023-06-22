@@ -24,4 +24,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=AboutMe}/{action=AboutMe}/{id?}");
 
+app.MapControllerRoute(
+    name: "updates",
+    pattern: "Updates",
+    defaults: new { controller = "Updates", action = "Updates" });
 app.Run();

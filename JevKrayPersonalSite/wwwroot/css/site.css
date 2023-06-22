@@ -11,7 +11,7 @@ html::-webkit-scrollbar {
 
 @media (min-width: 576px) {
     .nav-updates {
-        border-left: 3px solid #262626;
+        border-left: 3px solid rgb(27,28,31);
         padding-left: 1rem;
     }
 }
@@ -28,15 +28,15 @@ html {
 
 body {
     margin-bottom: 40px;
-    background-color: #262626;
-    color: #e1c9b4 !important;
-    font-family: 'Josefin Sans', sans-serif !important;
+    background-color: #ffffff;
+    color: #ffffff !important;
+    font-family: 'Press Start 2P';
 }
 
 footer {
-    background: linear-gradient(45deg, #e1c9b4, #2e6d9c);
+    background: rgb(27,28,31);
     color: #1C1714 !important;
-    font-family: 'Josefin Sans', sans-serif !important;
+    font-family: 'Press Start 2P';
 }
 
 /*mostly for _layout css preset*/
@@ -46,7 +46,7 @@ footer {
 }
 
 .header-text-color {
-    font-family: 'Josefin Sans', sans-serif !important;
+    font-family: 'Press Start 2P';
     color: #ffffff !important;
 }
 
@@ -91,7 +91,7 @@ footer {
 .navbar-b4 {
     font-weight: 600;
     padding-bottom: 4;
-    color: #262626 !important;
+    color: rgb(27,28,31) !important;
     bottom: auto;
 }
 
@@ -104,7 +104,7 @@ footer {
 }
 
 .palette-text {
-    color: #2e6d9c !important;
+    color: rgb(0,151,178);
 }
 
 .photo-am {
@@ -114,17 +114,22 @@ footer {
 }
 
 .text-am {
+    border: 1rem;
+    border-style: solid;
+    border-radius: 30px;
+    background-color: rgb(27,28,31);
     float: left;
-    width: 60%;
     height: 100%;
-    text-align: center;
     display: inline-block !important;
 }
 
 .text-am-small {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
     padding: 1rem 3rem 1rem 3rem;
-    font-size: 250%;
+    font-size: 1.5rem;
     margin-bottom: 0%;
+    border-radius: 20px;
 }
 
 .block-am {
@@ -140,10 +145,6 @@ footer {
 
 .remove-padding {
     padding: 0%;
-}
-
-.fixed-padding-down5_6 {
-    padding-bottom: 5.6px !important;
 }
 
 .underline-one {
@@ -185,14 +186,10 @@ footer {
 
 
 .underline-one-text {
-    background: linear-gradient(0deg, #2e6d9c, #e1c9b4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #2e6d9c;
+    background-color: #ffffff !important;
     position: relative;
     cursor: pointer;
-    text-decoration: none; /* Убираем подчеркивание */
-    -webkit-transition: all 1s ease;
+    text-decoration: none;
     transition: 0.1s linear;
 }
 
@@ -272,7 +269,7 @@ footer {
     text-decoration: none;
     align-items: center;
     justify-content: center;
-    background-color: #262626;
+    background-color: rgb(27,28,31);
     font-size: 2rem;
 }
 
@@ -283,8 +280,7 @@ footer {
 .footer-element-logo {
     width: 50%;
     display: inline-block !important;
-    color: #2e6d9c;
-    text-shadow: -0.5px 0 rgb(0, 0, 0), 0 0.5px #e1c9b4, 0.5px 0 #e1c9b4, 0 -0.5px #e1c9b4;
+    color: #ffffff;
 }
 
 .footer-element-privacy {
@@ -330,21 +326,21 @@ footer {
 }
 
 .madal-h-am {
-    background-color: #2e6d9c;
-    color: white;
+    background-color: rgb(0,151,178);
+    color: #ffffff;
     padding: 1rem 1rem 0.5rem 1rem;
     border: 0px;
 }
 
 .madal-b-am {
     padding-bottom: 1rem;
-    background-color: #262626;
+    background-color: rgb(27,28,31);
     border: 0px;
 }
 
 .madal-f-am {
     padding: 0rem 1rem 1rem 1rem;
-    background-color: #262626;
+    background-color: rgb(27,28,31);
     border: 0px;
 }
 
@@ -378,7 +374,7 @@ footer {
 .madal-b-name-text {
     font-size: 1.5rem;
     border: 0px;
-    background-color: antiquewhite;
+    background-color: #ffffff;
     border-radius: 0.25rem;
 }
 
@@ -394,7 +390,7 @@ footer {
 .madal-b-email-text {
     font-size: 1.5rem;
     border: 0px;
-    background-color: antiquewhite;
+    background-color: #ffffff;
     border-radius: 0.25rem;
 }
 
@@ -410,7 +406,7 @@ footer {
 .madal-b-title-text {
     font-size: 1.5rem;
     border: 0px;
-    background-color: antiquewhite;
+    background-color: #ffffff;
     border-radius: 0.25rem;
 }
 
@@ -425,7 +421,7 @@ footer {
 .madal-b-message-text {
     font-size: 1.5rem;
     border: 0px;
-    background-color: antiquewhite;
+    background-color: #ffffff;
     border-radius: 0.25rem;
 }
 
@@ -435,6 +431,7 @@ footer {
     }
 
 .modal-title-am {
+    color: rgb(27,28,31);
     font-size: 2rem;
 }
 
@@ -471,4 +468,100 @@ footer {
     margin: 1rem 0 0 0;
     font-weight: 800;
     font-size: 200%;
+}
+
+.a-brand-link {
+    color: rgb(0,151,178); 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 0.75rem 0.5rem 0.5rem 0.75rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.a-brand-link:hover {
+    color: #ffffff;
+}
+
+.a-link {
+    color: #ffffff; 
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    padding-right: 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.a-link:hover {
+    color: rgb(0,151,178);
+    transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
+}
+
+.pad-bor-contacts{
+    padding-right: 1rem;
+    border-right: 0,2rem;
+
+}
+
+.im-am {
+    border-radius: 20px;
+    float: right; 
+    margin: 0.5rem 0 1.5rem 1rem;
+    border: 0.5rem;
+    border-color: #ffffff;
+    border-style: solid;
+    transition: all 0.4s ease; 
+}
+
+.im-am:hover {
+    border-color: rgb(0,151,178);
+}
+
+.text-logo1 {
+    text-decoration: none;
+    color: rgb(0,151,178) !important;
+}
+
+.a-link-footer {
+    cursor: pointer;
+    color: #ffffff; 
+    text-decoration: none;
+    text-align: center;
+    padding-right: 1rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.a-link-footer:hover {
+    color: rgb(0,151,178);
+    transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
+}
+
+.logos-am {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}   
+
+.logo-img {
+    padding: 5%;
+    max-height: 50px; /* Высота изображения будет определена абсолютным значением. Необходимо указать значение, соответствующее высоте футера. */
+    width: auto;
+}
+
+.blackback {
+    background: #000;
+}
+
+.font-1i3 {
+    font-size: 1.3rem;
 }

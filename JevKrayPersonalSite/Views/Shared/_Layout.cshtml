@@ -9,56 +9,89 @@
     <link rel="stylesheet" href="~/JevKrayPersonalSite.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="blackback">
     <header>
-        <nav class="remove-border remove-padding margin-off header-back-color header-text-color navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="remove-border padding-top4 container-fluid">
-                <a class="text-w600 text-size-brand remove-padding header-text-color navbar-brand" asp-area="" asp-controller="AboutMe" asp-action="AboutMe">Eugene.</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav navbar-b4 text-size-navbar flex-grow-1 content-end">
-                        <li class="nav-item">
-                            <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Education" >Education</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Projects">Projects</a>
-                        </li>
-                        <li class="nav-item nav-contact">
-                            <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts">Contacts</a>
-                        </li>
-                        <li class="nav-item nav-updates">
-                            <a class="text-size-navbar navbar-b4 header-text-color nav-link text-dark" asp-area="" asp-controller="Updates" asp-action="Updates">Updates</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="header-1 dflex">
+            <div class>
+                <a class="a-brand-link dflex" asp-controller="AboutMe" asp-action="AboutMe">Eugene.</a>
             </div>
-        </nav>  
+            <div class="header-left dflex dflex_link pt03">
+                <a class="a-link" asp-controller="Home" asp-action="Education">Education</a>
+                <a class="a-link" asp-controller="Home" asp-action="Skills">Skills</a>
+                <a class="a-link" asp-controller="Home" asp-action="Projects">Projects</a>
+                <a class="a-link" asp-controller="Home" asp-action="Contacts">Contacts</a>
+                <a class="a-link" asp-controller="Updates" asp-action="">Updates</a>
+                <a class="a-link" asp-controller="Home" asp-action="AboutSite">About</a>
+            </div>
+        </div>
     </header>
-    <div class="fixed-padding-down5_6 padding-12 container-wt-margin" >
+    <div class="padding-12 container-wt-margin">
         <main role="main" class="remove-padding-down pb-3">
             @RenderBody()
         </main>
     </div>
     <footer class="border-top footer remove-border footer-c1">
-        <div class="container-wt-margin padding-l12-r18 remove-border footer-c2">
-            <div class="footer-element-logo">&copy; 2023 - JevKrayPersonalSite</div>
-            <div class="footer-element-privacy">
-                <a class ="underline-one" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div class="container-wt-margin padding-l12-r18 remove-border footer-c2">
+        <div class="footer-row">
+            <div class="logos-am">
+                <div class="logo-item">
+                    <a class="a-link-footer" href="https://t.me/eugenekray"><img src="~/pictures/tg.png" class="logo-img"> Telegram</a>
+                </div>
+                <div class="logo-item">
+                    <a class="a-link-footer" href="https://github.com/Jevkray"><img src="~/pictures/git.png" class="logo-img"> GitHub</a>
+                </div>
+                <div class="logo-item">
+                    <a class="a-link-footer" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="~/pictures/gmail.png" class="logo-img"> Mail</a>
+                </div>
+                <div class="logo-item">
+                    <a class="a-link-footer" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/linkedin.png" class="logo-img"> LinkedIn</a>
+                </div>
             </div>
         </div>
-
-    </footer>
+    </div>
+</footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog madal-am-c2">
+                <div class="modal-content">
+                    @using (Html.BeginForm("AboutMe"))
+                    {
+                        <div class="modal-header madal-h-am">
+                            <h3 class="modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
+                            <button type="button" class="btn-close margin-cross" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                        </div>
+                        <div class="font-1i3 modal-body madal-b-am">
+                            <h3>On this window you can message to my personal email</h3>
+                            <div class="madal-b-name d-grid-am">
+                                <input class="font-1i3 madal-b-name-text" type="text" name="Username" placeholder="Full Name" />
+                            </div>
+                            <div class="madal-b-email d-grid-am">
+                                <input class="font-1i3 madal-b-email-text" type="text" name="Email" placeholder="Email Address" />
+                            </div>
+                            <div class="madal-b-title d-grid-am">
+                                <input class="font-1i3 madal-b-title-text" type="text" name="Title" placeholder="Email Subject" />
+                            </div>
+                            <div class="font-1i3 madal-b-message d-grid-am">
+                                @Html.TextArea("Message", new { @class="madal-am-message madal-b-message-text", @placeholder="Message" })
+                            </div>
+                        </div>
+                        <div class="modal-footer madal-f-am">
+                            <button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="madal-button-send btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
 </html>

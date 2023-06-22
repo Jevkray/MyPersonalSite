@@ -16,14 +16,14 @@ namespace JevKrayPersonalSite.Controllers
         [HttpGet]
         public ActionResult AboutMe()
         {
-            return View();
+            return View(null);
         }
         [HttpPost]
         public ActionResult AboutMe(string Username, string Email, string Title, string Message)
         {
             var mail = CodeMail.CreatieMail(Username, Email, Title, Message);
             CodeMail.SendMail(mail);
-            return View();
+            return View((object)"Email Succes");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
