@@ -15,8 +15,8 @@ namespace JevKrayPersonalSite.Controllers
         }
         public IActionResult Updates()
         {
-            GitLogger.GetLog();
-            var html = System.IO.File.ReadAllText("PrivateData/GitLog.html");
+            GitHubLogger.GetCommits();
+            var html = System.IO.File.ReadAllText("PrivateData/GitHubLog.html");
             ViewBag.Html = $"<div>{html}</div>";
             return View();
         }
