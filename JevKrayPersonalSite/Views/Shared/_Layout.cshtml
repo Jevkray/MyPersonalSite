@@ -36,25 +36,25 @@
         </main>
     </div>
     <footer class="border-top footer remove-border footer-c1">
-    <div class="container-wt-margin padding-l12-r18 remove-border footer-c2">
-        <div class="footer-row">
-            <div class="logos-am">
-                <div class="logo-item">
-                    <a class="a-link-footer" href="https://t.me/eugenekray"><img src="~/pictures/tg.png" class="logo-img"> Telegram</a>
-                </div>
-                <div class="logo-item">
-                    <a class="a-link-footer" href="https://github.com/Jevkray"><img src="~/pictures/git.png" class="logo-img"> GitHub</a>
-                </div>
-                <div class="logo-item">
-                    <a class="a-link-footer" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="~/pictures/gmail.png" class="logo-img"> Mail Me</a>
-                </div>
-                <div class="logo-item">
-                    <a class="a-link-footer" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/linkedin.png" class="logo-img"> LinkedIn</a>
+        <div class="container-wt-margin padding-l12-r18 remove-border footer-c2">
+            <div class="footer-row">
+                <div class="logos-am">
+                    <div class="logo-item">
+                        <a class="a-link-footer" href="https://t.me/eugenekray"><img src="~/pictures/tg.png" class="logo-img"> Telegram</a>
+                    </div>
+                    <div class="logo-item">
+                        <a class="a-link-footer" href="https://github.com/Jevkray"><img src="~/pictures/git.png" class="logo-img"> GitHub</a>
+                    </div>
+                    <div class="logo-item">
+                        <a class="a-link-footer" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/linkedin.png" class="logo-img"> LinkedIn</a>
+                    </div>
+                    <div class="logo-item">
+                        <a class="a-link-footer" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="~/pictures/gmail.png" class="logo-img"> Mail Me</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -62,36 +62,36 @@
 </body>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog madal-am-c2">
-                <div class="modal-content">
-                    @using (Html.BeginForm("AboutMe"))
-                    {
-                        <div class="modal-header madal-h-am">
-                            <h3 class="p-2 modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
-                            <button type="button" class="btn-close margin-cross" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                        </div>
-                        <div class="font-1i3 modal-body madal-b-am">
-                            <h3 class="p-3">On this window you can message to my personal email</h3>
-                            <div class="madal-b-name d-grid-am">
-                                <input class="font-1i3 madal-b-name-text" type="text" name="Username" placeholder="Full Name" />
-                            </div>
-                            <div class="madal-b-email d-grid-am">
-                                <input class="font-1i3 madal-b-email-text" type="text" name="Email" placeholder="Email Address" />
-                            </div>
-                            <div class="madal-b-title d-grid-am">
-                                <input class="font-1i3 madal-b-title-text" type="text" name="Title" placeholder="Email Subject" />
-                            </div>
-                            <div class="font-1i3 madal-b-message d-grid-am">
-                                @Html.TextArea("Message", new { @class="madal-am-message madal-b-message-text", @placeholder="Message" })
-                            </div>
-                        </div>
-                        <div class="modal-footer madal-f-am">
-                            <button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="madal-button-send btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
-                        </div>
-                    }
+    <div class="modal-dialog madal-am-c2">
+        <div class="modal-content">
+            @using (Html.BeginForm("AboutMe"))
+            {
+                <div class="modal-header madal-h-am">
+                    <h3 class="p-2 modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
+                    <button type="button" class="btn-close margin-cross" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
-            </div>
+                <div class="font-1i3 modal-body madal-b-am">
+                    <h3 class="p-3">On this window you can message to my personal email</h3>
+                    <div class="madal-b-name d-grid-am">
+                        <input class="font-1i3 madal-b-name-text" type="text" name="Username" placeholder="Full Name" />
+                    </div>
+                    <div class="madal-b-email d-grid-am">
+                        <input class="font-1i3 madal-b-email-text" type="text" name="Email" placeholder="Email Address" />
+                    </div>
+                    <div class="madal-b-title d-grid-am">
+                        <input class="font-1i3 madal-b-title-text" type="text" name="Title" placeholder="Email Subject" />
+                    </div>
+                    <div class="font-1i3 madal-b-message d-grid-am">
+                        @Html.TextArea("Message", new { @class="madal-am-message madal-b-message-text", @placeholder="Message" })
+                    </div>
+                </div>
+                <div class="modal-footer madal-f-am">
+                    <button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="madal-button-send btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
+                </div>
+            }
         </div>
+    </div>
+</div>
 
 </html>
