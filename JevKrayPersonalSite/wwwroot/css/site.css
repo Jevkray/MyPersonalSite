@@ -358,11 +358,14 @@ footer {
     border-color: #2e6d9c;
     background-color: #2e6d9c;
     margin: 0.25rem 0rem 0.25rem 0.25rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.2s ease; /* Время изменения цвета */
 }
 
     .madal-button-send:hover {
+        background-color: dodgerblue !important;
         font-size: 1.5rem;
-        border-color: #3886c2;
+        border-color: rgb(27,28,31) !important;
         background-color: #3886c2;
         margin: 0.25rem 0rem 0.25rem 0.25rem;
     }
@@ -372,6 +375,8 @@ footer {
 }
 
 .madal-b-name-text {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
     border: 0px;
     background-color: #ffffff;
@@ -388,6 +393,8 @@ footer {
 }
 
 .madal-b-email-text {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
     border: 0px;
     background-color: #ffffff;
@@ -404,6 +411,8 @@ footer {
 }
 
 .madal-b-title-text {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
     border: 0px;
     background-color: #ffffff;
@@ -419,6 +428,7 @@ footer {
 }
 
 .madal-b-message-text {
+    padding: 0.2rem;
     font-size: 1.5rem;
     border: 0px;
     background-color: #ffffff;
