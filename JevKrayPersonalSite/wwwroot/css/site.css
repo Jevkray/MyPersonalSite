@@ -575,6 +575,7 @@ footer {
 
 .updated-elements {
     padding: 1rem;
+    padding-bottom: 0;
     border-radius: 20px;
     background: rgb(27,28,31);
 }
@@ -685,3 +686,6 @@ footer {
     padding-right: 1rem !important;
 }
 
+.mb-2-5{
+    margin-bottom: 0.75rem;
+}
