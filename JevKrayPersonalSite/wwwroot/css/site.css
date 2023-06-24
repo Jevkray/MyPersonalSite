@@ -114,9 +114,6 @@ footer {
 }
 
 .text-am {
-    border: 1rem;
-    border-style: solid;
-    border-radius: 30px;
     background-color: rgb(27,28,31);
     float: left;
     height: 100%;
@@ -126,7 +123,7 @@ footer {
 .text-am-small {
     font-family: 'Press Start 2P', cursive;
     color: #ffffff;
-    padding: 1rem 3rem 1rem 3rem;
+    padding: 1rem 2rem 1rem 2rem;
     font-size: 1.5rem;
     margin-bottom: 0%;
     border-radius: 20px;
@@ -481,7 +478,7 @@ footer {
 }
 
 .a-brand-link {
-    color: rgb(0,151,178); 
+    color: rgb(0,151,178);
     text-decoration: none;
     font-weight: 600;
     font-size: 2rem;
@@ -490,12 +487,12 @@ footer {
     transition: all 0.4s ease; /* Время изменения цвета */
 }
 
-.a-brand-link:hover {
-    color: #ffffff;
-}
+    .a-brand-link:hover {
+        color: #ffffff;
+    }
 
 .a-link {
-    color: #ffffff; 
+    color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -505,30 +502,30 @@ footer {
     transition: all 0.4s ease; /* Время изменения цвета */
 }
 
-.a-link:hover {
-    color: rgb(0,151,178);
-    transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
-}
+    .a-link:hover {
+        color: rgb(0,151,178);
+        transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
+    }
 
-.pad-bor-contacts{
+.pad-bor-contacts {
     padding-right: 1rem;
     border-right: 0,2rem;
-
 }
 
 .im-am {
     border-radius: 20px;
-    float: right; 
+    float: right;
     margin: 0.5rem 0 1.5rem 1rem;
     border: 0.5rem;
     border-color: #ffffff;
     border-style: solid;
-    transition: all 0.4s ease; 
+    transition: all 0.4s ease;
 }
 
-.im-am:hover {
-    border-color: rgb(0,151,178);
-}
+    .im-am:hover {
+        border-color: rgb(0, 151, 178);
+    }
+
 
 .text-logo1 {
     text-decoration: none;
@@ -537,7 +534,7 @@ footer {
 
 .a-link-footer {
     cursor: pointer;
-    color: #ffffff; 
+    color: #ffffff;
     text-decoration: none;
     text-align: center;
     padding-right: 1rem;
@@ -545,10 +542,10 @@ footer {
     transition: all 0.4s ease; /* Время изменения цвета */
 }
 
-.a-link-footer:hover {
-    color: rgb(0,151,178);
-    transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
-}
+    .a-link-footer:hover {
+        color: rgb(0,151,178);
+        transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
+    }
 
 .logos-am {
     display: flex;
@@ -560,7 +557,7 @@ footer {
     display: flex;
     align-items: center;
     margin: 0 10px;
-}   
+}
 
 .logo-img {
     padding: 5%;
@@ -576,11 +573,10 @@ footer {
     font-size: 1.3rem;
 }
 
-.updates-elements {
-    padding: 0 1rem 0 1rem;
+.updated-elements {
+    padding: 1rem;
     border-radius: 20px;
     background: rgb(27,28,31);
-    margin-bottom: 20px;
 }
 
 .updates-element {
@@ -600,10 +596,11 @@ footer {
     -webkit-transition: all 1s ease;
     transition: all 0.4s ease; /* Время изменения цвета */
 }
-.updates-githublink:hover {
-    color: #ffffff;
-    transform: rotate(0deg) translate3d(1rem);
-}
+
+    .updates-githublink:hover {
+        color: #ffffff;
+        transform: rotate(0deg) translate3d(1rem);
+    }
 
 .font-1_5rem {
     font-size: 1.5rem;
@@ -616,3 +613,75 @@ footer {
 .color-al-bl {
     color: white;
 }
+
+.block-am-flex-center {
+    margin-inline: auto;
+    max-width: 2050px;
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.block2050 {
+    max-width: 2050px;
+}
+
+.coloredboder-bottom {
+    border: 0.5rem;
+    border-style: solid;
+    border-radius: 30px !important;
+    border-color: rgb(27,28,31);
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .coloredboder-bottom:hover {
+        border: 0.5rem;
+        border-style: solid;
+        border-radius: 30px !important;
+        border-color: rgb(0,151,178);
+    }
+
+.coloredboder-am {
+    border: 0.5rem;
+    border-style: solid;
+    border-radius: 20px !important;
+    border-color: rgb(27,28,31);
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+/*.coloredboder-am:hover {
+        border: 0.5rem;
+        border-style: solid;
+        border-radius: 20px !important;
+        border-color: rgb(0,151,178);
+    }*/
+
+.coloredboder-update {
+    border: 0.5rem;
+    border-style: solid;
+    border-radius: 20px !important;
+    border-color: #000;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .coloredboder-update:hover {
+        border: 0.5rem;
+        border-style: solid;
+        border-radius: 20px !important;
+        border-color: rgb(0,151,178);
+    }
+
+.pb22{
+    padding-bottom: 22px;
+}
+
+.plr-3 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+

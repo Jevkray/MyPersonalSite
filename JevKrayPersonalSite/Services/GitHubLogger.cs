@@ -26,8 +26,7 @@ namespace JevKrayPersonalSite.Services
 
             foreach (var commit in commits)
             {
-                html.AppendLine("<div class=\"updates-element\" style=\"margin-bottom: 20px;\">");
-                html.AppendLine("<hr style=\"color: black;\">");
+                html.AppendLine("<div class=\"updates-element plr-3 p-2 coloredboder-update block2050\" style=\"margin-bottom: 20px;\">");
                 html.AppendLine($"<div><b>Author:</b> {commit.Commit.Author.Name}</div>");
                 html.AppendLine($"<div><b>Date:</b> {commit.Commit.Author.Date.AddHours(3).ToString("yyyy/MM/dd в HH:mm")}</div>");
                 html.AppendLine("<br>");
@@ -36,7 +35,6 @@ namespace JevKrayPersonalSite.Services
                 html.AppendLine("</div>");
                 html.AppendLine("<br>");
                 html.AppendLine($"<div><a class=\"updates-githublink\" href=\"https://github.com/Jevkray/MyPersonalSite/commit/{commit.Sha}\">Github</a></div>");
-                html.AppendLine("<hr style=\"color: black;\">");
                 html.AppendLine("</div>");
             }
 
