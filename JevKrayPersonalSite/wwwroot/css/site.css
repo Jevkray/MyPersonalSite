@@ -587,6 +587,12 @@ footer {
     margin-bottom: 20px;
 }
 
+.education-element {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 20px;
+    background: #000;
+}
+
 .updates-githublink {
     color: rgb(0,151,178);
     text-decoration: none;
@@ -625,8 +631,22 @@ footer {
     flex-direction: column;
 }
 
+.block-education-flex-center {
+    margin-inline: auto;
+    max-width: 1680px;
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
 .block2050 {
     max-width: 2050px;
+}
+
+.block1680 {
+    max-width: 1680px;
 }
 
 .coloredboder-bottom {
@@ -677,7 +697,7 @@ footer {
         border-color: rgb(0,151,178);
     }
 
-.pb22{
+.pb22 {
     padding-bottom: 22px;
 }
 
@@ -686,6 +706,41 @@ footer {
     padding-right: 1rem !important;
 }
 
-.mb-2-5{
+.mb-2-5 {
     margin-bottom: 0.75rem;
+}
+
+.education-block {
+    display: inline-flex;
+}
+
+    .education-block:hover .date-block {
+        color: rgb(0,151,178);
+    }
+
+.education-block-text-left {
+    padding: 1rem 2rem 1rem 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+
+.education-block-text-right {
+    padding: 1rem 2rem 1rem 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.w85 {
+    width: 85%;
+}
+
+.date-block {
+    width: 15%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
 }
