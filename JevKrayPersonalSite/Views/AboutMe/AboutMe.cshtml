@@ -1,7 +1,16 @@
-﻿@model string 
+﻿@model string
 @{
     ViewData["Title"] = "About Me";
 }
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowRight") {
+            window.location.href = '@Url.Action("Education", "Home")';
+        }
+    });
+</script>
+
 <div class="block-am block-am-flex-center coloredboder-am">
     <div>
         <p_am class="text-am margin-off">

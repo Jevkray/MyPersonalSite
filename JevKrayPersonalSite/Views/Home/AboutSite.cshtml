@@ -2,6 +2,14 @@
     ViewData["Title"] = "About";
 }
 
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowLeft") {
+            window.location.href = '@Url.Action("Projects", "Home")';
+        }
+    });
+</script>
+
 <h1 class="palette-text">@ViewData["Title"]</h1>
 <a class="a-link-footer" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
 <a class="a-link-footer" asp-area="" asp-controller="Home" asp-action="Resume">Resume</a>

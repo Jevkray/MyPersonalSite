@@ -1,6 +1,23 @@
 @{
     ViewData["Title"] = "Skills";
 }
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowRight") {
+            window.location.href = '@Url.Action("Projects", "Home")';
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowLeft") {
+            window.location.href = '@Url.Action("Education", "Home")';
+        }
+    });
+</script>
+
 <div class="block-am block-education-flex-center coloredboder-am">
     <div>
         <p_am class="text-am margin-off">
@@ -15,13 +32,13 @@
                             <p>
                                 C#, .Net (Разработка с использованием данной технологии и платформы более 2х лет.)
                                 <div class="progress-bar">
-                                    <div class="progress" style="width:80%;"></div>
+                                    <div class="progress" style="width:75%;"></div>
                                 </div>
                             </p>
                             <p>
                                 HTML, CSS (Уверенное владение.)
                                 <div class="progress-bar">
-                                    <div class="progress" style="width:90%;"></div>
+                                    <div class="progress" style="width:85%;"></div>
                                 </div>
                             </p>
                             <p>
@@ -39,7 +56,7 @@
                             <p>
                                 WinForms (При необходимости могу реализовать Desktop приложение.)
                                 <div class="progress-bar">
-                                    <div class="progress" style="width:70%;"></div>
+                                    <div class="progress" style="width:75%;"></div>
                                 </div>
                             </p>
                             <p>
@@ -70,7 +87,6 @@
                     </div>
                 </div>
             </div>
+        </p_am>
     </div>
-    </p_am>
-</div>
 </div>

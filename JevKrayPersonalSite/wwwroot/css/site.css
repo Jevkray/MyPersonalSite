@@ -771,3 +771,27 @@ footer {
 .fonts1_5rem {
     font-size: 1.5rem;
 }
+
+.main-block-updates {
+    height: calc(100vh - 124px); /* Учет высоты футера */
+    overflow-y: scroll; /* Добавить вертикальную прокрутку */
+    padding-right: 0.5rem;
+    /* Стилизация полосы прокрутки */
+    scrollbar-width: thin; /* для Firefox и других браузеров на основе Gecko */
+    scrollbar-color: rgba(155, 155, 155, 0.7) transparent; /* цвет для Firefox */
+    /* Стилизация полосы прокрутки для Chrome, Safari и Opera */
+
+&::-webkit-scrollbar {
+    width: 12px;
+}
+
+&::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+&::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.7);
+    border-radius: 20px;
+    border: transparent;
+}
+}

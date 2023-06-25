@@ -1,6 +1,23 @@
 @{
     ViewData["Title"] = "Education";
 }
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowRight") {
+            window.location.href = '@Url.Action("Skills", "Home")';
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowLeft") {
+            window.location.href = '@Url.Action("AboutMe", "AboutMe")';
+        }
+    });
+</script>
+
 <div class="block-am block-am-flex-center coloredboder-am">
     <div>
         <p_am class="text-am margin-off">

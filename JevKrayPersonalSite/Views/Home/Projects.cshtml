@@ -1,4 +1,21 @@
 @{
     ViewData["Title"] = "Projects";
 }
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowRight") {
+            window.location.href = '@Url.Action("AboutSite", "Home")';
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowLeft") {
+            window.location.href = '@Url.Action("Skills", "Home")';
+        }
+    });
+</script>
+
 <h1 class="palette-text">@ViewData["Title"]</h1>
