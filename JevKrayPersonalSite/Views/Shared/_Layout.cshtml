@@ -21,12 +21,66 @@
                 <a class="a-brand-link dflex" asp-controller="AboutMe" asp-action="AboutMe">Eugene.</a>
             </div>
             <div class="header-left dflex dflex_link pt03">
-                <a class="a-link" asp-controller="Home" asp-action="Education">Education</a>
-                <a class="a-link" asp-controller="Home" asp-action="Skills">Skills</a>
-                <a class="a-link" asp-controller="Home" asp-action="Projects">Projects</a>
-                <a class="a-link" asp-controller="Home" asp-action="Contacts">Contacts</a>
-                <a class="a-link" asp-controller="Updates" asp-action="">Updates</a>
-                <a class="a-link" asp-controller="Home" asp-action="AboutSite">About</a>
+                @{
+                    if (ViewData["Title"] == "Education")
+                    {
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="Education">Education</a>
+                    }
+                    else
+                    {
+                        <a class="a-link" asp-controller="Home" asp-action="Education">Education</a>
+                    }
+                }
+                @{
+                    if (ViewData["Title"] == "Skills")
+                    {
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="Skills">Skills</a>
+                    }
+                    else
+                    {
+                        <a class="a-link" asp-controller="Home" asp-action="Skills">Skills</a>
+                    }
+                }
+                @{
+                    if (ViewData["Title"] == "Projects")
+                    {
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="Projects">Projects</a>
+                    }
+                    else
+                    {
+                        <a class="a-link" asp-controller="Home" asp-action="Projects">Projects</a>
+                    }
+                }
+                @{
+                    if (ViewData["Title"] == "Contacts")
+                    {
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="Contacts">Contacts</a>
+                    }
+                    else
+                    {
+                        <a class="a-link" asp-controller="Home" asp-action="Contacts">Contacts</a>
+                    }
+                }
+                @{
+                    if (ViewData["Title"] == "Updates")
+                    {
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Updates" asp-action="">Updates</a>
+                    }
+                    else
+                    {
+                        <a class="a-link" asp-controller="Updates" asp-action="">Updates</a>
+                    }
+                }
+                @{
+                    if (ViewData["Title"] == "About")
+                    {
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="AboutSite">About</a>
+                    }
+                    else
+                    {
+                        <a class="a-link" asp-controller="Home" asp-action="AboutSite">About</a>
+                    }
+                }
             </div>
         </div>
     </header>
