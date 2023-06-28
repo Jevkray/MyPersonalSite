@@ -23,7 +23,7 @@ namespace JevKrayPersonalSite.Controllers
         {
             var mail = CodeMail.CreatieMail(Username, Email, Title, Message);
             CodeMail.SendMail(mail);
-            return View((object)"Email Succes");
+            return Content("Email Sent");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

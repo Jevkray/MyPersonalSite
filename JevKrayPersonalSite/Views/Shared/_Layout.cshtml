@@ -98,7 +98,7 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog madal-am-c2">
         <div class="modal-content">
-            @using (Html.BeginForm("AboutMe"))
+            @using (Html.BeginForm("AboutMe", "AboutMe", FormMethod.Post, new { id = "aboutMeForm" }))
             {
                 <div class="modal-header madal-h-am">
                     <h3 class="p-2 modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
@@ -121,17 +121,44 @@
                 </div>
                 <div class="modal-footer madal-f-am">
                     <button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" class="madal-button-send btn btn-primary madal-footer-width" data-bs-dismiss="modal" value="Send" input>
+                    <input type="button" class="madal-button-send btn btn-primary madal-footer-width" value="Send" onclick="sendMessage()" />
                 </div>
             }
         </div>
     </div>
 </div>
 
-@if (Model != null)
-{
-}
-
 </html>
 
+<script>
+    function sendMessage() {
 
+        event.preventDefault();
+
+        var form = $('#aboutMeForm');
+        var formData = form.serialize();
+
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'), // Используем метод из атрибута формы
+            data: formData,
+            beforeSend: function () {
+                // Show loading message before sending the request
+                $('.modal-body').html('<h3 class="p-3">Loading...</h3>');
+                $('.modal-footer').html('<button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>'); // Заменяем содержимое элемента с классом "modal-footer" на кнопку "Close"
+            },
+            success: function (response) {
+                // Обработка успешного ответа от сервера
+                console.log(response); // Выводим ответ в консоль
+                $('.modal-body').html('<h3 class="p-3">Mail Sent, if you want to send more, update page</h3>'); // Заменяем содержимое элемента с классом "modal-body" на сообщение "Mail Sent..."
+                $('.modal-footer').html('<button type="button" class="madal-button-close btn btn-secondary madal-footer-width" data-bs-dismiss="modal">Close</button>'); // Заменяем содержимое элемента с классом "modal-footer" на кнопку "Close"
+            },  
+            error: function (xhr, status, error) {
+                // Обработка ошибки
+                console.log(error); // Выводим ошибку в консоль
+                // Дополнительный код для обработки ошибки
+            }
+
+        });
+    }
+</script>

@@ -350,20 +350,24 @@ footer {
     margin: 0.25rem 0.25rem 0.25rem 0rem;
 }
 
+    .madal-button-close:hover {
+        border-color: white !important;
+    }
+
 .madal-button-send {
+    background-color: rgb(0,151,178) !important;
     font-size: 1.5rem;
     border-color: #2e6d9c;
-    background-color: #2e6d9c;
+    border-color: rgb(27,28,31) !important;
     margin: 0.25rem 0rem 0.25rem 0.25rem;
     -webkit-transition: all 1s ease;
     transition: all 0.2s ease; /* Время изменения цвета */
 }
 
     .madal-button-send:hover {
-        background-color: dodgerblue !important;
         font-size: 1.5rem;
-        border-color: rgb(27,28,31) !important;
-        background-color: #3886c2;
+        border-color: white !important;
+        background-color: rgb(0,195,230) !important;
         margin: 0.25rem 0rem 0.25rem 0.25rem;
     }
 
@@ -781,7 +785,9 @@ footer {
     scrollbar-color: rgba(155, 155, 155, 0.7) transparent; /* цвет для Firefox */
     /* Стилизация полосы прокрутки для Chrome, Safari и Opera */
 
-&::-webkit-scrollbar {
+    &::-webkit-scrollbar
+
+{
     width: 12px;
 }
 
