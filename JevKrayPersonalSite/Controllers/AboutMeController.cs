@@ -14,16 +14,9 @@ namespace JevKrayPersonalSite.Controllers
             _logger = logger;
         }
         [HttpGet]
-        public ActionResult AboutMe()
+        public IActionResult AboutMe()
         {
-            return View(null);
-        }
-        [HttpPost]
-        public ActionResult AboutMe(string Username, string Email, string Title, string Message)
-        {
-            var mail = CodeMail.CreatieMail(Username, Email, Title, Message);
-            CodeMail.SendMail(mail);
-            return Content("Email Sent");
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

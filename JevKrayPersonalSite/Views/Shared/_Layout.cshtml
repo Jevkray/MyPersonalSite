@@ -98,7 +98,7 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog madal-am-c2">
         <div class="modal-content">
-            @using (Html.BeginForm("AboutMe", "AboutMe", FormMethod.Post, new { id = "aboutMeForm" }))
+            @using (Html.BeginForm("MailSender", "MailApi", FormMethod.Post, new { id = "mailSenderForm" }))
             {
                 <div class="modal-header madal-h-am">
                     <h3 class="p-2 modal-title modal-title-am" id="exampleModalLabel">Send to Mail</h3>
@@ -135,7 +135,7 @@
 
         event.preventDefault();
 
-        var form = $('#aboutMeForm');
+        var form = $('#mailSenderForm');
         var formData = form.serialize();
 
         $.ajax({
@@ -158,7 +158,6 @@
                 console.log(error); // Выводим ошибку в консоль
                 // Дополнительный код для обработки ошибки
             }
-
         });
     }
 </script>

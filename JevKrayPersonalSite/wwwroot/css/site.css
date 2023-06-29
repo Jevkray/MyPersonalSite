@@ -348,6 +348,8 @@ footer {
 .madal-button-close {
     font-size: 1.5rem;
     margin: 0.25rem 0.25rem 0.25rem 0rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.5s ease; /* Время изменения цвета */
 }
 
     .madal-button-close:hover {
@@ -361,7 +363,7 @@ footer {
     border-color: rgb(27,28,31) !important;
     margin: 0.25rem 0rem 0.25rem 0.25rem;
     -webkit-transition: all 1s ease;
-    transition: all 0.2s ease; /* Время изменения цвета */
+    transition: all 0.5s ease; /* Время изменения цвета */
 }
 
     .madal-button-send:hover {
@@ -776,7 +778,7 @@ footer {
     font-size: 1.5rem;
 }
 
-.main-block-updates {
+.main-block-updates {   
     height: calc(100vh - 124px); /* Учет высоты футера */
     overflow-y: scroll; /* Добавить вертикальную прокрутку */
     padding-right: 0.5rem;
