@@ -1639,86 +1639,92 @@ footer {
 }
 
 @media (min-width: 512px) {
-    .div-column-block {
+    .div-column-block-pr {
         width: 50%;
         height: 240px;
         overflow: overlay;
         scrollbar-width: 0;
-        margin: 1rem;
         border: 0.5rem;
         background-color: #000;
         border-style: solid;
         border-radius: 20px;
         border-color: #000;
+        -webkit-transition: all 1s ease;
+        transition: all 0.3s ease;
     }
 
-    .div-layer-block {
+    .div-layer-block-pr {
         width: 100%;
         height: 240px;
         overflow: overlay;
         scrollbar-width: 0;
-        margin: 1rem;
         border: 0.5rem;
         background-color: #000;
         border-style: solid;
         border-radius: 20px;
         border-color: #000;
+        -webkit-transition: all 1s ease;
+        transition: all 0.3s ease;
     }
 }
 
 @media (min-width: 1228px) {
-    .div-column-block {
+    .div-column-block-pr {
         width: 50%;
         height: 400px;
         overflow: overlay;
         scrollbar-width: 0;
-        margin: 1rem;
         border: 0.5rem;
         background-color: #000;
         border-style: solid;
         border-radius: 20px;
         border-color: #000;
+        -webkit-transition: all 1s ease;
+        transition: all 0.3s ease;
     }
 
-    .div-layer-block {
+    .div-layer-block-pr {
         width: 100%;
         height: 400px;
         overflow: overlay;
         scrollbar-width: 0;
-        margin: 1rem;
         border: 0.5rem;
         background-color: #000;
         border-style: solid;
         border-radius: 20px;
         border-color: #000;
+        -webkit-transition: all 1s ease;
+        transition: all 0.3s ease;
     }
 }
 
 @media (min-width: 1780px) {
-    .div-column-block {
+    .div-column-block-pr {
         width: 50%;
         height: 500px;
         overflow: overlay;
         scrollbar-width: 0;
-        margin: 1rem;
         border: 0.5rem;
         background-color: #000;
         border-style: solid;
         border-radius: 20px;
         border-color: #000;
+        -webkit-transition: all 1s ease;
+        transition: all 0.3s ease;
     }
 
-    .div-layer-block {
+    .div-layer-block-pr {
         width: 100%;
         height: 500px;
         overflow: overlay;
         scrollbar-width: 0;
-        margin: 1rem;
         border: 0.5rem;
         background-color: #000;
         border-style: solid;
         border-radius: 20px;
         border-color: #000;
+        -webkit-transition: all 1s ease;
+        transition: all 0.3s ease;
     }
 }
 
@@ -1741,13 +1747,13 @@ footer {
     }
 }
 
-.div-column-block:hover .title-pr {
+.div-column-block-pr:hover .title-pr {
     display: flex;
     color: rgb(0,151,178);
     border-color: rgb(0,151,178);
 }
 
-    .div-column-block:hover .title-pr::after {
+    .div-column-block-pr:hover .title-pr::after {
         content: "";
         display: flex;
         color: rgb(0,151,178);
@@ -1755,18 +1761,18 @@ footer {
         animation: changedott 2s linear infinite;
     }
 
-.div-column-block:hover {
+.div-column-block-pr:hover {
     cursor: pointer;
     border-color: rgb(0,151,178);
 }
 
-.div-layer-block:hover .title-pr {
+.div-layer-block-pr:hover .title-pr {
     display: flex;
     color: rgb(0,151,178);
     border-color: rgb(0,151,178);
 }
 
-    .div-layer-block:hover .title-pr::after {
+    .div-layer-block-pr:hover .title-pr::after {
         content: "";
         display: flex;
         color: rgb(0,151,178);
@@ -1774,16 +1780,16 @@ footer {
         animation: changedott 2s linear infinite;
     }
 
-.div-layer-block:hover {
+.div-layer-block-pr:hover {
     cursor: pointer;
     border-color: rgb(0,151,178);
 }
 
-.div-column-block::-webkit-scrollbar {
+.div-column-block-pr::-webkit-scrollbar {
     width: 0;
 }
 
-.div-layer-block::-webkit-scrollbar {
+.div-layer-block-pr::-webkit-scrollbar {
     width: 0;
 }
 
@@ -1860,10 +1866,11 @@ footer {
     border-style: solid;
     border-radius: 10px;
     border-color: #000;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    cursor: pointer;
 }
+
+    .title-pr-main-block:hover .styled-dot {
+        color: rgb(0,151,178);
+    }
 
 .title-pr-main-text {
     font-size: 1.5rem;
@@ -1872,13 +1879,34 @@ footer {
     transition: all 0.4s ease; /* Время изменения цвета */
 }
 
-    .title-pr-main-text:hover {
-        font-size: 1.5rem;
-        color: rgb(0,151,178)
-    }
-
 .text-title-pr-nm-block {
-    display: none;
     -webkit-transition: all 1s ease;
     transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.styled-dot {
+    padding-right: 0.7rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+    cursor: pointer;
+}
+
+    .styled-dot:hover {
+    }
+
+.styled-title-pr {
+    padding-left: 1.4rem;
+    margin: auto;
 }
