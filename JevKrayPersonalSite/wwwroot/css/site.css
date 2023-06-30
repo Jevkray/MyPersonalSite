@@ -682,11 +682,11 @@ footer {
 }
 
 /*.coloredboder-am:hover {
-        border: 0.5rem;
-        border-style: solid;
-        border-radius: 20px !important;
-        border-color: rgb(0,151,178);
-    }*/
+            border: 0.5rem;
+            border-style: solid;
+            border-radius: 20px !important;
+            border-color: rgb(0,151,178);
+        }*/
 
 .coloredboder-update {
     border: 0.5rem;
@@ -778,7 +778,7 @@ footer {
     font-size: 1.5rem;
 }
 
-.main-block-updates {   
+.main-block-updates {
     height: calc(100vh - 124px); /* Учет высоты футера */
     overflow-y: scroll; /* Добавить вертикальную прокрутку */
     padding-right: 0.5rem;
@@ -802,4 +802,1083 @@ footer {
     border-radius: 20px;
     border: transparent;
 }
+
+}
+
+.div-layer {
+    display: flex;
+}
+
+.div-column-block {
+    width: 50%;
+    height: 50vh;
+    overflow: overlay;
+    scrollbar-width: 0;
+    background-color: #000;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+    .div-column-block::-webkit-scrollbar {
+        width: 0;
+    }
+
+.alm-black {
+    background-color: rgb(27,28,31);
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 576px) {
+    .nav-updates {
+        border-left: 3px solid rgb(27,28,31);
+        padding-left: 1rem;
+    }
+}
+
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    color: #ffffff !important;
+    font-family: 'Press Start 2P';
+}
+
+footer {
+    background: rgb(27,28,31);
+    color: #1C1714 !important;
+    font-family: 'Press Start 2P';
+}
+
+/*mostly for _layout css preset*/
+
+.header-back-color {
+    background: linear-gradient(45deg, #2e6d9c, #e1c9b4) !important;
+}
+
+.header-text-color {
+    font-family: 'Press Start 2P';
+    color: #ffffff !important;
+}
+
+.content-end {
+    justify-content: flex-end !important;
+}
+
+.text-w600 {
+    font-weight: 600;
+}
+
+.text-size-brand {
+    font-size: 2rem;
+}
+
+.text-size-navbar {
+    font-size: 1rem;
+}
+
+.container-wt-margin {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.padding-12 {
+    padding: 12px;
+}
+
+.padding-top4 {
+    padding-top: 4px;
+}
+
+.padding-but4 {
+    padding-bottom: 4px;
+}
+
+.padding-l12-r18 {
+    padding-left: 12px;
+    padding-right: 18px;
+}
+
+.navbar-b4 {
+    font-weight: 600;
+    padding-bottom: 4;
+    color: rgb(27,28,31) !important;
+    bottom: auto;
+}
+
+.pb-3-wt-padding {
+    padding: 0% !important;
+}
+
+.margin-off {
+    margin: 0 !important;
+}
+
+.palette-text {
+    color: rgb(0,151,178);
+}
+
+.photo-am {
+    float: left;
+    width: 40%;
+    display: inline-block !important;
+}
+
+.text-am {
+    background-color: rgb(27,28,31);
+    float: left;
+    height: 100%;
+    display: inline-block !important;
+}
+
+.text-am-small {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0%;
+    border-radius: 20px;
+}
+
+.block-am {
+    width: 100%;
+    height: 100%;
+    display: inline-block !important;
+    overflow: hidden;
+}
+
+.remove-padding-down {
+    padding-bottom: 0% !important;
+}
+
+.remove-padding {
+    padding: 0%;
+}
+
+.underline-one {
+    color: #ffffff; /* Цвет обычной ссылки */
+    position: relative;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+    .underline-one:hover {
+        color: #e1c9b4;
+    }
+
+    .underline-one:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -3px;
+        width: 0;
+        height: 2px; /* Высота линии */
+        background-color: #e1c9b4; /* Цвет подчеркивания при исчезании линии*/
+        transition: width 0.5s; /* Время эффекта */
+    }
+
+    .underline-one:hover:after {
+        content: "";
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        height: 2px; /* Высота линии */
+        background-color: #e1c9b4; /* Цвет подчеркивания при появлении линии*/
+        transition: width 0.5s; /* Время эффекта */
+    }
+
+
+.underline-one-text {
+    background-color: #ffffff !important;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.1s linear;
+}
+
+    .underline-one-text:hover {
+        transform: scale(1.02);
+    }
+
+.image-am {
+    float: left;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: scale(-1, 1);
+    border: 2px solid;
+    -webkit-border-image: -webkit-linear-gradient(45deg, #2e6d9c, #e1c9b4);
+    border-image-slice: 1;
+    border-radius: 2px 2px 2px 2px;
+}
+
+.remove-border {
+    border: 0px !important;
+}
+
+.style-name-am {
+    background: linear-gradient(0deg, #2e6d9c, #e1c9b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #2e6d9c;
+    margin: 1rem 0 0 0;
+    font-weight: 600;
+    font-size: 400%;
+}
+
+.logos-am {
+    padding: 0rem 3rem 0rem 3rem;
+    display: flex !important;
+}
+
+.image-logo-am {
+    height: auto;
+    width: 20%;
+}
+
+.logo-gmail {
+    align-items: center;
+    width: 50%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-github {
+    align-items: center;
+    width: 50%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-tg {
+    align-items: center;
+    width: 50%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-linkedin {
+    align-items: center;
+    width: 50%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-logo-am {
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(27,28,31);
+    font-size: 2rem;
+}
+
+.madal-footer-width {
+    width: calc(50% - 0.25rem);
+}
+
+.footer-element-logo {
+    width: 50%;
+    display: inline-block !important;
+    color: #ffffff;
+}
+
+.footer-element-privacy {
+    width: 50%;
+    display: inline-block !important;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.nav-contact {
+    padding-right: 1rem;
+}
+
+.footer-c1 {
+    line-height: 40px !important
+}
+
+.footer-c2 {
+    width: 100%;
+    height: 100%;
+}
+
+.text-al-c {
+    text-align: center
+}
+
+.madal-am-c2 {
+    max-width: 50%;
+    height: 80%
+}
+
+.d-grid-am {
+    display: grid;
+}
+
+
+.text-color-red {
+    color: red;
+}
+
+.madal-am-message {
+    min-height: 100px;
+}
+
+.madal-h-am {
+    background-color: rgb(0,151,178);
+    color: #ffffff;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border: 0px;
+}
+
+.madal-b-am {
+    padding-bottom: 1rem;
+    background-color: rgb(27,28,31);
+    border: 0px;
+}
+
+.madal-f-am {
+    padding: 0rem 1rem 1rem 1rem;
+    background-color: rgb(27,28,31);
+    border: 0px;
+}
+
+.margin-cross {
+    margin-bottom: unset !important;
+}
+
+.madal-button-close {
+    font-size: 1.5rem;
+    margin: 0.25rem 0.25rem 0.25rem 0rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.5s ease; /* Время изменения цвета */
+}
+
+    .madal-button-close:hover {
+        border-color: white !important;
+    }
+
+.madal-button-send {
+    background-color: rgb(0,151,178) !important;
+    font-size: 1.5rem;
+    border-color: #2e6d9c;
+    border-color: rgb(27,28,31) !important;
+    margin: 0.25rem 0rem 0.25rem 0.25rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.5s ease; /* Время изменения цвета */
+}
+
+    .madal-button-send:hover {
+        font-size: 1.5rem;
+        border-color: white !important;
+        background-color: rgb(0,195,230) !important;
+        margin: 0.25rem 0rem 0.25rem 0.25rem;
+    }
+
+.madal-b-name {
+    padding-bottom: 0.5rem;
+}
+
+.madal-b-name-text {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+    .madal-b-name-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
+
+.madal-b-email {
+    padding-bottom: 0.5rem;
+}
+
+.madal-b-email-text {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+    .madal-b-email-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
+
+.madal-b-title {
+    padding-bottom: 0.5rem;
+}
+
+.madal-b-title-text {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+    .madal-b-title-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
+
+.madal-b-message {
+}
+
+.madal-b-message-text {
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    border: 0px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+    .madal-b-message-text:focus {
+        outline: solid;
+        outline-color: #2e6d9c;
+    }
+
+.modal-title-am {
+    color: rgb(27,28,31);
+    font-size: 2rem;
+}
+
+.td-0-none {
+    text-decoration: none;
+}
+
+.va-sub {
+    vertical-align: sub;
+}
+
+.updates-block {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.main-block-updates {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.git-view-block {
+    overflow: scroll;
+    overflow: auto;
+}
+
+.text-header-block {
+    background: linear-gradient(0deg, #2e6d9c, #e1c9b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #2e6d9c;
+    margin: 1rem 0 0 0;
+    font-weight: 800;
+    font-size: 200%;
+}
+
+.a-brand-link {
+    color: rgb(0,151,178);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 0.75rem 0.5rem 0.5rem 0.75rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .a-brand-link:hover {
+        color: #ffffff;
+    }
+
+.a-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    padding-right: 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .a-link:hover {
+        color: rgb(0,151,178);
+        transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
+    }
+
+.pad-bor-contacts {
+    padding-right: 1rem;
+    border-right: 0,2rem;
+}
+
+.im-am {
+    border-radius: 20px;
+    float: right;
+    margin: 0.5rem 0 1.5rem 1rem;
+    border: 0.5rem;
+    border-color: #ffffff;
+    border-style: solid;
+    transition: all 0.4s ease;
+}
+
+    .im-am:hover {
+        border-color: rgb(0, 151, 178);
+    }
+
+.text-logo1 {
+    text-decoration: none;
+    color: rgb(0,151,178) !important;
+}
+
+.a-link-footer {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding-right: 1rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .a-link-footer:hover {
+        color: rgb(0,151,178);
+        transform: rotate(0deg) translate(-0.15rem); /* Трансформация */
+    }
+
+.logos-am {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.logo-img {
+    padding: 5%;
+    max-height: 50px; /* Высота изображения будет определена абсолютным значением. Необходимо указать значение, соответствующее высоте футера. */
+    width: auto;
+}
+
+.blackback {
+    background: #000;
+}
+
+.font-1i3 {
+    font-size: 1.3rem;
+}
+
+.updated-elements {
+    padding: 1rem;
+    padding-bottom: 0;
+    border-radius: 20px;
+    background: rgb(27,28,31);
+}
+
+.updates-element {
+    padding: 0 1rem 0 1rem;
+    border-radius: 20px;
+    background: #000;
+    margin-bottom: 20px;
+}
+
+.education-element {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 20px;
+    background: #000;
+}
+
+.updates-githublink {
+    color: rgb(0,151,178);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+    padding-right: 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .updates-githublink:hover {
+        color: #ffffff;
+        transform: rotate(0deg) translate3d(1rem);
+    }
+
+.font-1_5rem {
+    font-size: 1.5rem;
+}
+
+.padding-left-2rem {
+    padding-left: 2rem;
+}
+
+.color-al-bl {
+    color: white;
+}
+
+.block-am-flex-center {
+    margin-inline: auto;
+    max-width: 2050px;
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.block-education-flex-center {
+    margin-inline: auto;
+    max-width: 1680px;
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.block2050 {
+    max-width: 2050px;
+}
+
+.block1680 {
+    max-width: 1680px;
+}
+
+.coloredboder-bottom {
+    border: 0.5rem;
+    border-style: solid;
+    border-radius: 30px !important;
+    border-color: rgb(27,28,31);
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .coloredboder-bottom:hover {
+        border: 0.5rem;
+        border-style: solid;
+        border-radius: 30px !important;
+        border-color: rgb(0,151,178);
+    }
+
+.coloredboder-am {
+    border: 0.5rem;
+    border-style: solid;
+    border-radius: 20px !important;
+    border-color: rgb(27,28,31);
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+/*.coloredboder-am:hover {
+            border: 0.5rem;
+            border-style: solid;
+            border-radius: 20px !important;
+            border-color: rgb(0,151,178);
+        }*/
+
+.coloredboder-update {
+    border: 0.5rem;
+    border-style: solid;
+    border-radius: 20px !important;
+    border-color: #000;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .coloredboder-update:hover {
+        border: 0.5rem;
+        border-style: solid;
+        border-radius: 20px !important;
+        border-color: rgb(0,151,178);
+    }
+
+.pb22 {
+    padding-bottom: 22px;
+}
+
+.plr-3 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.mb-2-5 {
+    margin-bottom: 0.75rem;
+}
+
+.education-block {
+    display: inline-flex;
+}
+
+    .education-block:hover .date-block {
+        color: rgb(0,151,178);
+    }
+
+.education-block-text-left {
+    padding: 1rem 2rem 1rem 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+
+.education-block-text-right {
+    padding: 1rem 2rem 1rem 2rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.w85 {
+    width: 85%;
+}
+
+.date-block {
+    width: 15%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.education-block {
+    display: flex;
+    width: 100%;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.progress-bar {
+    width: 100%; /* Регулируйте ширину по своему усмотрению */
+    background-color: #f3f3f3; /* Цвет фона шкалы */
+    border-radius: 10px; /* Закругление углов шкалы */
+    overflow: hidden; /* Обрезает контент и добавляет полосы прокрутки */
+    margin-top: 5px; /* Отступ сверху */
+}
+
+.progress {
+    height: 20px; /* Высота шкалы */
+    background-color: rgb(0,151,178); /* Цвет заполнения шкалы */
+}
+
+.fonts1_5rem {
+    font-size: 1.5rem;
+}
+
+.main-block-updates {
+    height: calc(100vh - 124px); /* Учет высоты футера */
+    overflow-y: scroll; /* Добавить вертикальную прокрутку */
+    padding-right: 0.5rem;
+    /* Стилизация полосы прокрутки */
+    scrollbar-width: thin; /* для Firefox и других браузеров на основе Gecko */
+    scrollbar-color: rgba(155, 155, 155, 0.7) transparent; /* цвет для Firefox */
+    /* Стилизация полосы прокрутки для Chrome, Safari и Opera */
+
+    &::-webkit-scrollbar
+
+{
+    width: 12px;
+}
+
+&::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+&::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.7);
+    border-radius: 20px;
+    border: transparent;
+}
+
+}
+
+.div-layer {
+    display: flex;
+}
+
+@media (min-width: 512px) {
+    .div-column-block {
+        width: 50%;
+        height: 240px;
+        overflow: overlay;
+        scrollbar-width: 0;
+        margin: 1rem;
+        border: 0.5rem;
+        background-color: #000;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: #000;
+    }
+
+    .div-layer-block {
+        width: 100%;
+        height: 240px;
+        overflow: overlay;
+        scrollbar-width: 0;
+        margin: 1rem;
+        border: 0.5rem;
+        background-color: #000;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: #000;
+    }
+}
+
+@media (min-width: 1228px) {
+    .div-column-block {
+        width: 50%;
+        height: 400px;
+        overflow: overlay;
+        scrollbar-width: 0;
+        margin: 1rem;
+        border: 0.5rem;
+        background-color: #000;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: #000;
+    }
+
+    .div-layer-block {
+        width: 100%;
+        height: 400px;
+        overflow: overlay;
+        scrollbar-width: 0;
+        margin: 1rem;
+        border: 0.5rem;
+        background-color: #000;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: #000;
+    }
+}
+
+@media (min-width: 1780px) {
+    .div-column-block {
+        width: 50%;
+        height: 500px;
+        overflow: overlay;
+        scrollbar-width: 0;
+        margin: 1rem;
+        border: 0.5rem;
+        background-color: #000;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: #000;
+    }
+
+    .div-layer-block {
+        width: 100%;
+        height: 500px;
+        overflow: overlay;
+        scrollbar-width: 0;
+        margin: 1rem;
+        border: 0.5rem;
+        background-color: #000;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: #000;
+    }
+}
+
+
+@keyframes changedott {
+    0% {
+        content: "";
+    }
+
+    25% {
+        content: ".";
+    }
+
+    50% {
+        content: "..";
+    }
+
+    75% {
+        content: "...";
+    }
+}
+
+.div-column-block:hover .title-pr {
+    display: flex;
+    color: rgb(0,151,178);
+    border-color: rgb(0,151,178);
+}
+
+    .div-column-block:hover .title-pr::after {
+        content: "";
+        display: flex;
+        color: rgb(0,151,178);
+        border-color: rgb(0,151,178);
+        animation: changedott 2s linear infinite;
+    }
+
+.div-column-block:hover {
+    cursor: pointer;
+    border-color: rgb(0,151,178);
+}
+
+.div-layer-block:hover .title-pr {
+    display: flex;
+    color: rgb(0,151,178);
+    border-color: rgb(0,151,178);
+}
+
+    .div-layer-block:hover .title-pr::after {
+        content: "";
+        display: flex;
+        color: rgb(0,151,178);
+        border-color: rgb(0,151,178);
+        animation: changedott 2s linear infinite;
+    }
+
+.div-layer-block:hover {
+    cursor: pointer;
+    border-color: rgb(0,151,178);
+}
+
+.div-column-block::-webkit-scrollbar {
+    width: 0;
+}
+
+.div-layer-block::-webkit-scrollbar {
+    width: 0;
+}
+
+
+.alm-black {
+    background-color: rgb(27,28,31);
+}
+
+.image-block-pr {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    position: relative; /* Добавляем позиционирование, чтобы создать контекст для позиционирования градиента */
+}
+
+.image_pr {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    .image_pr:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    }
+
+.image_pr_1 {
+    background-image: url(../pictures/projects/pr_1/pr_1_im_1.jpg);
+}
+
+.image_pr_2 {
+    background-image: url(../pictures/projects/pr_2/pr_2_im_3.jpg);
+}
+
+.image_pr_3 {
+    background-image: url(../pictures/projects/pr_3/pr_3_im_3.jpg);
+}
+
+.block-pj {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.text-pr {
+    font-size: 0.7rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.title-pr {
+    font-size: 1.1rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+.title-pr-main-block {
+    background-color: #000;
+    border: 0.5rem;
+    background-color: #000;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #000;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.title-pr-main-text {
+    font-size: 1.5rem;
+    color: white;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .title-pr-main-text:hover {
+        font-size: 1.5rem;
+        color: rgb(0,151,178)
+    }
+
+.text-title-pr-nm-block {
+    display: none;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
 }

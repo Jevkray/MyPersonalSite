@@ -28,11 +28,6 @@ namespace JevKrayPersonalSite.Controllers
             return View();
         }
 
-        public IActionResult Projects()
-        {
-            return View();
-        }
-
         public IActionResult AboutSite()
         {
             return View();

@@ -30,6 +30,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Updates", action = "Updates" });
 
 app.MapControllerRoute(
+    name: "projects",
+    pattern: "Projects",
+    defaults: new { controller = "Projects", action = "Projects" });
+
+app.MapControllerRoute(
     name: "mailapi", 
     pattern: "mailsender",
     defaults: new { controller = "Mailapi", api = "Mailsender" });
