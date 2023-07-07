@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace JevKrayPersonalSite.Controllers
+namespace JevKrayPersonalSite.Views.Projects
 {
     public class ProjectsController : Controller
     {
@@ -16,7 +16,22 @@ namespace JevKrayPersonalSite.Controllers
         public IActionResult Projects()
         {
             return View();
-        }   
+        }
+
+        public IActionResult GazorpGameStore()
+        {
+            return View();
+        }
+
+        public IActionResult Ferma()
+        {
+            return View();
+        }
+
+        public IActionResult WPumper()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
