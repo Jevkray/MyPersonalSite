@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace JevKrayPersonalSite.Views.Projects
+namespace JevKrayPersonalSite.Controllers
 {
     public class ProjectsController : Controller
     {
