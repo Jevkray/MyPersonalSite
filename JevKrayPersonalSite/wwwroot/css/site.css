@@ -681,15 +681,6 @@ footer {
     transition: all 0.4s ease; /* Время изменения цвета */
 }
 
-.coloredboder-allpj {
-    border: 0.5rem;
-    border-style: solid;
-    border-radius: 20px !important;
-    border-color: rgb(27,28,31);
-    -webkit-transition: all 1s ease;
-    transition: all 0.4s ease; /* Время изменения цвета */
-}
-
 /*.coloredboder-am:hover {
             border: 0.5rem;
             border-style: solid;
@@ -1925,9 +1916,9 @@ footer {
     text-decoration: none;
 }
 
-.a-none:hover {
-    color: #fff;
-}
+    .a-none:hover {
+        color: #fff;
+    }
 
 .block-allpj {
     display: flex;
@@ -1939,16 +1930,123 @@ footer {
 
 .block-allpj-flex-center {
     margin-inline: auto;
-    max-width: 2050px;
     display: flex !important;
     justify-content: center;
     align-content: center;
     flex-wrap: nowrap;
-    flex-direction: column;
+    flex-direction: row;
+    background-color: rgb(27,28,31);
+}
+
+.coloredboder-allpj {
+    border: 0.5rem;
+    border-style: solid;
+    border-radius: 20px !important;
+    border-color: rgb(27,28,31);
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
 }
 
 .image-block-pj {
+    width: 75%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.image-block-pj-left {
+    width: 5%;
+    background-color: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-block-pj-main {
+    width: 90%;
+    background-color: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-block-pj-right {
+    width: 5%;
+    background-color: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-block-pj {
+    width: 25%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.text-with-scroll {
+    margin-right: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    overflow-y: scroll; /* Добавить вертикальную прокрутку */
+    padding-right: 0.5rem;
+    /* Стилизация полосы прокрутки */
+    scrollbar-width: thin; /* для Firefox и других браузеров на основе Gecko */
+    scrollbar-color: rgba(155, 155, 155, 0.7) transparent; /* цвет для Firefox */
+    /* Стилизация полосы прокрутки для Chrome, Safari и Opera */
+
+    &::-webkit-scrollbar
+
+{
+    width: 12px;
+}
+
+&::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+&::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.7);
+    border-radius: 20px;
+    border: transparent;
+}
+
+}
+
+.text-block-pj-header {
+    font-size: 1.2rem;
+}
+
+.text-block-pj-main {
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.pj-body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 124px);
+    border-radius: 20px !important;
+    border: 0;
+}
+
+.image-pj {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
 }
