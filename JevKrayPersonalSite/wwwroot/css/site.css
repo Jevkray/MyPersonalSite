@@ -1929,6 +1929,7 @@ footer {
 
 
 .block-allpj-flex-center {
+    padding: 0.5rem;
     margin-inline: auto;
     display: flex !important;
     justify-content: center;
@@ -1957,7 +1958,7 @@ footer {
 .image-block-pj-left {
     width: 5%;
     background-color: #000;
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1966,16 +1967,21 @@ footer {
 .image-block-pj-main {
     width: 90%;
     background-color: #000;
-    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .image-block-pj-right {
     width: 5%;
     background-color: #000;
-    border-radius: 20px;
+    border-radius: 0px 20px 20px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1988,10 +1994,12 @@ footer {
     flex-direction: column;
 }
 
+    .text-block-pj:hover .text-block-pj-header {
+        color: rgb(0,151,178);
+    }
+
 .text-with-scroll {
-    margin-right: 0.75rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem;
     overflow-y: scroll; /* Добавить вертикальную прокрутку */
     padding-right: 0.5rem;
     /* Стилизация полосы прокрутки */
@@ -2018,7 +2026,9 @@ footer {
 }
 
 .text-block-pj-header {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease;
 }
 
 .text-block-pj-main {
@@ -2049,4 +2059,79 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 20px;
+    object-fit: contain;
 }
+
+.pl-0 {
+    padding-left: 0;
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.ml-0 {
+    margin-left: 0 !important;
+}
+
+.mr-0 {
+    margin-right: 0 !important;
+}
+
+.image-block-pj-left-selector {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .image-block-pj-left-selector:hover {
+        color: rgb(0,151,178);
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+.image-block-pj-right-selector {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease; /* Время изменения цвета */
+}
+
+    .image-block-pj-right-selector:hover {
+        color: rgb(0,151,178);
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
