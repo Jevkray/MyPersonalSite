@@ -28,7 +28,7 @@ namespace JevKrayPersonalSite.Controllers
             return View();
         }
 
-        public IActionResult AboutSite()
+        public IActionResult Info()
         {
             return View();
         }
