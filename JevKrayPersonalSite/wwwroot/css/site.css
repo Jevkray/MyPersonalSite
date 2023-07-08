@@ -123,7 +123,6 @@ footer {
 .text-am-small {
     font-family: 'Press Start 2P', cursive;
     color: #ffffff;
-    padding: 1rem 2rem 1rem 2rem;
     font-size: 1.5rem;
     margin-bottom: 0%;
     border-radius: 20px;
@@ -521,7 +520,7 @@ footer {
 .im-am {
     border-radius: 20px;
     float: right;
-    margin: 0.5rem 0 1.5rem 1rem;
+    margin: 0.5rem 0 1.5rem 2rem;
     border: 0.5rem;
     border-color: #ffffff;
     border-style: solid;
@@ -626,26 +625,6 @@ footer {
 
 .color-al-bl {
     color: white;
-}
-
-.block-am-flex-center {
-    margin-inline: auto;
-    max-width: 2050px;
-    display: flex !important;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: column;
-}
-
-.block-education-flex-center {
-    margin-inline: auto;
-    max-width: 1680px;
-    display: flex !important;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: column;
 }
 
 .block2050 {
@@ -1605,7 +1584,6 @@ footer {
     background-color: rgb(27,28,31);
     border-radius: 20px;
     overflow-y: scroll; /* Добавить вертикальную прокрутку */
-    padding-right: 0.5rem;
     /* Стилизация полосы прокрутки */
     scrollbar-width: thin; /* для Firefox и других браузеров на основе Gecko */
     scrollbar-color: rgba(155, 155, 155, 0.7) transparent; /* цвет для Firefox */
@@ -1614,11 +1592,11 @@ footer {
     &::-webkit-scrollbar
 
 {
-    width: 12px;
+    width: 0;
 }
 
 &::-webkit-scrollbar-track {
-    margin: 1rem;
+    margin: 0;
     background: transparent;
 }
 
@@ -1627,4 +1605,435 @@ footer {
     border-radius: 20px;
     border: transparent;
 }
+
+}
+
+.block-am-flex-center {
+    margin-inline: auto;
+    max-width: 2050px;
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.block-education-flex-center {
+    margin-inline: auto;
+    max-width: 2050px;
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+@media (min-width: 512px) {
+
+    /*About Me*/
+    
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2050px;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 0.75rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+
+
+    .im-am {
+        width: 24%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education*/
+
+    .education-text {
+        font-size: 0.5rem;
+    }
+
+    /*Skills*/
+
+    .header-skills{
+        font-size: 1.3rem;
+    }
+
+    .text-skills{
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    /*About Me*/
+
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2050px;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 1rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+    .im-am {
+        width: 24%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education*/
+
+    .education-text {
+        font-size: 0.6rem;
+    }
+
+    .header-skills {
+        font-size: 0.9rem;
+    }
+
+    .text-skills {
+        font-size: 0.6rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    /*About Me*/
+
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2050px;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 1.125rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+    .im-am {
+        width: 24%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education*/
+
+    .education-text {
+        font-size: 0.7rem;
+    }
+
+    .header-skills {
+        font-size: 0.9rem;
+    }
+
+    .text-skills {
+        font-size: 0.6rem;
+    }
+
+}
+
+@media (min-width: 1152px) {
+
+    /*About Me*/
+
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2050px;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 1.25rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+
+    .im-am {
+        width: 24%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education*/
+
+    .education-text {
+        font-size: 0.75rem;
+    }
+
+    .header-skills {
+        font-size: 0.9rem;
+    }
+
+    .text-skills {
+        font-size: 0.6rem;
+    }
+
+}
+
+@media (min-width: 1280px) {
+
+    /*About Me*/
+
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2050px;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 1.25rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+
+    .im-am {
+        width: 24%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education - Skills*/
+
+    .education-text {
+        font-size: 0.75rem;
+    }
+
+    .header-skills {
+        font-size: 0.9rem;
+    }
+
+    .text-skills {
+        font-size: 0.6rem;
+    }
+
+}
+
+@media (min-width: 1536px) {
+
+    /*About Me*/
+
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2050px;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 1.5rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+    .im-am {
+        width: 24%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education*/
+
+    .education-text {
+        font-size: 0.94rem;
+    }
+
+    .header-skills {
+        font-size: 1.67rem;
+    }
+
+    .text-skills {
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (min-width: 1780px) {
+
+    /*About Me*/
+
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2050px;
+        display: flex !important;
+        justify-content: center;    
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 1.8rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+    .im-am {
+        width: 26%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education*/
+
+    .education-text {
+        font-size: 1.25rem;
+    }
+
+    .header-skills {
+        font-size: 1.8rem;
+    }
+
+    .text-skills {
+        font-size: 1.2rem;
+    }
+
+    /*Privacy*/
+
+    .privacy-block {
+        display: flex;
+        justify-content: center;
+        max-width: 2560px;
+        flex-direction: column;
+        text-align: left;
+    }
+
+}
+
+@media (min-width: 2560px) {
+
+    /*About Me*/
+
+    .block-am-flex-center {
+        margin-inline: auto;
+        max-width: 2560px;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .text-am-small {
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        font-size: 2.5rem;
+        margin-bottom: 0%;
+        border-radius: 20px;
+    }
+    .im-am {
+        width: 30%;
+        border-radius: 20px;
+        float: right;
+        margin: 0.5rem 0 1.5rem 2rem;
+        border: 0.5rem;
+        border-color: #ffffff;
+        border-style: solid;
+        transition: all 0.4s ease;
+    }
+
+    /*Education*/
+
+    .education-text {
+        font-size: 2rem;
+    }
+
+    .header-skills {
+        font-size: 2.6rem;
+    }
+
+    .text-skills {
+        font-size: 1.9rem;
+    }
+
+    /*Privacy*/
+
+    .privacy-block {
+        display: flex;
+        justify-content:center;
+        max-width: 2560px;
+        flex-direction: column;
+        text-align: left;
+    }
+
+}
+
+.coloredboder-education {
+    border-left: 0.5rem;
+    border-right: 0.5rem;
+    border-style: solid;
+    border-radius: 20px !important;
+    border-color: rgb(27,28,31);
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease;
 }
