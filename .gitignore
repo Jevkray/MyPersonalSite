@@ -34,6 +34,8 @@ bld/
 [Ll]ogs/
 
 [Pp]rivate[Dd]ata/
+GitHubLogger.cs
+MailSender.cs
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
