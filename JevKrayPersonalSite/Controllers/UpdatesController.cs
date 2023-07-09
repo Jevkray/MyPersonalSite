@@ -2,6 +2,7 @@
 using JevKrayPersonalSite.Models;
 using System.Diagnostics;
 using JevKrayPersonalSite.Services;
+using System.Threading.Tasks;
 
 namespace JevKrayPersonalSite.Controllers
 {
@@ -13,10 +14,10 @@ namespace JevKrayPersonalSite.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Updates()
+
+        public async Task<IActionResult> Updates()
         {
-            GitHubLogger.GetCommits();
-            var html = System.IO.File.ReadAllText("PrivateData/GitHubLog.html");
+            var html = await GitHubLogger.GetCommits();
             ViewBag.Html = $"<div>{html}</div>";
             return View();
         }

@@ -7,21 +7,17 @@ namespace JevKrayPersonalSite.Services
 {
     public class GitHubLogger
     {
-        public static async void GetCommits()
+        public static async Task<string> GetCommits()
         {
             string path = "PrivateData/PrivateData.txt";
-            string token = "";
-            using (var sr = new System.IO.StreamReader(path))
-            {
-                for (int i = 1; i < 21; i++)
-                    sr.ReadLine();
-                    token = sr.ReadLine();
-            }
+            string token = "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";
+
             var client = new GitHubClient(new ProductHeaderValue("GitCommiter"));
             client.Credentials = new Credentials(token);
             var commits = await client.Repository.Commit.GetAll("Jevkray", "MyPersonalSite");
 
             var html = new StringBuilder();
+
             html.AppendLine("<div>");
 
             foreach (var commit in commits)
@@ -40,7 +36,9 @@ namespace JevKrayPersonalSite.Services
 
             html.AppendLine("</div>");
 
-            File.WriteAllText("PrivateData/GitHubLog.html", html.ToString().Replace("\r\n", ""));
+            string result = html.ToString().Replace("\r\n", "");
+
+            return result;
         }
     }
 }

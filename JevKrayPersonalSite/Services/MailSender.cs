@@ -10,26 +10,10 @@ namespace JevKrayPersonalSite.Services
     {
         internal class CodeMail
         {
-            private static string[] ReadTxt()
-            {
-                string path = "PrivateData/PrivateData.txt";
-
-                using (StreamReader reader = new StreamReader(path))
-                {
-                    string[] InfoData = new string[5];
-                    for (int i = 0; i < 5; i++)
-                    {
-                        InfoData[i] = reader.ReadLine();
-                    }
-                    return InfoData;
-                }
-            }
             public static MailMessage CreatieMail(string Username, string Email, string Title, string Message)
             {
-                string[] InfoData = ReadTxt();
-
-                var from = new MailAddress(InfoData[0], Username);
-                var to = new MailAddress(InfoData[1]);
+                var from = new MailAddress("eg.kray.work.stmp@gmail.com", Username);
+                var to = new MailAddress("SemmiTwinsBoss@gmail.com");
                 var mail = new MailMessage(from, to);
                 mail.Subject = Title;
                 mail.Body = Message + "\n\n" + "Contact Email: " + Email;
@@ -38,9 +22,8 @@ namespace JevKrayPersonalSite.Services
             }
             public static void SendMail(MailMessage mail)
             {
-                string[] InfoData = ReadTxt();
-                SmtpClient smtp = new SmtpClient(InfoData[2], Convert.ToInt32(InfoData[3]));
-                smtp.Credentials = new NetworkCredential(InfoData[0], InfoData[4]);
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.Credentials = new NetworkCredential("eg.kray.work.stmp@gmail.com", "cjzictfknfwjvmut");
                 smtp.EnableSsl = true;
 
                 smtp.Send(mail);
