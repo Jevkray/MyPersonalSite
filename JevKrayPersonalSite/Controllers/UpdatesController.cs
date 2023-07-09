@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using JevKrayPersonalSite.Models;
 using System.Diagnostics;
-using JevKrayPersonalSite.Services;
 using System.Threading.Tasks;
+using JevKrayPersonalSite.PrivateServices;
 
 namespace JevKrayPersonalSite.Controllers
 {
