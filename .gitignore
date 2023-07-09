@@ -33,6 +33,7 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+[Pp]rivate[Ss]ervices/
 [Pp]rivate[Dd]ata/
 GitHubLogger.cs
 MailSender.cs
