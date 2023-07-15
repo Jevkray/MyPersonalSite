@@ -15,10 +15,11 @@ namespace JevKrayPersonalSite.Controllers
             _logger = logger;
         }
 
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
         public async Task<IActionResult> Updates()
         {
             var html = await GitHubLogger.GetCommits();
-            ViewBag.Html = $"<div>{html}</div>";
+            ViewBag.Html = $"{html}";
             return View();
         }
 
