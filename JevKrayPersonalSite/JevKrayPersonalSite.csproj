@@ -14,5 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Settings\" />
+    <Folder Include="wwwroot\pictures\projects\pr_4\" />
   </ItemGroup>
 </Project>

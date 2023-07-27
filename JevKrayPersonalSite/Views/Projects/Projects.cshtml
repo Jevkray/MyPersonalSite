@@ -19,7 +19,7 @@
 </script>
 
 <div class="block-pj block-am-flex-center coloredboder-am ">
-    <div class="p-2 alm-black"> 
+    <div class="p-2 alm-black">
         <div class="title-pr-main-block mb-3">
             <div class="flex">
                 <h1 class="text-center styled-title-pr title-pr-main-text mb-0 pt-2 pb-2">
@@ -75,7 +75,7 @@
             </a>
         </div>
         <div class="div-layer">
-            <a class="a-none div-layer-block-pr" asp-controller="Projects" asp-action="WPumper">
+            <a class="a-none div-column-block-pr mb-3 mr-2" asp-controller="Projects" asp-action="WPumper">
                 <div class="image-block-pr image_pr_3 image_pr"></div>
                 <h2 class="mt-2 title-pr p-2 pb-0 pt-0">WPumper</h2>
                 <hr class="m-2" />
@@ -83,6 +83,21 @@
                     Данный проект представляет собой DESKTOP приложение, предназначенное для внесения некоторых изменений в .exe приложение.
                 <p class="text-pr p-2 pb-1 pt-0 mb-0">
                     Данное приложение может нарастить размер приложения до необходимого, может изменить иконку приложения а также, с помощью него - можно скопировать сертификаты другого .exe приложения, либо добавить свои.
+                </p>
+            </a>
+
+            <a class="a-none div-column-block-pr mb-3 mr-2" asp-controller="Projects" asp-action="SteamChecker">
+                <div class="image-block-pr image_pr_4 image_pr"></div>
+                <h2 class="mt-2 title-pr p-2 pb-0 pt-0">Steam Checker</h2>
+                <hr class="m-2" />
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Данный проект представляет собой приложение необходимое для быстрой оценки стоимости инвентаря аккаунта Стим, интерфейс которой выполнен в Консоли, а также в Боте Telegram.
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Данное приложение работает с использованием нескольких API - для эмитации сессии аккаута (Selenium), - для создания LoginSecure (SteamApi), для парсинга предметов (CockyGrabber), - для проверки стоимости инвентаря (CSGO-backpack.api).
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Сайт использует авторизованные аккаунты для проверки стоимости, автрозовываться можно через Chrome или Egde(необходимо поменять подключение).
+                <p class="text-pr p-2 pb-0 pt-0 mb-0">
+                    Сортировать аккаунты можно в зависимости от стоимости - и если стоимость аккаунта будет соблюдать некоторые параметры - уведомление будет отправлено в Telegram.
                 </p>
             </a>
         </div>

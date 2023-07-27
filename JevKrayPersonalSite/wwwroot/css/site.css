@@ -990,6 +990,10 @@ footer {
     background-image: url(../pictures/projects/pr_3/pr_3_im_3.jpg);
 }
 
+.image_pr_4 {
+    background-image: url(../pictures/projects/pr_4/pr_4_im_1.jpg);
+}
+
 .block-pj {
     display: flex;
     width: 100%;
