@@ -1633,7 +1633,7 @@ footer {
 @media (min-width: 512px) {
 
     /*About Me*/
-    
+
     .block-am-flex-center {
         margin-inline: auto;
         max-width: 2050px;
@@ -1671,14 +1671,13 @@ footer {
 
     /*Skills*/
 
-    .header-skills{
+    .header-skills {
         font-size: 1.3rem;
     }
 
-    .text-skills{
+    .text-skills {
         font-size: 0.8rem;
     }
-
 }
 
 @media (min-width: 768px) {
@@ -1693,6 +1692,7 @@ footer {
         align-content: center;
         flex-wrap: nowrap;
     }
+
     .text-am-small {
         font-family: 'Press Start 2P', cursive;
         color: #ffffff;
@@ -1700,6 +1700,7 @@ footer {
         margin-bottom: 0%;
         border-radius: 20px;
     }
+
     .im-am {
         width: 24%;
         border-radius: 20px;
@@ -1724,7 +1725,6 @@ footer {
     .text-skills {
         font-size: 0.6rem;
     }
-
 }
 
 @media (min-width: 1024px) {
@@ -1747,6 +1747,7 @@ footer {
         margin-bottom: 0%;
         border-radius: 20px;
     }
+
     .im-am {
         width: 24%;
         border-radius: 20px;
@@ -1771,7 +1772,6 @@ footer {
     .text-skills {
         font-size: 0.6rem;
     }
-
 }
 
 @media (min-width: 1152px) {
@@ -1819,7 +1819,6 @@ footer {
     .text-skills {
         font-size: 0.6rem;
     }
-
 }
 
 @media (min-width: 1280px) {
@@ -1868,7 +1867,6 @@ footer {
     .text-skills {
         font-size: 0.6rem;
     }
-
 }
 
 @media (min-width: 1536px) {
@@ -1884,6 +1882,7 @@ footer {
         align-items: center;
         flex-wrap: nowrap;
     }
+
     .text-am-small {
         font-family: 'Press Start 2P', cursive;
         color: #ffffff;
@@ -1891,6 +1890,7 @@ footer {
         margin-bottom: 0%;
         border-radius: 20px;
     }
+
     .im-am {
         width: 24%;
         border-radius: 20px;
@@ -1915,7 +1915,6 @@ footer {
     .text-skills {
         font-size: 0.8rem;
     }
-
 }
 
 @media (min-width: 1780px) {
@@ -1926,11 +1925,12 @@ footer {
         margin-inline: auto;
         max-width: 2050px;
         display: flex !important;
-        justify-content: center;    
+        justify-content: center;
         align-content: center;
         align-items: center;
         flex-wrap: nowrap;
     }
+
     .text-am-small {
         font-family: 'Press Start 2P', cursive;
         color: #ffffff;
@@ -1938,6 +1938,7 @@ footer {
         margin-bottom: 0%;
         border-radius: 20px;
     }
+
     .im-am {
         width: 26%;
         border-radius: 20px;
@@ -1972,7 +1973,6 @@ footer {
         flex-direction: column;
         text-align: left;
     }
-
 }
 
 @media (min-width: 2560px) {
@@ -1988,6 +1988,7 @@ footer {
         align-items: center;
         flex-wrap: nowrap;
     }
+
     .text-am-small {
         font-family: 'Press Start 2P', cursive;
         color: #ffffff;
@@ -1995,6 +1996,7 @@ footer {
         margin-bottom: 0%;
         border-radius: 20px;
     }
+
     .im-am {
         width: 30%;
         border-radius: 20px;
@@ -2024,12 +2026,11 @@ footer {
 
     .privacy-block {
         display: flex;
-        justify-content:center;
+        justify-content: center;
         max-width: 2560px;
         flex-direction: column;
         text-align: left;
     }
-
 }
 
 .coloredboder-education {
@@ -2040,4 +2041,39 @@ footer {
     border-color: rgb(27,28,31);
     -webkit-transition: all 1s ease;
     transition: all 0.4s ease;
+}
+
+.notification-header-message {
+    display: none;
+    width: 100%;
+    background-color: chocolate !important;
+}
+
+.notification-text {
+    margin: 0.75rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+}
+
+.span.bold {
+    font-weight: bold;
+}
+
+.updates-in-notification {
+    color: rgba(0,0,0, 1) !important;
+    -webkit-transition: all 1s ease;
+    transition: all 0.4s ease;
+}
+
+    .updates-in-notification:hover {
+        color: rgba(0,0,0, 0.5) !important;
+    }
+
+.button-right {
+    margin: 0.5rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-left: auto;
 }

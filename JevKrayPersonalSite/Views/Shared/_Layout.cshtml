@@ -64,6 +64,17 @@
                 }
             </div>
         </div>
+
+            <div class="notification-header-message" id="notification-header-message">
+                <p class="notification-text">
+                    <span class="bold">Notification: </span>мобильная версия сайта находится в разработке, чтобы посмотреть прогресс перейдите во вкладку 
+                    <a class="updates-in-notification" asp-controller="Updates" asp-action=""> Updates</a>
+                </p>
+                <div class="button-right">
+                    <button id="closeBtn" class="btn-close"></button>
+                </div>
+        </div>
+
     </header>
     <div class="pb22 padding-12 container-wt-margin">
         <main role="main" class="remove-padding-down pb-3">
@@ -161,4 +172,37 @@
             }
         });
     }
+
+    // Получение или установка значения куки
+    function getCookie(name) {
+        const value = "; " + document.cookie;
+        const parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const notification = document.getElementById("notification-header-message");
+        const closeBtn = document.getElementById("closeBtn");
+
+        // Проверка куки и состояния уведомления
+        const notificationClosed = getCookie("notificationClosed");
+        if (notificationClosed === "true") {
+            notification.style.display = "none";
+        } else {
+            notification.style.display = "flex";
+        }
+
+        // Обработчик для кнопки закрытия
+        closeBtn.addEventListener("click", () => {
+            notification.style.display = "none";
+            setCookie("notificationClosed", "true", 30); // Сохраняем состояние в куки на 30 дней
+        });
+    });
+
 </script>
