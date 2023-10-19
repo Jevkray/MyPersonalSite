@@ -26,6 +26,7 @@
     <PackageReference Include="Octokit" Version="6.1.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Services\BackgroundServices\" />
     <Folder Include="Settings\" />
     <Folder Include="wwwroot\pictures\projects\pr_4\" />
   </ItemGroup>

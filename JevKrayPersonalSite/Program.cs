@@ -18,8 +18,6 @@ builder.Services.AddDbContext<JevkSiteDbContext>(options =>
 });
 
 var app = builder.Build();
-//var worker = app.Services.GetRequiredService<Worker>();
-//worker.StartAsync(CancellationToken.None);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
