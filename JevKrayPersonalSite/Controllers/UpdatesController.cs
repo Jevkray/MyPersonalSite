@@ -2,7 +2,7 @@
 using JevKrayPersonalSite.Models;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using JevKrayPersonalSite.PrivateServices;
+using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
 
 namespace JevKrayPersonalSite.Controllers
 {
@@ -18,8 +18,9 @@ namespace JevKrayPersonalSite.Controllers
         [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
         public async Task<IActionResult> Updates()
         {
-            var html = await GitHubLogger.GetCommits();
-            ViewBag.Html = $"{html}";
+            string filePath = "PrivateData/GitHubLog.html"; // Путь к файлу с данными GitHub
+            string html = System.IO.File.ReadAllText(filePath);
+            ViewBag.Html = html;
             return View();
         }
 

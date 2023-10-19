@@ -1,7 +1,12 @@
+using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
+using JevKrayPersonalSite.Workers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHostedService<Worker>();
+builder.Services.AddTransient<GitHubLogger>();
 
 var app = builder.Build();
 

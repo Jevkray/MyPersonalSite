@@ -2,11 +2,11 @@
 using System.Text;
 using LibGit2Sharp;
 
-namespace JevKrayPersonalSite.Services
+namespace JevKrayPersonalSite.Services.BackgroundServices
 {
     public class GitLogger
     {
-        public static async void GetLog()
+        public static async void GetLogAsync()
         {
             using (var repo = new Repository("../"))
             {
