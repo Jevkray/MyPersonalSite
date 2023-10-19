@@ -4,19 +4,24 @@ namespace JevKrayPersonalSite.Workers
 {
     public class Worker : BackgroundService
     {
-        private readonly GitHubLogger _gitHubLogger;
+        private readonly IServiceProvider _serviceProvider;
 
-        public Worker(GitHubLogger gitHubLogger)
+        public Worker(IServiceProvider serviceProvider)
         {
-            _gitHubLogger = gitHubLogger;
+            _serviceProvider = serviceProvider;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                await _gitHubLogger.GetCommitsAsync();
-                await Task.Delay(300000);
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    var gitHubLogger = scope.ServiceProvider.GetRequiredService<GitHubLogger>();
+                    await gitHubLogger.UpdateCommitsOnDB();
+                }
+
+                await Task.Delay(30000);
             }
         }
     }
