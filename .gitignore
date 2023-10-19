@@ -39,6 +39,7 @@ bld/
 GitHubLogger.cs
 MailSender.cs
 [Aa]pp[Ss]ettings.json
+appsettings.json
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
