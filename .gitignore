@@ -33,13 +33,12 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-
 #Custom
 [Pp]rivate[Ss]ervices/
 [Pp]rivate[Dd]ata/
 GitHubLogger.cs
 MailSender.cs
-appsettings.*
+[Aa]pp[Ss]ettings.json
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
