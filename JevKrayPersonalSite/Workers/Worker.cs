@@ -21,7 +21,7 @@ namespace JevKrayPersonalSite.Workers
                     await gitHubLogger.UpdateCommitsOnDB();
                 }
 
-                await Task.Delay(30000);
+                await Task.Delay(600000);
             }
         }
     }
