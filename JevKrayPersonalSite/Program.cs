@@ -1,6 +1,7 @@
 using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
 using JevKrayPersonalSite.Workers;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
@@ -15,6 +16,11 @@ builder.Services.AddScoped<GitHubLogger>();
 builder.Services.AddDbContext<JevkSiteDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    options.ViewLocationFormats.Add("/Views/SharedOld/{0}.cshtml");
 });
 
 var app = builder.Build();
@@ -36,17 +42,17 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=AboutMe}/{action=AboutMe}/{id?}");
+    pattern: "{controller=AboutMeOld}/{action=AboutMe}/{id?}");
 
 app.MapControllerRoute(
     name: "updates",
     pattern: "Updates",
-    defaults: new { controller = "Updates", action = "Updates" });
+    defaults: new { controller = "UpdatesOld", action = "Updates" });
 
 app.MapControllerRoute(
     name: "projects",
     pattern: "Projects",
-    defaults: new { controller = "Projects", action = "Projects" });
+    defaults: new { controller = "ProjectsOld", action = "Projects" });
 
 app.MapControllerRoute(
     name: "mailapi",
