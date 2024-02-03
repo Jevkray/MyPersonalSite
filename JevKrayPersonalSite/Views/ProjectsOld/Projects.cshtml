@@ -1,0 +1,120 @@
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowRight") {
+            window.location.href = '@Url.Action("Info", "Home")';
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "ArrowLeft") {
+            window.location.href = '@Url.Action("Skills", "Home")';
+        }
+    });
+</script>
+
+<div class="block-pj block-am-flex-center coloredboder-am ">
+    <div class="p-2 alm-black">
+        <div class="title-pr-main-block mb-3">
+            <div class="flex">
+                <h1 class="text-center styled-title-pr title-pr-main-text mb-0 pt-2 pb-2">
+                    My latest commercial projects
+                </h1>
+                <div id="toggleButton" class=" pt-2 styled-dot">...</div>
+            </div>
+            <div style="display:none" id="hiddenText" class="text-title-pr-nm-block">
+                <hr class="m-3 mb-3 mt-2" />
+                <p class="text-title-pr-nm-text mb-0 p-3 pt-0 pb-2">
+                    В данной теме представлены мои последние коммерческие проекты.
+                    Помимо данных проектов есть еще множество работ: для курсовых проектов,
+                    мелких приложений, а также работ с приватных заказов, которые просили публично не показывать.
+                </p>
+            </div>
+        </div>
+
+        <div class="div-layer">
+            <a class="a-none div-column-block-pr mb-3 mr-2" asp-controller="ProjectsOld" asp-action="GazorpGameStore">
+                <div class="image-block-pr image_pr_1 image_pr"></div>
+                <h2 class="mt-2 title-pr p-2 pb-0 pt-0">Gazorp Game Store</h2>
+                <hr class="m-2" />
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Данный проект представляет собой (WEB - DESKTOP) приложение, написанное в формате интернет-магазина.
+                <p class="text-pr p-2 pb-0 pt-0">
+                    В данном проекте в качестве бд используется MySQL, также приложение использует 5-тислойную архитектуру в основе веба которой идут Razor-pages, в качестве Desktop части - ипользовались WinForms.
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Также сделан юнит тестинг всего приложения (45 тестов).
+                <p class="text-pr p-2 pb-0 pt-0">
+                    В веб части реализованы: корзина, отзывы (комментарии), страница товаров, подробности товара, админ меню ( меню редактирования - добавления - удаления товаров), кабинет пользователя, реагистрация/авторизация пользователя, вся возможная валидация.
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Веб дизайна почти нету (только bootstrap) пару форм и моделей - реализована основа (т.к. за это никто не платил :(, а жаль )
+                <p class="text-pr p-2 pb-0 pt-0">
+                    В desktop части - реализована авторизация *Admin only, админ меню ( меню редактирования - добавления - удаления продуктов/товаров/услуг), меню товаров, валидация.
+                <p class="text-pr p-2 pb-1 pt-0 mb-0">
+                    Это коммерческое приложение было написано по заказу - оно было представлено на конкурсе в Нидерландах с целью получения финансов на последующую его разработку. Однако по моему мнению - оно достаточно банально, хоть и сделано по строгому ТЗ.
+                </p>
+            </a>
+
+            <a class="a-none div-column-block-pr mb-3 ml-2" asp-controller="ProjectsOld" asp-action="Ferma">
+                <div class="image-block-pr image_pr_2 image_pr"></div>
+                <h2 class="mt-2 title-pr p-2 pb-0 pt-0">Ferma 2.0</h2>
+                <hr class="m-2" />
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Данный проект представляет собой (WEB - DESKTOP) приложение, предназначенное для ведения статистики на фермерском предприятии.
+                <p class="text-pr p-2 pb-0 pt-0">
+                    В данном пректе в качестве бд используется MSSQL, обычная (3 слойная архитектура), веб на основе MVC, Desktop - WPF.
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Я занимался написанием веб части - в которой по ТЗ должны быть интерфесы напрявленные на работу с персоналом предприятия.
+                <p class="text-pr p-2 pb-1 pt-0 mb-0">
+                    Были реализованы следующие интерфейсы, а именно (Авторизация *Admin only), админ меню ( добавление - редактирование - удаление сотрудников (а также работа с правами сотрудников/их правами доступа))
+                </p>
+            </a>
+        </div>
+        <div class="div-layer">
+            <a class="a-none div-column-block-pr mr-2" asp-controller="ProjectsOld" asp-action="WPumper">
+                <div class="image-block-pr image_pr_3 image_pr"></div>
+                <h2 class="mt-2 title-pr p-2 pb-0 pt-0">WPumper</h2>
+                <hr class="m-2" />
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Данный проект представляет собой DESKTOP приложение, предназначенное для внесения некоторых изменений в .exe приложение.
+                <p class="text-pr p-2 pb-1 pt-0 mb-0">
+                    Данное приложение может нарастить размер приложения до необходимого, может изменить иконку приложения а также, с помощью него - можно скопировать сертификаты другого .exe приложения, либо добавить свои.
+                </p>
+            </a>
+
+            <a class="a-none div-column-block-pr ml-2" asp-controller="ProjectsOld" asp-action="SteamChecker">
+                <div class="image-block-pr image_pr_4 image_pr"></div>
+                <h2 class="mt-2 title-pr p-2 pb-0 pt-0">Steam Checker</h2>
+                <hr class="m-2" />
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Данный проект представляет собой приложение необходимое для быстрой оценки стоимости инвентаря аккаунта Стим, интерфейс которой выполнен в Консоли, а также в Боте Telegram.
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Данное приложение работает с использованием нескольких API - для эмитации сессии аккаута (Selenium), - для создания LoginSecure (SteamApi), для парсинга предметов (CockyGrabber), - для проверки стоимости инвентаря (CSGO-backpack.api).
+                <p class="text-pr p-2 pb-0 pt-0">
+                    Сайт использует авторизованные аккаунты для проверки стоимости, автрозовываться можно через Chrome или Egde(необходимо поменять подключение).
+                <p class="text-pr p-2 pb-0 pt-0 mb-0">
+                    Сортировать аккаунты можно в зависимости от стоимости - и если стоимость аккаунта будет соблюдать некоторые параметры - уведомление будет отправлено в Telegram.
+                </p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("toggleButton").addEventListener("click", function () {
+        var hiddenTextDiv = document.getElementById("hiddenText");
+        var toggleButtonDiv = document.getElementById("toggleButton")
+        if (hiddenTextDiv.style.display === "none") {
+            hiddenTextDiv.style.display = "block";
+            toggleButtonDiv.style.color = "rgb(0,151,178)";
+        } else {
+            hiddenTextDiv.style.display = "none";
+            toggleButtonDiv.style.color = null;
+        }
+    });
+</script>
+
