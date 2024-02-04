@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace JevKrayPersonalSite.Controllers
+namespace JevKrayPersonalSite.Controllers.OldControllers
 {
-    public class ProjectsController : Controller
+    public class ProjectsOldController : Controller
     {
-        private readonly ILogger<ProjectsController> _logger;
+        private readonly ILogger<ProjectsOldController> _logger;
 
-        public ProjectsController(ILogger<ProjectsController> logger)
+        public ProjectsOldController(ILogger<ProjectsOldController> logger)
         {
             _logger = logger;
         }

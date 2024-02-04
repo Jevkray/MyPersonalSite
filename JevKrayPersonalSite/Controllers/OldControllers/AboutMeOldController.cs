@@ -3,13 +3,13 @@ using JevKrayPersonalSite.Services.MailSender;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace JevKrayPersonalSite.Controllers
+namespace JevKrayPersonalSite.Controllers.OldControllers
 {
-    public class AboutMeController : Controller
+    public class AboutMeOldController : Controller
     {
-        private readonly ILogger<AboutMeController> _logger;
+        private readonly ILogger<AboutMeOldController> _logger;
 
-        public AboutMeController(ILogger<AboutMeController> logger)
+        public AboutMeOldController(ILogger<AboutMeOldController> logger)
         {
             _logger = logger;
         }

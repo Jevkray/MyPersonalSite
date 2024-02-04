@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="image-block-pj-main mt-2 mb-2">
-                <img id="projectImage" src="../pictures/projects/pr_1/pr_1_im_1.jpg" class="image-pj">
+                <img id="projectImage" src="../../pictures/projects/pr_1/pr_1_im_1.jpg" class="image-pj">
             </div>
             <div class="image-block-pj-right m-2 ml-0">
                 <div class="image-block-pj-right-selector" onclick="changePage(1)">
@@ -56,7 +56,7 @@
         if (newPage >= minPage && newPage <= maxPage) {
             currentPage = newPage;
             var image = document.getElementById("projectImage");
-            image.src = `../pictures/projects/pr_1/pr_1_im_${currentPage}.jpg`;
+            image.src = `../../pictures/projects/pr_1/pr_1_im_${currentPage}.jpg`;
 
             updateSelectors();
         }
