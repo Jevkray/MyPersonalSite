@@ -8,12 +8,12 @@ using JevKrayPersonalSite.DAL;
 
 namespace JevKrayPersonalSite.Controllers
 {
-    public class UpdatesOldController : Controller
+    public class UpdatesNewController : Controller
     {
-        private readonly ILogger<UpdatesOldController> _logger;
+        private readonly ILogger<UpdatesNewController> _logger;
         private readonly JevkSiteDbContext _dbContext;
 
-        public UpdatesOldController(JevkSiteDbContext dbContext, ILogger<UpdatesOldController> logger)
+        public UpdatesNewController(JevkSiteDbContext dbContext, ILogger<UpdatesNewController> logger)
         {
             _dbContext = dbContext;
             _logger = logger;

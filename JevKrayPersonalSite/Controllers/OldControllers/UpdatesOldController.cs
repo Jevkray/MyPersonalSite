@@ -6,14 +6,14 @@ using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
 using System.Text;
 using JevKrayPersonalSite.DAL;
 
-namespace JevKrayPersonalSite.Controllers
+namespace JevKrayPersonalSite.Controllers.OldControllers
 {
-    public class UpdatesController : Controller
+    public class UpdatesOldController : Controller
     {
-        private readonly ILogger<UpdatesController> _logger;
+        private readonly ILogger<UpdatesOldController> _logger;
         private readonly JevkSiteDbContext _dbContext;
 
-        public UpdatesController(JevkSiteDbContext dbContext, ILogger<UpdatesController> logger)
+        public UpdatesOldController(JevkSiteDbContext dbContext, ILogger<UpdatesOldController> logger)
         {
             _dbContext = dbContext;
             _logger = logger;

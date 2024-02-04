@@ -4,13 +4,18 @@ using System.Diagnostics;
 
 namespace JevKrayPersonalSite.Controllers
 {
-    public class HomeController : Controller
+    public class HomeNewController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeNewController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeNewController(ILogger<HomeNewController> logger)
         {
             _logger = logger;
+        }
+
+        public IActionResult Home()
+        {
+            return View();
         }
 
         public IActionResult Privacy()

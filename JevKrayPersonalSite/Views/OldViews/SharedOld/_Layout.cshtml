@@ -19,47 +19,47 @@
     <header>
         <div class="header-1 dflex">
             <div class>
-                <a class="a-brand-link dflex" asp-controller="AboutMe" asp-action="AboutMe">Eugene.</a>
+                <a class="a-brand-link dflex" asp-controller="AboutMeOld" asp-action="AboutMe">Eugene.</a>
             </div>
             <div class="header-left dflex dflex_link pt03">
                 @{
                     if (ViewData["Title"] == "Education")
                     {
-                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="Education">Education</a>
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="HomeOld" asp-action="Education">Education</a>
                     }
                     else
                     {
-                        <a class="a-link" asp-controller="Home" asp-action="Education">Education</a>
+                        <a class="a-link" asp-controller="HomeOld" asp-action="Education">Education</a>
                     }
                 }
                 @{
                     if (ViewData["Title"] == "Skills")
                     {
-                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="Skills">Skills</a>
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="HomeOld" asp-action="Skills">Skills</a>
                     }
                     else
                     {
-                        <a class="a-link" asp-controller="Home" asp-action="Skills">Skills</a>
+                        <a class="a-link" asp-controller="HomeOld" asp-action="Skills">Skills</a>
                     }
                 }
                 @{
                     if (ViewData["Title"] == "Projects")
                     {
-                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Projects" asp-action="">Projects</a>
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="ProjectsOld" asp-action="Projects">Projects</a>
                     }
                     else
                     {
-                        <a class="a-link" asp-controller="Projects" asp-action="">Projects</a>
+                        <a class="a-link" asp-controller="ProjectsOld" asp-action="Projects">Projects</a>
                     }
                 }
                 @{
                     if (ViewData["Title"] == "Info")
                     {
-                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="Home" asp-action="Info">Info</a>
+                        <a style="color: rgba(0,151,178,0.9);" class="a-link" asp-controller="HomeOld" asp-action="Info">Info</a>
                     }
                     else
                     {
-                        <a class="a-link" asp-controller="Home" asp-action="Info">Info</a>
+                        <a class="a-link" asp-controller="HomeOld" asp-action="Info">Info</a>
                     }
                 }
             </div>
@@ -67,8 +67,8 @@
 
             <div class="notification-header-message" id="notification-header-message">
                 <p class="notification-text">
-                    <span class="bold">Notification: </span>мобильная версия сайта находится в разработке, чтобы посмотреть прогресс перейдите во вкладку 
-                    <a class="updates-in-notification" asp-controller="Updates" asp-action=""> Updates</a>
+                    <span class="bold">Notification: </span>Это старая версия сайта, новая находится в разработке, чтобы посмотреть прогресс перейдите во вкладку
+                <a class="updates-in-notification" asp-controller="UpdatesOld" asp-action="Updates"> Updates</a>
                 </p>
                 <div class="button-right">
                     <button id="closeBtn" class="btn-close"></button>
