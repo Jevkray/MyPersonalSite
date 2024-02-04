@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
-bool selectedV2 = true;
+bool selectedV2 = false;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,16 +29,29 @@ if (selectedV2 == false)
         options.ViewLocationFormats.Add("/Views/OldViews/{2}/{1}/{0}.cshtml");
         options.ViewLocationFormats.Add("/Views/OldViews/{1}/{0}.cshtml");
         options.ViewLocationFormats.Add("/Views/OldViews/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/OldViews/SharedOld/{0}.cshtml");
+
+        options.ViewLocationFormats.Add("/Views/OldViews/AboutMe/{0}.cshtml");
+        options.ViewLocationFormats.Add("/Views/OldViews/Home/{0}.cshtml");
+        options.ViewLocationFormats.Add("/Views/OldViews/Shared/{0}.cshtml");
+
+        options.ViewLocationFormats.Add("/Views/OldViews/Projects/{0}.cshtml");
+        options.ViewLocationFormats.Add("/Views/OldViews/Updates/{0}.cshtml");
     });
 }
 else
 {
     builder.Services.Configure<RazorViewEngineOptions>(options =>
     {
+        options.ViewLocationFormats.Clear();
+        options.ViewLocationFormats.Add("/Views/NewViews/{2}/{1}/{0}.cshtml");
         options.ViewLocationFormats.Add("/Views/NewViews/{1}/{0}.cshtml");
         options.ViewLocationFormats.Add("/Views/NewViews/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/NewViews/SharedNew/{0}.cshtml");
+
+        options.ViewLocationFormats.Add("/Views/NewViews/Home/{0}.cshtml");
+        options.ViewLocationFormats.Add("/Views/NewViews/Shared/{0}.cshtml");
+
+        options.ViewLocationFormats.Add("/Views/NewViews/Projects/{0}.cshtml");
+        options.ViewLocationFormats.Add("/Views/NewViews/Updates/{0}.cshtml");
     });
 }
 
@@ -62,36 +75,35 @@ app.UseAuthorization();
 if (selectedV2 == false)
 {
     app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=AboutMeOld}/{folder=AboutMeOld}/{action=AboutMe}/{id?}");
+        name: "default",
+        pattern: "{controller=AboutMeOld}/{action=AboutMe}/{id?}");
 
     app.MapControllerRoute(
         name: "updates",
         pattern: "Updates",
-        defaults: new { controller = "UpdatesOld", folder = "UpdatesOld", action = "Updates" });
+        defaults: new { controller = "UpdatesOld", action = "Updates" });
 
     app.MapControllerRoute(
         name: "projects",
         pattern: "Projects",
-        defaults: new { controller = "ProjectsOld", folder = "ProjectsOld", action = "Projects" });
+        defaults: new { controller = "ProjectsOld", action = "Projects" });
 }
 else
 {
     app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=HomeNew}/{folder=HomeNew}/{action=Home}/{id?}");
+        name: "default",
+        pattern: "{controller=HomeNew}/{action=Home}/{id?}");
 
     app.MapControllerRoute(
         name: "updates",
         pattern: "Updates",
-        defaults: new { controller = "UpdatesNew", folder = "UpdatesNew", action = "Updates" });
+        defaults: new { controller = "UpdatesNew", action = "Updates" });
 
     app.MapControllerRoute(
         name: "projects",
         pattern: "Projects",
-        defaults: new { controller = "ProjectsNew", folder = "ProjectsNew", action = "Projects" });
+        defaults: new { controller = "ProjectsNew", action = "Projects" });
 }
-
 
 app.MapControllerRoute(
     name: "mailapi",
@@ -110,4 +122,3 @@ Task.Run(async () =>
 });
 
 app.Run();
-
