@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
+using JevKrayPersonalSite.Routing;
 
-bool selectedV2 = false;
+bool selectedV2 = true;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,39 +22,7 @@ builder.Services.AddDbContext<JevkSiteDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-if (selectedV2 == false)
-{
-    builder.Services.Configure<RazorViewEngineOptions>(options =>
-    {
-        options.ViewLocationFormats.Clear();
-        options.ViewLocationFormats.Add("/Views/OldViews/{2}/{1}/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/OldViews/{1}/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/OldViews/{0}.cshtml");
-
-        options.ViewLocationFormats.Add("/Views/OldViews/AboutMe/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/OldViews/Home/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/OldViews/Shared/{0}.cshtml");
-
-        options.ViewLocationFormats.Add("/Views/OldViews/Projects/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/OldViews/Updates/{0}.cshtml");
-    });
-}
-else
-{
-    builder.Services.Configure<RazorViewEngineOptions>(options =>
-    {
-        options.ViewLocationFormats.Clear();
-        options.ViewLocationFormats.Add("/Views/NewViews/{2}/{1}/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/NewViews/{1}/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/NewViews/{0}.cshtml");
-
-        options.ViewLocationFormats.Add("/Views/NewViews/Home/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/NewViews/Shared/{0}.cshtml");
-
-        options.ViewLocationFormats.Add("/Views/NewViews/Projects/{0}.cshtml");
-        options.ViewLocationFormats.Add("/Views/NewViews/Updates/{0}.cshtml");
-    });
-}
+ViewEngineOptionsConfiguration.ConfigureViewEngineOptions(services: builder.Services, selectedV2);
 
 var app = builder.Build();
 
@@ -61,7 +30,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -72,45 +40,16 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-if (selectedV2 == false)
+#pragma warning disable ASP0014
+app.UseEndpoints(endpoints =>
 {
-    app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=AboutMeOld}/{action=AboutMe}/{id?}");
+    RoutingConfiguration.ConfigureRoutes(endpoints, selectedV2);
+});
+#pragma warning restore ASP0014
 
-    app.MapControllerRoute(
-        name: "updates",
-        pattern: "Updates",
-        defaults: new { controller = "UpdatesOld", action = "Updates" });
 
-    app.MapControllerRoute(
-        name: "projects",
-        pattern: "Projects",
-        defaults: new { controller = "ProjectsOld", action = "Projects" });
-}
-else
-{
-    app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=HomeNew}/{action=Home}/{id?}");
-
-    app.MapControllerRoute(
-        name: "updates",
-        pattern: "Updates",
-        defaults: new { controller = "UpdatesNew", action = "Updates" });
-
-    app.MapControllerRoute(
-        name: "projects",
-        pattern: "Projects",
-        defaults: new { controller = "ProjectsNew", action = "Projects" });
-}
-
-app.MapControllerRoute(
-    name: "mailapi",
-    pattern: "mailsender",
-    defaults: new { controller = "Mailapi", api = "Mailsender" });
-
-// Запускаем Worker в фоновом потоке
+// Запускаем Worker в фоновом потоке (Чтобы обновлять информацию о github логе, но при этом не перегружать github сервер - запросами.)
+#pragma warning disable CS4014
 Task.Run(async () =>
 {
     using (var scope = app.Services.CreateScope())
@@ -120,5 +59,6 @@ Task.Run(async () =>
         await worker.StartAsync(default);
     }
 });
+#pragma warning restore CS4014 
 
 app.Run();
