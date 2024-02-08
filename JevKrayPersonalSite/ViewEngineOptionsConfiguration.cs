@@ -3,13 +3,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class ViewEngineOptionsConfiguration
 {
-    public static void ConfigureViewEngineOptions(IServiceCollection services, bool selectedV2)
+    public static void ConfigureViewEngineOptions(IServiceCollection services, bool useNewVersion)
     {
         services.Configure<RazorViewEngineOptions>(options =>
         {
             options.ViewLocationFormats.Clear();
 
-            if (!selectedV2)
+            if (!useNewVersion)
             {
                 options.ViewLocationFormats.Add("/Views/OldViews/{2}/{1}/{0}.cshtml");
                 options.ViewLocationFormats.Add("/Views/OldViews/{1}/{0}.cshtml");
