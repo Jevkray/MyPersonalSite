@@ -2,68 +2,8 @@
     ViewData["Title"] = "Education";
 }
 
-<script>
-    document.addEventListener("keydown", function (event) {
-        if (event.code === "ArrowRight") {
-            window.location.href = '@Url.Action("Skills", "Home")';
-        }
-    });
-</script>
+@section Sprites {
+    <link rel="stylesheet" href="~/css/home.css" />
+}
 
-<script>
-    document.addEventListener("keydown", function (event) {
-        if (event.code === "ArrowLeft") {
-            window.location.href = '@Url.Action("AboutMe", "AboutMe")';
-        }
-    });
-</script>
-
-<body class="regular-body">
-    <div class="regular-block regular-block-center coloredboder-education iframe p-2">
-        <div class="block-am block-am-flex-center regular-block-with-scroll-info">
-            <div>
-                <p_am class="text-am margin-off">
-                    <div>
-
-                        <div class="education-block m-2">
-                            <div class="education-block-text-left w85 education-element education-text">
-                                Начало моего пути в программировании прошло во время обучения в Гимназии №1 г. Старые Дороги, в то время я занимался изучением ABCPascal и Python (однако сейчас я даже не могу вспомнить, как устроен Pascal).
-                            </div>
-                            <div class="date-block education-text">
-                                2009-2020
-                            </div>
-                        </div>
-
-                        <div class="education-block m-2">
-                            <div class="date-block education-text">
-                                2020-2024
-                            </div>
-                            <div class="education-block-text-right w85 education-element education-text">
-                                Следующим этапом было поступление в БГУИР (Белорусский государственный университет информатики и радиоэлектроники), в котором я учусь и настоящее время. Здесь мы по минимуму изучали C++, из которого также большинство информации успешно мной забыто.
-                            </div>
-                        </div>
-
-                        <div class="education-block m-2">
-                            <div class="education-block-text-left w85 education-element education-text">
-                                В процессе обучения в БГУИРЕ я закончил курсы TeachMeSkills по специальности FullStack .NET разработчик, где соответственно и начал свой путь изучения C# и .NET.
-                            </div>
-                            <div class="date-block education-text">
-                                2021-2022
-                            </div>
-                        </div>
-
-                        <div class="education-block m-2">
-                            <div class="date-block education-text">
-                                2023
-                            </div>
-                            <div class="education-block-text-right w85 education-element mb-0 education-text">
-                                Прошло уже 3 года с момента, как я начал изучать платформу .NET и язык C#. За это время я освоил множество аспектов, принципов и архитектур. Кроме того, я успешно овладел языком таблиц стилей CSS, языком разметки HTML, а также приобрел некоторый опыт в работе с JS. Довольно большая часть моих фриланс-проектов, также связана и с разработкой WinForms приложений. Кроме того, я часто сталкиваюсь с работой с базами данных, такими как MySQL и MS SQL. Все это позволяет мне продолжать расти и развиваться в роли разработчика.
-                            </div>
-                        </div>
-
-                    </div>
-                </p_am>
-            </div>
-        </div>
-    </div>
-</body>
+Education
