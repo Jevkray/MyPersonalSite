@@ -7,7 +7,7 @@ using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 using JevKrayPersonalSite.Routing;
 
-bool selectedV2 = true;
+bool useNewVersion = false;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ builder.Services.AddDbContext<JevkSiteDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-ViewEngineOptionsConfiguration.ConfigureViewEngineOptions(services: builder.Services, selectedV2);
+ViewEngineOptionsConfiguration.ConfigureViewEngineOptions(services: builder.Services, useNewVersion);
 
 var app = builder.Build();
 
@@ -43,7 +43,7 @@ app.UseAuthorization();
 #pragma warning disable ASP0014
 app.UseEndpoints(endpoints =>
 {
-    RoutingConfiguration.ConfigureRoutes(endpoints, selectedV2);
+    RoutingConfiguration.ConfigureRoutes(endpoints, useNewVersion);
 });
 #pragma warning restore ASP0014
 

@@ -5,9 +5,9 @@ namespace JevKrayPersonalSite.Routing
 {
     public static class RoutingConfiguration
     {
-        public static void ConfigureRoutes(IEndpointRouteBuilder endpoints, bool selectedV2)
+        public static void ConfigureRoutes(IEndpointRouteBuilder endpoints, bool useNewVersion)
         {
-            if (selectedV2 == false)
+            if (useNewVersion == false)
             {
                 endpoints.MapControllerRoute(
                     name: "default",
