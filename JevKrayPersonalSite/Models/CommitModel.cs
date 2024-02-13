@@ -12,9 +12,10 @@ namespace JevKrayPersonalSite.Models
         public int Id { get; set; }
         public string AuthorName { get; set; }
         public DateTimeOffset Date { get; set; }
-        public string Message {  get; set; }
+        public string Name { get; set; }
+        public string Message { get; set; }
 
         [Url]
-        public string Link {  get; set; }
+        public string Link { get; set; }
     }
 }

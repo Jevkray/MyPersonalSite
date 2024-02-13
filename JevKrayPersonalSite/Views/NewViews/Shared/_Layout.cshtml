@@ -13,19 +13,27 @@
     @await RenderSectionAsync("Sprites", required: false)
 
 </head>
-<body >
+<body>
+    <div class="wrapper">
+        <header class="header p-3 bg-black bg-primary text-white container-fluid">
+            <div class="row">
+                <div class="col-3 fs-2">
+                    Хедер
+                </div>
+                <div class="col-3 ms-auto text-end">
+                    123
+                </div>
+            </div>
+        </header>
 
-    <header>
-        Заголовок
-    </header>
+        <main role="main" class="main bg-white container-fluid p-3">
+            @RenderBody()
+        </main>
 
-    <main role="main" class="">
-        @RenderBody()
-    </main>
-
-    <footer>
-        Футер
-    </footer>
+        <footer class="footer p-3 bg-black bg-gradient text-white container-fluid">
+            Футер
+        </footer>
+    </div>
 
     <!-- Скрипты -->
 

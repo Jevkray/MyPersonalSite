@@ -2,6 +2,7 @@
     ViewData["Title"] = "Updates";
 }
 
+
 <div class="block-am-flex-center">
     <div class="main-block-updates">
         <div class="pt-2 pb-2 mb-2-5 mt-0 updated-elements coloredboder-am">
@@ -9,7 +10,34 @@
         </div>
         <div class="updated-elements">
             <div class="scroll-container">
-                <div class="updates-block git-view-block">@Html.Raw(ViewBag.Html)</div>
+                <div class="updates-block git-view-block">
+                    <div>
+
+                        @{
+                            foreach (var commit in Model)
+                            {
+                                <div class="updates-element plr-3 p-2 coloredboder-update block2050">
+                                    <div><b>Author:</b>@commit.AuthorName</div>
+                                    <div><b>Date:</b>@commit.Date.ToString("yyyy/MM/dd â HH:mm")</div>
+                                    @if (commit.Name != "")
+                                    {
+                                        <br>
+                                        <div style="margin-left: 10px;">
+                                            @commit.Name
+                                        </div>
+                                    }
+                                    <br>
+                                    <div style="margin-left: 20px;">
+                                        @Html.Raw(commit.Message.Replace("\n", "<br>").ToString())
+                                    </div>
+                                    <br>
+                                    <div><a class="updates-githublink" href="@commit.Link">Github</a></div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
