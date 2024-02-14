@@ -1,0 +1,28 @@
+﻿.bg-photo {
+    background-image: url(../../pictures/noback.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.min-vh-87 {
+    min-height: 87vh !important;
+}
+
+.hr-washed {
+    margin: 20px 0;
+    padding: 0;
+    height: 0;
+    border: none;
+    box-shadow: 0 0 10px 2px rgb(74,86,234);
+    height: 0px !important;
+    color: rgb(74,86,234);
+}
+
+@media (min-width: 768px) 
+{
+    .hr-washed {
+        display: none;
+    }
+}
