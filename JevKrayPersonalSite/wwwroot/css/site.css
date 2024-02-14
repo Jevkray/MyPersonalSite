@@ -12,3 +12,145 @@ body{
 .main {
     flex: 1 1 auto;
 }
+
+.bg-def{
+    background-color: rgb(74,86,234);
+}
+
+.text-def{
+    color: rgb(74,86,234);
+}
+
+.bg-dr {
+    background-color: rgb(56, 56, 56);
+}
+
+.text-dr {
+    background-color: rgb(56, 56, 56);
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+}
+
+.montserrat-thin {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.montserrat-extralight {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.montserrat-light {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.montserrat-medium {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.montserrat-semibold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.montserrat-bold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.montserrat-superbold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.logo-img{
+    width: 35px;
+}
+
+.btn.dropdown-toggle::after {
+    display: none;
+}
+
+.drop-nav {
+    padding: 0.5rem;
+    margin-left: 1.3rem !important;
+    margin-top: 0.8rem !important;
+}
+
+.drop-nav-li {
+    padding: 0.5rem;
+}
+
+.drop-nav-button {
+    width: 90%;
+}
+
+.drop-nav-with-button {
+    padding-top: 2.5rem !important;
+}
+
+.btn:hover{
+    margin: -1px;
+    color: white;
+    border: 2px solid white;  
+}
+
+.btn:focus {
+    margin: -1px;
+    color: rgb(74,86,234);
+    border: 2px solid rgb(74,86,234);
+    box-shadow: 0rem !important;  
+}
+
+.btn-check:focus + .btn, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0rem black;
+}
+
+.btn:active {
+    margin: -1px;
+    color: white;
+    border: 2px solid white;
+}
+
+.dropdown-element:hover {
+    background-color: rgb(74,86,234);
+    cursor: pointer;
+    -webkit-transition: transform 0.2s initial;
+    transition: background-color linear 0.2s;
+}
+
+.dropdown-element:focus {
+    background-color: rgb(74,86,234);
+    cursor: pointer;
+}

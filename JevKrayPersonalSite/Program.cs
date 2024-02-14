@@ -7,7 +7,7 @@ using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 using JevKrayPersonalSite.Routing;
 
-bool useNewVersion = false;
+bool useNewVersion = true;
 
 var builder = WebApplication.CreateBuilder(args);
 
