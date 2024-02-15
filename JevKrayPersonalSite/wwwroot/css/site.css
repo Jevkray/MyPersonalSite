@@ -1,5 +1,5 @@
 ﻿html,
-body{
+body {
     height: 100%;
 }
 
@@ -13,11 +13,11 @@ body{
     flex: 1 1 auto;
 }
 
-.bg-def{
+.bg-def {
     background-color: rgb(74,86,234);
 }
 
-.text-def{
+.text-def {
     color: rgb(74,86,234);
 }
 
@@ -93,7 +93,7 @@ body{
     font-style: normal;
 }
 
-.logo-img{
+.logo-img {
     width: 35px;
 }
 
@@ -119,17 +119,17 @@ body{
     padding-top: 2.5rem !important;
 }
 
-.btn:hover{
+.btn:hover {
     margin: -1px;
     color: white;
-    border: 2px solid white;  
+    border: 2px solid white;
 }
 
 .btn:focus {
     margin: -1px;
     color: rgb(74,86,234);
     border: 2px solid rgb(74,86,234);
-    box-shadow: 0rem !important;  
+    box-shadow: 0rem !important;
 }
 
 .btn-check:focus + .btn, .btn:focus {
@@ -154,3 +154,15 @@ body{
     background-color: rgb(74,86,234);
     cursor: pointer;
 }
+
+.a-link {
+    cursor: pointer;
+    margin-left: 3px;
+    transition: margin 0.1s linear;
+    white-space: nowrap;
+}
+
+    .a-link:hover {
+        margin-left: 0px;
+        margin-right: 3px;
+    }
