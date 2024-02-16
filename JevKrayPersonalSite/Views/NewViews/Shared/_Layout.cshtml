@@ -50,28 +50,33 @@
                             <img src="~/pictures/vectors/toolbar.svg" width="35" height="auto" alt="SVG Image">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end drop-nav bg-dr">
+
+                            <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Education">
                             <li class="drop-nav-li dropdown-element rounded-3">
-                                <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Education">
-                                    <div class="ms-auto ps-3 pe-3 fs-4">Education</div>
-                                </a>
+                                <div class="ms-auto ps-3 pe-3 fs-4">Education</div>
                             </li>
+                            </a>
+
+                            <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Skills">
                             <li class="drop-nav-li dropdown-element rounded-3">
-                                <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Skills">
-                                    <div class="ps-3 pe-3 fs-4">Skills</div>
-                                </a>
+                                <div class="ps-3 pe-3 fs-4">Skills</div>
                             </li>
+                            </a>
+
+                            <a class="text-white text-decoration-none" asp-controller="ProjectsNew" asp-action="Projects">
                             <li class="drop-nav-li dropdown-element rounded-3">
-                                <a class="text-white text-decoration-none" asp-controller="ProjectsNew" asp-action="Projects">
-                                    <div class="ps-3 pe-3 fs-4">
-                                        Projects
-                                    </div>
-                                </a>
+                                <div class="ps-3 pe-3 fs-4">
+                                    Projects
+                                </div>
                             </li>
+                            </a>
+
+                            <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Info">
                             <li class="drop-nav-li dropdown-element rounded-3">
-                                <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Info">
-                                    <div class="ps-3 pe-3 fs-4">Info</div>
-                                </a>
+                                <div class="ps-3 pe-3 fs-4">Info</div>
                             </li>
+                            </a>
+
                         </ul>
                     </div>
                 </div>
