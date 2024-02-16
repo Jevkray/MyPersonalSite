@@ -21,23 +21,30 @@
         <header class="header m-2 mb-0 mt-0">
             <div class="bg-def text-white container-fluid rounded-bottom">
                 <div class="row p-2">
-                    <div class="nav-brand col-3 fs-3">
-                        <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Home">Main</a>
-                    </div>
-                    <div class="col-9 d-none d-md-flex align-items-center">
-                        <div class="nav-item ms-auto ps-3 pe-3 fs-4">
-                            <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Education">Education</a>
+
+                    @{
+
+                        var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
+
+                        <div class="nav-brand col-3 fs-3">
+                            <a class="a-link text-white text-decoration-none @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home">Home</a>
                         </div>
-                        <div class="nav-item ps-3 pe-3 fs-4">
-                            <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Skills">Skills</a>
+                        <div class="col-9 d-none d-md-flex align-items-center">
+                            <div class="nav-item ms-auto ps-3 pe-3 fs-4">
+                                <a class="a-link text-white text-decoration-none @(currentPage == "Education" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Education">Education</a>
+                            </div>
+                            <div class="nav-item ps-3 pe-3 fs-4">
+                                <a class="a-link text-white text-decoration-none @(currentPage == "Skills" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Skills">Skills</a>
+                            </div>
+                            <div class="nav-item ps-3 pe-3 fs-4">
+                                <a class="a-link text-white text-decoration-none @(currentPage == "Projects" ? "a-active" : "")" asp-controller="ProjectsNew" asp-action="Projects">Projects</a>
+                            </div>
+                            <div class="nav-item ps-3 pe-3 fs-4">
+                                <a class="a-link text-white text-decoration-none @(currentPage == "Info" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Info">Info</a>
+                            </div>
                         </div>
-                        <div class="nav-item ps-3 pe-3 fs-4">
-                            <a class="a-link text-white text-decoration-none" asp-controller="ProjectsNew" asp-action="Projects">Projects</a>
-                        </div>
-                        <div class="nav-item ps-3 pe-3 fs-4">
-                            <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Info">Info</a>
-                        </div>
-                    </div>
+
+                    }
                     <div class="col-9 d-md-none align-items-center text-end">
                         <button type="button" class="btn dropdown-toggle p-0 nav-list-item" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="~/pictures/vectors/toolbar.svg" width="35" height="auto" alt="SVG Image">
@@ -95,7 +102,7 @@
                 </div>
 
                 <!--mobile only lodos-->
-                    
+
                 <div class="row d-md-none text-center">
                     <div class="logo-item col-3">
                         <a class="a-link" href="https://t.me/eugenekray"><img src="~/pictures/vectors/tg.svg" class="logo-img"></a>

@@ -26,7 +26,7 @@ body {
 }
 
 .text-dr {
-    background-color: rgb(56, 56, 56);
+    color: rgb(56, 56, 56);
 }
 
 .row {
@@ -166,3 +166,11 @@ body {
         margin-left: 0px;
         margin-right: 3px;
     }
+
+.a-active {
+    pointer-events: none; /* Отключение событий мыши */
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
