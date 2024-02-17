@@ -9,3 +9,71 @@
 <div class="fs-5">
     Info
 </div>
+
+<button id="loadImageBtn">Загрузить изображение</button>
+<div id="imageContainer"></div>
+<div>
+    <form id="captchaForm">
+        <input type="text" id="captchaInput" name="capcha" placeholder="Введите капчу">
+        <button type="submit">Проверить капчу</button>
+    </form>
+    <div id="captchaMessage"></div>
+</div>
+
+@section Scripts {
+    <script>
+        function loadCaptchaImage() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/HomeNew/GetCapcha', true);
+            xhr.responseType = 'blob';
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var url = URL.createObjectURL(xhr.response);
+                    var img = document.createElement('img');
+                    img.src = url;
+                    document.getElementById('imageContainer').innerHTML = '';
+                    document.getElementById('imageContainer').appendChild(img);
+                } else {
+                    console.error('Ошибка загрузки изображения:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Ошибка выполнения запроса на сервер');
+            };
+            xhr.send();
+        }
+
+        document.getElementById('loadImageBtn').addEventListener('click', loadCaptchaImage);
+
+        document.getElementById('captchaForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/HomeNew/CheckCapcha', true);
+            xhr.responseType = 'json';
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var isValid = xhr.response;
+                    if (!isValid) {
+                        var message = document.getElementById('captchaMessage');
+                        message.textContent = 'Неверная капча';
+                        // Если капча неверная, загружаем новую капчу
+                        loadCaptchaImage();
+                    } else {
+                        // Если капча верна, производим редирект на страницу HomeNew/Home
+                        window.location.href = '/HomeNew/Home';
+                    }
+                } else {
+                    console.error('Ошибка проверки капчи:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Ошибка выполнения запроса на сервер');
+            };
+            xhr.send(formData);
+        });
+
+        // При загрузке страницы загружаем первую капчу
+        window.onload = loadCaptchaImage;
+    </script>
+}

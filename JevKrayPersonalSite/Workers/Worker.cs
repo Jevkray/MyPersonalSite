@@ -1,4 +1,5 @@
-﻿using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
+﻿using JevKrayPersonalSite.DAL;
+using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
 
 namespace JevKrayPersonalSite.Workers
 {
@@ -13,6 +14,33 @@ namespace JevKrayPersonalSite.Workers
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            var capchaCleanupTask = StartCapchaCleanupTask(stoppingToken);
+            var gitHubUpdateTask = StartGitHubUpdateTask(stoppingToken);
+        }
+
+        private async Task StartCapchaCleanupTask(CancellationToken stoppingToken)
+        {
+            while (!stoppingToken.IsCancellationRequested)
+            {
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetRequiredService<JevkSiteDbContext>();
+
+                    try
+                    {
+                        await dbContext.DeleteExpiredCapchaSessions();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Ошибка во время удаления просроченных сеансов CAPTCHA: {ex.Message}");
+                    }
+                }
+                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken); 
+            }
+        }
+
+        private async Task StartGitHubUpdateTask(CancellationToken stoppingToken)
+        {
             while (!stoppingToken.IsCancellationRequested)
             {
                 using (var scope = _serviceProvider.CreateScope())
@@ -21,7 +49,8 @@ namespace JevKrayPersonalSite.Workers
                     await gitHubLogger.UpdateCommitsOnDB();
                 }
 
-                await Task.Delay(600000);
+                
+                await Task.Delay(TimeSpan.FromMinutes(10), stoppingToken);
             }
         }
     }
