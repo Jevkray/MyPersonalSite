@@ -114,16 +114,11 @@ namespace JevKrayPersonalSite.Controllers
 
         public async Task<bool> IsValidCapcha(string capcha, string sessionId)
         {
-            // Получаем объект CapchaSessionModel из базы данных по sessionId
             var capchaSessionModel = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
 
-            // Если объект найден
             if (capchaSessionModel != null)
             {
-                // Вычисляем хеш введенной капчи
                 string inputCapchaHash = CacherService.CalculateMD5Hash(capcha);
-
-                // Сравниваем хеш введенной капчи с хешем капчи из базы данных
                 bool isValid = inputCapchaHash == capchaSessionModel.CapchaCache;
 
                 return isValid;

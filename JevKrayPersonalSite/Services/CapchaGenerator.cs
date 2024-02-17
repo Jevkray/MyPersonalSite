@@ -31,7 +31,7 @@ namespace JevKrayPersonalSite.Services
 
                 // Задаем цвет текста и шрифт
                 using (Brush brush = new SolidBrush(Color.FromArgb(74, 86, 234)))
-                using (Font font = new Font("Consolas", 24))
+                using (Font font = new Font("Consolas", 32))
                 {
                     // Определяем размеры текста
                     SizeF textSize = graphics.MeasureString(code, font);
