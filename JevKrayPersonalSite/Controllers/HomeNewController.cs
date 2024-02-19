@@ -93,7 +93,7 @@ namespace JevKrayPersonalSite.Controllers
             {
                 string sessionId = Request.Cookies["CapchaSessionId"];
 
-                bool isValidCapcha = await IsValidCapcha(capcha, sessionId);
+                bool isValidCapcha = await IsValidCapcha(capcha.ToLower(), sessionId);
 
                 Response.Cookies.Delete("CapchaSessionId");
 

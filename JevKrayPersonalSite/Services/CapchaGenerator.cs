@@ -14,7 +14,7 @@ namespace JevKrayPersonalSite.Services
 
         public static async Task<(string, Bitmap)> CreateCapchaAsync()
         {
-            string code = GenerateRandomText();
+            string code = GenerateRandomText().ToLower();
             Bitmap image = await GenerateImageAsync(code);
 
             return (code, image);
@@ -23,15 +23,15 @@ namespace JevKrayPersonalSite.Services
         private static async Task<Bitmap> GenerateImageAsync(string code)
         {
             // Создаем новое изображение с размерами 200x100 пикселей
-            Bitmap bmp = new Bitmap(200, 100);
+            Bitmap bmp = new Bitmap(300, 200);
             using (Graphics graphics = Graphics.FromImage(bmp))
             {
                 // Задаем цвет фона
-                graphics.Clear(Color.White);
+                graphics.Clear(Color.FromArgb(56, 56, 56));
 
                 // Задаем цвет текста и шрифт
-                using (Brush brush = new SolidBrush(Color.FromArgb(74, 86, 234)))
-                using (Font font = new Font("Consolas", 32))
+                using (Brush brush = new SolidBrush(Color.FromArgb(255, 255, 255)))
+                using (Font font = new Font("Consolas", 50))
                 {
                     // Определяем размеры текста
                     SizeF textSize = graphics.MeasureString(code, font);
@@ -81,7 +81,7 @@ namespace JevKrayPersonalSite.Services
         {
             Random random = new Random();
             int length = random.Next(6, 8); // Генерируем случайную длину от 6 до 7 символов
-            const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789"; // Исключаем символы "O" и "0"
+            const string chars = "abcdefghijkmnopqrstuvwxyz0123456789";
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
