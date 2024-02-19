@@ -4,6 +4,7 @@ using JevKrayPersonalSite.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JevKrayPersonalSite.Migrations
 {
     [DbContext(typeof(JevkSiteDbContext))]
-    partial class JevkSiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240217030136_addSessions")]
+    partial class addSessions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,10 +39,6 @@ namespace JevKrayPersonalSite.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("SessionId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -82,7 +81,7 @@ namespace JevKrayPersonalSite.Migrations
                         {
                             Id = 1,
                             AuthorName = "test",
-                            Date = new DateTimeOffset(new DateTime(2024, 2, 17, 6, 33, 20, 879, DateTimeKind.Unspecified).AddTicks(774), new TimeSpan(0, 3, 0, 0, 0)),
+                            Date = new DateTimeOffset(new DateTime(2024, 2, 17, 6, 1, 36, 290, DateTimeKind.Unspecified).AddTicks(5853), new TimeSpan(0, 3, 0, 0, 0)),
                             Link = "https://google.com",
                             Message = "test",
                             Name = "test"

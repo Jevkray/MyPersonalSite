@@ -7,6 +7,8 @@ namespace JevKrayPersonalSite.DAL
     {
         public DbSet<CommitModel> Commits { get; set; }
 
+        public DbSet<CapchaSessionModel> CapchaSessions { get; set; }
+
         public JevkSiteDbContext(DbContextOptions<JevkSiteDbContext> options) : base(options)
         {
 
@@ -19,6 +21,18 @@ namespace JevKrayPersonalSite.DAL
                 );
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        public async Task DeleteExpiredCapchaSessions()
+        {
+            var expirationTime = DateTime.Now.AddMinutes(-5); 
+
+            var expiredSessions = await CapchaSessions
+                .Where(session => session.CreatedAt < expirationTime)
+                .ToListAsync();
+
+            CapchaSessions.RemoveRange(expiredSessions);
+            await SaveChangesAsync();
         }
     }
 }
