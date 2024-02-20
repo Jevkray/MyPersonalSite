@@ -1,10 +1,11 @@
 ﻿using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.Models;
+using JevKrayPersonalSite.PrivateServices.MailSender;
 using JevKrayPersonalSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Drawing;
 using System.Drawing.Imaging;
+using System.Net.Mail;
 
 namespace JevKrayPersonalSite.Controllers
 {
@@ -91,9 +92,13 @@ namespace JevKrayPersonalSite.Controllers
         {
             if (Request.Cookies["CapchaSessionId"] != "")
             {
+#pragma warning disable CS8600 // Преобразование литерала, допускающего значение NULL или возможного значения NULL в тип, не допускающий значение NULL.
                 string sessionId = Request.Cookies["CapchaSessionId"];
+#pragma warning restore CS8600 // Преобразование литерала, допускающего значение NULL или возможного значения NULL в тип, не допускающий значение NULL.
 
+#pragma warning disable CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
                 bool isValidCapcha = await IsValidCapcha(capcha.ToLower(), sessionId);
+#pragma warning restore CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
 
                 Response.Cookies.Delete("CapchaSessionId");
 
@@ -112,7 +117,9 @@ namespace JevKrayPersonalSite.Controllers
             }
         }
 
+#pragma warning disable CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         public async Task<bool> IsValidCapcha(string capcha, string sessionId)
+#pragma warning restore CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         {
             var capchaSessionModel = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
 
@@ -126,6 +133,21 @@ namespace JevKrayPersonalSite.Controllers
             else
             {
                 return false;
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SendEmail(string Username, string Email, string Title, string Message)
+        {
+            try
+            {
+                MailMessage mail = CodeMail.CreatieMail(Username, Email, Title, Message);
+                CodeMail.SendMail(mail);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
             }
         }
 

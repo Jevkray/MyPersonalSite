@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Routing;
-
-namespace JevKrayPersonalSite.Routing
+﻿namespace JevKrayPersonalSite.Routing
 {
     public static class RoutingConfiguration
     {

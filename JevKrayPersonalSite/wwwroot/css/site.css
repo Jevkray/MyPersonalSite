@@ -174,3 +174,69 @@ body {
     font-weight: 500;
     font-style: normal;
 }
+
+.modal-input-field {
+    border-radius: 0px;
+    border-width: 0.1rem;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.modal-input-field:focus-visible {
+    border-width: 0.1rem;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    outline:none;
+}
+
+.margin-input-button {
+    background-color: rgb(74,86,234);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    color: white;
+    border: 0.1rem solid black;
+    width: 100%;
+}
+
+.border-modal {
+    border: 0.1rem solid black;
+}
+
+.modal-header-down {
+    border-bottom: 1px solid black;
+}
+
+.btn-close-modal:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-close-modal:focus-visible {
+    box-shadow: none;
+    outline: none;
+}
+
+.image-container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+}
+
+.reload-image-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+    .reload-image-btn svg {
+        fill: white;
+    }
+
+

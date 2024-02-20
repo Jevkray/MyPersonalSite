@@ -1,11 +1,8 @@
 using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
-using JevKrayPersonalSite.Workers;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System.Threading.Tasks;
 using JevKrayPersonalSite.Routing;
+using JevKrayPersonalSite.Workers;
+using Microsoft.EntityFrameworkCore;
 
 bool useNewVersion = true;
 

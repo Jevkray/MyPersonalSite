@@ -1,4 +1,4 @@
-﻿using JevKrayPersonalSite.Services.MailSender;
+﻿using JevKrayPersonalSite.PrivateServices.MailSender;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JevKrayPersonalSite.Controllers.ApiControllers

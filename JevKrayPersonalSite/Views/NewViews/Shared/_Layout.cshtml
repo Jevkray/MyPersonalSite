@@ -102,11 +102,13 @@
                         <a class="a-link text-white text-decoration-none" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img">  LinkedIn</a>
                     </div>
                     <div class="col-3">
-                        <a class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="~/pictures/vectors/msg.svg" class="logo-img">  Mail Me</a>
+                        <a href="#" class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
+                            <img src="~/pictures/vectors/msg.svg" class="logo-img">  Mail me
+                        </a>
                     </div>
                 </div>
 
-                <!--mobile only lodos-->
+                <!--mobile, small resolution, only lodos-->
 
                 <div class="row d-md-none text-center">
                     <div class="logo-item col-3">
@@ -119,21 +121,167 @@
                         <a class="a-link" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img"></a>
                     </div>
                     <div class="logo-item col-3">
-                        <a class="a-link" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="~/pictures/vectors/msg.svg" class="logo-img"></a>
+                        <a href="#" class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
+                            <img src="~/pictures/vectors/msg.svg" class="logo-img">
+                        </a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- Скрипты -->
+    <!--Modal-->
+
+    <div class="modal" id="callBackModal" tabindex="-1" role="dialog" aria-labelledby="callBackModalLabel" aria-hidden="true">
+        <div class="modal-dialog rounded-3 pt-5" role="document">
+            <div class="modal-content border-modal">
+                <div class="modal-header bg-def modal-header-down">
+                    <h2 class="modal-title text-white fs-3" id="callBackModalLabel">Оставить сообщение</h2>
+                    <button type="button" class="btn-close btn-close-white me-2 btn-close-modal" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="p-3">
+                    <form class="" action="" name="form" method="post">
+                        <div class="fs-5">
+                            <div class="pb-2">
+                                <input placeholder="Ваше имя *" id="Username" name="Username" type="text" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div class="pb-2">
+                                <input placeholder="Ваш Email*" id="Email" name="Email" type="email" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div class="pb-2">
+                                <input placeholder="Тема сообщения *" id="Title" name="Title" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div class="">
+                                <textarea placeholder="Ваше сообщение *" id="Message" name="Message" class="w-100 modal-input-field p-2" rows="3" required></textarea>
+                            </div>
+                            <button id="loadImageBtn">Загрузить изображение</button>
+                            <div id="imageContainer"></div>
+                            <div>
+                                <form id="captchaForm">
+                                    <input type="text" id="captchaInput" name="capcha" placeholder="Введите капчу">
+                                    <button type="submit">Проверить капчу</button>
+                                </form>
+                                <div id="captchaMessage"></div>
+                            </div>
+                            <div class="pb-3">
+                                <span class="fs-6 opacity-75">Нажимая кнопку "Отправить", я подтверждаю свою дееспособность, даю согласие на обработку моих персональных данных в соответствии с <a asp-controller="Home" asp-action="License" target="_blank">условиями</a></span>
+                            </div>
+                            <input name="antispam" type="hidden">
+                            <div class="">
+                                <input class="margin-input-button" id="sendButton" value="Отправить" type="button">
+                            </div>
+                            <div class="" id="modalMessage"></div>
+                            <input type="hidden" name="ajax" value="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#sendButton").click(function () {
+                var name = $("#Username").val();
+                var email = $("#Email").val();
+                var title = $("#Title").val();
+                var message = $("#Message").val();
+
+                var data = {
+                    Username: name,
+                    Email: email,
+                    Title: title,
+                    Message: message
+                };
+
+                var modalMessage = $("#modalMessage");
+                modalMessage.html("");
+                modalMessage.html("Отправка данных...");
+                modalMessage.addClass("p-3 pt-4");
+
+                $.ajax({
+                    type: "POST",
+                    url: "/MailApi/MailSender",
+                    data: data,
+                    success: function (response) {
+                        modalMessage.html("");
+                        modalMessage.html("Заявка успешно оставлена!");
+                        modalMessage.addClass("p-3 pt-4");
+                        setTimeout(function () {
+                            $("#callBackModal").modal("hide");
+                        }, 2000);
+                    },
+                    error: function () {
+                        modalMessage.html("");
+                        modalMessage.html("Не удалось оставить заявку.");
+                        modalMessage.addClass("p-4");
+                    }
+                });
+            });
+        });
+
+        function loadCaptchaImage() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/HomeNew/GetCapcha', true);
+            xhr.responseType = 'blob';
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var url = URL.createObjectURL(xhr.response);
+                    var img = document.createElement('img');
+                    img.src = url;
+                    document.getElementById('imageContainer').innerHTML = '';
+                    document.getElementById('imageContainer').appendChild(img);
+                } else {
+                    console.error('Ошибка загрузки изображения:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Ошибка выполнения запроса на сервер');
+            };
+            xhr.send();
+        }
+
+        document.getElementById('loadImageBtn').addEventListener('click', loadCaptchaImage);
+
+        document.getElementById('captchaForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/HomeNew/CheckCapcha', true);
+            xhr.responseType = 'json';
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var isValid = xhr.response;
+                    if (!isValid) {
+                        var message = document.getElementById('captchaMessage');
+                        message.textContent = 'Неверная капча';
+                        // Если капча неверная, загружаем новую капчу
+                        loadCaptchaImage();
+                    } else {
+                        // Если капча верна, производим редирект на страницу HomeNew/Home
+                        window.location.href = '/HomeNew/Home';
+                    }
+                } else {
+                    console.error('Ошибка проверки капчи:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Ошибка выполнения запроса на сервер');
+            };
+            xhr.send(formData);
+        });
+
+        // При загрузке страницы загружаем первую капчу
+        window.onload = loadCaptchaImage;
+
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
-
-<!-- Модальное -->
-
 </html>

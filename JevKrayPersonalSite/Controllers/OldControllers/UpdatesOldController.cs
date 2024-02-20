@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.Models;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
-using System.Text;
-using JevKrayPersonalSite.DAL;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace JevKrayPersonalSite.Controllers.OldControllers
 {

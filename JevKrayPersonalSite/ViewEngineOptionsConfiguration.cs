@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.Extensions.DependencyInjection;
 
 public static class ViewEngineOptionsConfiguration
 {

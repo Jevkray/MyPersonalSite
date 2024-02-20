@@ -1,11 +1,5 @@
-﻿using Docker.DotNet.Models;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Net;
-using System.Net.Mail;
-using System.Reflection.PortableExecutable;
 
 namespace JevKrayPersonalSite.Services
 {
@@ -20,7 +14,9 @@ namespace JevKrayPersonalSite.Services
             return (code, image);
         }
 
+#pragma warning disable CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         private static async Task<Bitmap> GenerateImageAsync(string code)
+#pragma warning restore CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         {
             // Создаем новое изображение с размерами 200x100 пикселей
             Bitmap bmp = new Bitmap(300, 200);

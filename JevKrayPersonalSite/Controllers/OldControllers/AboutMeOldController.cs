@@ -1,5 +1,4 @@
 ﻿using JevKrayPersonalSite.Models;
-using JevKrayPersonalSite.Services.MailSender;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
