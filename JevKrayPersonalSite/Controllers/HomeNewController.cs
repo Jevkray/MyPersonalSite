@@ -1,20 +1,24 @@
 ﻿using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.Models;
+using JevKrayPersonalSite.PrivateServices.MailSender;
 using JevKrayPersonalSite.Services;
+using JevKrayPersonalSite.Services.ServiceInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Drawing;
 using System.Drawing.Imaging;
+using System.Net.Mail;
 
 namespace JevKrayPersonalSite.Controllers
 {
     public class HomeNewController : Controller
     {
+        private readonly ICaptchaService _captchaService;
         private readonly JevkSiteDbContext _dbContext;
         private readonly ILogger<HomeNewController> _logger;
 
-        public HomeNewController(ILogger<HomeNewController> logger, JevkSiteDbContext dbContext)
+        public HomeNewController(ILogger<HomeNewController> logger, JevkSiteDbContext dbContext, ICaptchaService captchaService)
         {
+            _captchaService = captchaService;
             _dbContext = dbContext;
             _logger = logger;
         }
@@ -50,9 +54,9 @@ namespace JevKrayPersonalSite.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetCapcha()
+        public async Task<IActionResult> GetCaptcha()
         {
-            var captchaResult = await CapchaGenerator.CreateCapchaAsync(); // Ваш метод для создания капчи
+            var captchaResult = await _captchaService.CreateCaptchaAsync(); // Ваш метод для создания капчи
 
             // Преобразование изображения в массив байтов в формате PNG
             byte[] imageBytes;
@@ -85,50 +89,6 @@ namespace JevKrayPersonalSite.Controllers
 
             return File(imageBytes, "image/png");
         }
-
-        [HttpPost]
-        public async Task<bool> CheckCapcha(string capcha)
-        {
-            if (Request.Cookies["CapchaSessionId"] != "")
-            {
-                string sessionId = Request.Cookies["CapchaSessionId"];
-
-                bool isValidCapcha = await IsValidCapcha(capcha.ToLower(), sessionId);
-
-                Response.Cookies.Delete("CapchaSessionId");
-
-                var capchaSession = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
-
-                if (capchaSession != null)
-                {
-                    _dbContext.CapchaSessions.Remove(capchaSession);
-                    await _dbContext.SaveChangesAsync();
-                }
-                return isValidCapcha;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public async Task<bool> IsValidCapcha(string capcha, string sessionId)
-        {
-            var capchaSessionModel = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
-
-            if (capchaSessionModel != null)
-            {
-                string inputCapchaHash = CacherService.CalculateMD5Hash(capcha);
-                bool isValid = inputCapchaHash == capchaSessionModel.CapchaCache;
-
-                return isValid;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
 using System.Text;
-using JevKrayPersonalSite.DAL;
 
 namespace JevKrayPersonalSite.Controllers
 {
@@ -20,9 +18,13 @@ namespace JevKrayPersonalSite.Controllers
         }
 
         [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
+#pragma warning disable CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         public async Task<IActionResult> Updates()
+#pragma warning restore CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         {
+#pragma warning disable CS0219 // Переменная назначена, но ее значение не используется
             string filePath = "PrivateData/GitHubLog.html"; // Путь к файлу с данными GitHub
+#pragma warning restore CS0219 // Переменная назначена, но ее значение не используется
 
             var html = new StringBuilder();
 

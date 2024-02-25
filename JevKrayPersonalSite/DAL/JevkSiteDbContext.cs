@@ -25,7 +25,7 @@ namespace JevKrayPersonalSite.DAL
 
         public async Task DeleteExpiredCapchaSessions()
         {
-            var expirationTime = DateTime.Now.AddMinutes(-5); 
+            var expirationTime = DateTime.Now.AddMinutes(-5);
 
             var expiredSessions = await CapchaSessions
                 .Where(session => session.CreatedAt < expirationTime)

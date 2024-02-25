@@ -27,7 +27,7 @@
                         var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
 
                         <div class="nav-brand col-3 fs-3">
-                            <a class="a-link text-white text-decoration-none @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home">Home</a>
+                            <a class="a-link text-white text-decoration-none logo-main @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home"><span></span></a>
                         </div>
                         <div class="col-9 d-none d-md-flex align-items-center">
                             <div class="nav-item ms-auto ps-3 pe-3 fs-4">
@@ -102,11 +102,13 @@
                         <a class="a-link text-white text-decoration-none" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img">  LinkedIn</a>
                     </div>
                     <div class="col-3">
-                        <a class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="~/pictures/vectors/msg.svg" class="logo-img">  Mail Me</a>
+                        <a href="#" class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
+                            <img src="~/pictures/vectors/msg.svg" class="logo-img">  Mail me
+                        </a>
                     </div>
                 </div>
 
-                <!--mobile only lodos-->
+                <!--mobile, small resolution, only lodos-->
 
                 <div class="row d-md-none text-center">
                     <div class="logo-item col-3">
@@ -119,21 +121,189 @@
                         <a class="a-link" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img"></a>
                     </div>
                     <div class="logo-item col-3">
-                        <a class="a-link" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="~/pictures/vectors/msg.svg" class="logo-img"></a>
+                        <a href="#" class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
+                            <img src="~/pictures/vectors/msg.svg" class="logo-img">
+                        </a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- Скрипты -->
+    <!--Modal-->
+    <div class="modal" id="callBackModal" tabindex="-1" role="dialog" aria-labelledby="callBackModalLabel" aria-hidden="true">
+        <div class="modal-dialog rounded-3" role="document">
+            <div class="modal-content border-modal">
+                <div class="modal-header bg-def modal-header-down">
+                    <h2 class="modal-title text-white fs-3" id="callBackModalLabel">Оставить сообщение</h2>
+                    <button type="button" class="btn-close btn-close-white me-2 btn-close-modal" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="p-3">
+                    <form class="" action="" name="form" method="post">
+                        <div class="fs-5">
+                            <div class="pb-2">
+                                <input placeholder="Ваше имя *" id="Username" name="Username" type="text" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div class="pb-2">
+                                <input placeholder="Ваш Email*" id="Email" name="Email" type="email" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div class="pb-2">
+                                <input placeholder="Тема сообщения *" id="Title" name="Title" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div>
+                                <textarea placeholder="Ваше сообщение *" id="Message" name="Message" class="w-100 modal-input-field p-2" rows="3"></textarea>
+                            </div>
+                            <div id="imageContainer" class="image-container">
+                            </div>
+                            <div>
+                                <input placeholder="Число c изображения *" id="captchaInput" name="Сapcha" type="text" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div class="pb-3 pt-2">
+                                <span class="fs-6 opacity-75">Нажимая кнопку "Отправить", я подтверждаю свою дееспособность, даю согласие на обработку моих персональных данных в соответствии с <a asp-controller="Home" asp-action="License" target="_blank">условиями</a></span>
+                            </div>
+                            <input name="antispam" type="hidden">
+                            <div>
+                                <input class="margin-input-button" id="sendButton" value="Отправить" type="submit">
+                            </div>
+                            <div class="" id="modalMessage"></div>
+                            <input type="hidden" name="ajax" value="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // Обработчик клика по кнопке "Загрузить изображение"
+            $('#loadImageBtn').click(function () {
+                loadCaptchaImage(); // Вызываем функцию загрузки капчи
+            });
+            // Проверка капчи перед отправкой формы
+            $('#callBackModal').on('show.bs.modal', function () {
+                loadCaptchaImage();
+            });
+            // Обработчик клика по кнопке отправки формы
+            $('#sendButton').click(function (event) {
+                event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+                // Получаем значения полей формы
+                var name = $('#Username').val();
+                var email = $('#Email').val();
+                var title = $('#Title').val();
+                var message = $('#Message').val();
+                var captcha = $('#captchaInput').val();
+
+                // Проверяем, заполнены ли все обязательные поля
+                if (name && email && title && message && captcha) {
+                    // Отключаем кнопку отправки и выводим сообщение "Загрузка"
+                    $('#sendButton').prop('disabled', true).addClass('opacity-75').val('Загрузка...');
+
+                    // Выполняем запрос на сервер для отправки сообщения
+                    $.ajax({
+                        type: 'POST',
+                        url: '/MailApi/MailSender',
+                        data: {
+                            Username: name,
+                            Email: email,
+                            Title: title,
+                            Message: message,
+                            Capcha: captcha,
+                        },
+                        success: function (response) {
+                            // По получении успешного ответа от сервера
+                            $('#sendButton').val('Доставлено'); // Изменяем текст кнопки на "Доставлено"
+                            setTimeout(function () {
+                                $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
+                            }, 1500); // Через 1.5 секунды
+                            loadCaptchaImage();
+                        },
+                        error: function () {
+                            // По получении успешного ответа от сервера
+                            $('#sendButton').val('Проверьте капчу'); // Изменяем текст кнопки на "Доставлено"
+                            setTimeout(function () {
+                                $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
+                            }, 1500); // Через 1.5 секунды
+                        }
+                    });
+                } else {
+                    $('#sendButton').prop('disabled', true).addClass('opacity-75').val('Заполните все поля'); // Изменяем текст кнопки на "Доставлено"
+                    setTimeout(function () {
+                        $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
+                    }, 1500); // Через 1.5 секунды
+                }
+            });
+        });
+
+
+        function loadCaptchaImage() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/HomeNew/GetCaptcha', true);
+            xhr.responseType = 'blob';
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var blob = xhr.response;
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        //caphca img
+                        var url = reader.result;
+                        var img = document.createElement('img');
+                        img.src = url;
+
+                        img.classList.add('image-capcha', 'mt-2', 'mb-2', 'rounded-3');
+
+                        document.getElementById('imageContainer').innerHTML = '';
+                        document.getElementById('imageContainer').appendChild(img);
+
+                        //button
+                        var button = $('<button>', {
+                            'type': 'button',
+                            'class': 'image-capcha-update-button m-1 rounded ps-1 pb-1 pe-1',
+                            'id': 'imageButtonCapcha'
+                        });
+
+                        button.click(loadCaptchaImage);
+
+                        $('#imageContainer').append(button);
+
+                        //buttonSVG
+                        var buttonSvg = $('<img>', {
+                            'src': '../pictures/vectors/update.svg',
+                            'class': 'image-capcha-svg-button btn-close-white rounded-3 bg-br'
+                        });
+
+                        $('#imageButtonCapcha').append(buttonSvg);
+
+                        //capcha logo
+                        var logo = $('<div>', {
+                            'class': 'image-capcha-logo m-1 ps-2 pe-2 rounded-3 fs-6 noselect',
+                            'text': 'J˙S˙ capcha'
+                        })
+
+                        $('#imageContainer').append(logo);
+
+                        $('#captchaMessage').text('');
+                    };
+                    reader.readAsDataURL(blob);
+                } else {
+                    console.error('Ошибка загрузки изображения:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Ошибка выполнения запроса на сервер');
+            };
+            xhr.send();
+        }
+
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
-
-<!-- Модальное -->
-
 </html>

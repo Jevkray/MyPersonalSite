@@ -12,7 +12,9 @@ namespace JevKrayPersonalSite.Workers
             _serviceProvider = serviceProvider;
         }
 
+#pragma warning disable CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+#pragma warning restore CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
         {
             var capchaCleanupTask = StartCapchaCleanupTask(stoppingToken);
             var gitHubUpdateTask = StartGitHubUpdateTask(stoppingToken);
@@ -35,7 +37,7 @@ namespace JevKrayPersonalSite.Workers
                         Console.WriteLine($"Ошибка во время удаления просроченных сеансов CAPTCHA: {ex.Message}");
                     }
                 }
-                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken); 
+                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken);
             }
         }
 
@@ -49,7 +51,7 @@ namespace JevKrayPersonalSite.Workers
                     await gitHubLogger.UpdateCommitsOnDB();
                 }
 
-                
+
                 await Task.Delay(TimeSpan.FromMinutes(10), stoppingToken);
             }
         }

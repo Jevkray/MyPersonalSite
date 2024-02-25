@@ -174,3 +174,131 @@ body {
     font-weight: 500;
     font-style: normal;
 }
+
+.modal-input-field {
+    border-radius: 0px;
+    border-width: 0.1rem;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.modal-input-field:focus-visible {
+    border-width: 0.1rem;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    outline:none;
+}
+
+.margin-input-button {
+    background-color: rgb(74,86,234);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    color: white;
+    border: 0.1rem solid black;
+    width: 100%;
+}
+
+.border-modal {
+    border: 0.1rem solid black;
+}
+
+.modal-header-down {
+    border-bottom: 1px solid black;
+}
+
+.btn-close-modal:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-close-modal:focus-visible {
+    box-shadow: none;
+    outline: none;
+}
+
+.image-container {
+    position: relative !important;
+    max-width: 100%;
+    height: auto;
+}
+
+.reload-image-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+    .reload-image-btn svg {
+        fill: white;
+    }
+
+.image-capcha{
+    width: 100%;
+}
+
+.image-capcha-update-button {
+    padding: 0px 2px 2px 2px;
+    background-color: rgba(74,86,234, 0.85);
+    border: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    z-index: 1;
+}
+
+.image-capcha-logo {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(74,86,234, 0.85);
+    color: white;
+}
+
+.image-capcha-svg-button {
+    width: 25px;
+    height: 25px;
+}
+
+.message-container {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.message {
+    display: block;
+    transition: transform 0.5s ease-in-out;
+}
+
+.message-change {
+    transform: rotateX(-90deg);
+}
+
+.logo-main {
+    display: block;
+    width: 2.7rem;
+    height: 2.7rem;
+    background-image: url(../pictures/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

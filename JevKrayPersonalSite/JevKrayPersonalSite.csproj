@@ -30,6 +30,5 @@
     <Folder Include="Services\BackgroundServices\" />
     <Folder Include="Settings\" />
     <Folder Include="wwwroot\pictures\projects\pr_4\" />
-    <Folder Include="wwwroot\pictures\capcha\" />
   </ItemGroup>
 </Project>

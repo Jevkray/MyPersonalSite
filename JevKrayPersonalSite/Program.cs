@@ -1,11 +1,10 @@
 using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
-using JevKrayPersonalSite.Workers;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System.Threading.Tasks;
 using JevKrayPersonalSite.Routing;
+using JevKrayPersonalSite.Services.ServiceInterfaces;
+using JevKrayPersonalSite.Services;
+using JevKrayPersonalSite.Workers;
+using Microsoft.EntityFrameworkCore;
 
 bool useNewVersion = true;
 
@@ -16,6 +15,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHostedService<Worker>(); // Регистрируем Worker как HostedService
 builder.Services.AddScoped<GitHubLogger>();
+builder.Services.AddScoped<ICaptchaService, CaptchaService>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<JevkSiteDbContext>(options =>
 {

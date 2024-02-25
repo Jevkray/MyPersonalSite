@@ -1,16 +1,32 @@
-﻿using JevKrayPersonalSite.Services.MailSender;
+﻿using System.Threading.Tasks;
+using JevKrayPersonalSite.Services.ServiceInterfaces;
+using JevKrayPersonalSite.PrivateServices.MailSender;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JevKrayPersonalSite.Controllers.ApiControllers
 {
     public class MailApiController : Controller
     {
-        [HttpPost]
-        public IActionResult MailSender(string Username, string Email, string Title, string Message)
+        private readonly ICaptchaService _captchaService;
+
+        public MailApiController(ICaptchaService captchaService)
         {
-            var mail = CodeMail.CreatieMail(Username, Email, Title, Message);
-            CodeMail.SendMail(mail);
-            return Ok("Mail Sent");
+            _captchaService = captchaService;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> MailSender(string Username, string Email, string Title, string Message, string Capcha)
+        {
+            if (!await _captchaService.CheckCaptchaAsync(Capcha))
+            {
+                return BadRequest("Invalid Captcha");
+            }
+            else
+            {
+                var mail = CodeMail.CreateMail(Username, Email, Title, Message);
+                CodeMail.SendMail(mail);
+                return Ok("Mail Sent");
+            }
         }
     }
 }

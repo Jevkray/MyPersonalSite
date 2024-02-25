@@ -33,6 +33,16 @@
       "useSSL": true
     }
   },
+  "debugger.watcher": [
+    {
+      "name": "JevKrayPersonalSite",
+      "folder": "${JevKrayPersonalSite}/JevKrayPersonalSite"
+    },
+    {
+      "name": "Mars",
+      "folder": "${workspaceFolder}/mars"
+    }
+  ],
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -40,15 +50,5 @@
       "applicationUrl": "http://localhost:28653",
       "sslPort": 44387
     }
-  },
-  "debugger.watcher": [
-      {
-          "name": "JevKrayPersonalSite",
-          "folder": "${JevKrayPersonalSite}/JevKrayPersonalSite",
-      },
-      {
-          "name": "Mars",
-          "folder": "${workspaceFolder}/mars"
-      }
-  ]
+  }
 }
