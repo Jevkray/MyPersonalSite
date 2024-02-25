@@ -27,7 +27,7 @@
                         var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
 
                         <div class="nav-brand col-3 fs-3">
-                            <a class="a-link text-white text-decoration-none @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home">Home</a>
+                            <a class="a-link text-white text-decoration-none logo-main @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home"><span></span></a>
                         </div>
                         <div class="col-9 d-none d-md-flex align-items-center">
                             <div class="nav-item ms-auto ps-3 pe-3 fs-4">
@@ -131,9 +131,8 @@
     </div>
 
     <!--Modal-->
-
     <div class="modal" id="callBackModal" tabindex="-1" role="dialog" aria-labelledby="callBackModalLabel" aria-hidden="true">
-        <div class="modal-dialog rounded-3 pt-5" role="document">
+        <div class="modal-dialog rounded-3" role="document">
             <div class="modal-content border-modal">
                 <div class="modal-header bg-def modal-header-down">
                     <h2 class="modal-title text-white fs-3" id="callBackModalLabel">Оставить сообщение</h2>
@@ -151,24 +150,20 @@
                             <div class="pb-2">
                                 <input placeholder="Тема сообщения *" id="Title" name="Title" value="" class="w-100 modal-input-field p-2" required>
                             </div>
-                            <div class="">
-                                <textarea placeholder="Ваше сообщение *" id="Message" name="Message" class="w-100 modal-input-field p-2" rows="3" required></textarea>
-                            </div>
-                            <button id="loadImageBtn">Загрузить изображение</button>
-                            <div id="imageContainer"></div>
                             <div>
-                                <form id="captchaForm">
-                                    <input type="text" id="captchaInput" name="capcha" placeholder="Введите капчу">
-                                    <button type="submit">Проверить капчу</button>
-                                </form>
-                                <div id="captchaMessage"></div>
+                                <textarea placeholder="Ваше сообщение *" id="Message" name="Message" class="w-100 modal-input-field p-2" rows="3"></textarea>
                             </div>
-                            <div class="pb-3">
+                            <div id="imageContainer" class="image-container">
+                            </div>
+                            <div>
+                                <input placeholder="Число c изображения *" id="captchaInput" name="Сapcha" type="text" value="" class="w-100 modal-input-field p-2" required>
+                            </div>
+                            <div class="pb-3 pt-2">
                                 <span class="fs-6 opacity-75">Нажимая кнопку "Отправить", я подтверждаю свою дееспособность, даю согласие на обработку моих персональных данных в соответствии с <a asp-controller="Home" asp-action="License" target="_blank">условиями</a></span>
                             </div>
                             <input name="antispam" type="hidden">
-                            <div class="">
-                                <input class="margin-input-button" id="sendButton" value="Отправить" type="button">
+                            <div>
+                                <input class="margin-input-button" id="sendButton" value="Отправить" type="submit">
                             </div>
                             <div class="" id="modalMessage"></div>
                             <input type="hidden" name="ajax" value="">
@@ -184,58 +179,118 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script>
-
         $(document).ready(function () {
-            $("#sendButton").click(function () {
-                var name = $("#Username").val();
-                var email = $("#Email").val();
-                var title = $("#Title").val();
-                var message = $("#Message").val();
 
-                var data = {
-                    Username: name,
-                    Email: email,
-                    Title: title,
-                    Message: message
-                };
+            // Обработчик клика по кнопке "Загрузить изображение"
+            $('#loadImageBtn').click(function () {
+                loadCaptchaImage(); // Вызываем функцию загрузки капчи
+            });
+            // Проверка капчи перед отправкой формы
+            $('#callBackModal').on('show.bs.modal', function () {
+                loadCaptchaImage();
+            });
+            // Обработчик клика по кнопке отправки формы
+            $('#sendButton').click(function (event) {
+                event.preventDefault(); // Предотвращаем отправку формы по умолчанию
 
-                var modalMessage = $("#modalMessage");
-                modalMessage.html("");
-                modalMessage.html("Отправка данных...");
-                modalMessage.addClass("p-3 pt-4");
+                // Получаем значения полей формы
+                var name = $('#Username').val();
+                var email = $('#Email').val();
+                var title = $('#Title').val();
+                var message = $('#Message').val();
+                var captcha = $('#captchaInput').val();
 
-                $.ajax({
-                    type: "POST",
-                    url: "/MailApi/MailSender",
-                    data: data,
-                    success: function (response) {
-                        modalMessage.html("");
-                        modalMessage.html("Заявка успешно оставлена!");
-                        modalMessage.addClass("p-3 pt-4");
-                        setTimeout(function () {
-                            $("#callBackModal").modal("hide");
-                        }, 2000);
-                    },
-                    error: function () {
-                        modalMessage.html("");
-                        modalMessage.html("Не удалось оставить заявку.");
-                        modalMessage.addClass("p-4");
-                    }
-                });
+                // Проверяем, заполнены ли все обязательные поля
+                if (name && email && title && message && captcha) {
+                    // Отключаем кнопку отправки и выводим сообщение "Загрузка"
+                    $('#sendButton').prop('disabled', true).addClass('opacity-75').val('Загрузка...');
+
+                    // Выполняем запрос на сервер для отправки сообщения
+                    $.ajax({
+                        type: 'POST',
+                        url: '/MailApi/MailSender',
+                        data: {
+                            Username: name,
+                            Email: email,
+                            Title: title,
+                            Message: message,
+                            Capcha: captcha,
+                        },
+                        success: function (response) {
+                            // По получении успешного ответа от сервера
+                            $('#sendButton').val('Доставлено'); // Изменяем текст кнопки на "Доставлено"
+                            setTimeout(function () {
+                                $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
+                            }, 1500); // Через 1.5 секунды
+                            loadCaptchaImage();
+                        },
+                        error: function () {
+                            // По получении успешного ответа от сервера
+                            $('#sendButton').val('Проверьте капчу'); // Изменяем текст кнопки на "Доставлено"
+                            setTimeout(function () {
+                                $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
+                            }, 1500); // Через 1.5 секунды
+                        }
+                    });
+                } else {
+                    $('#sendButton').prop('disabled', true).addClass('opacity-75').val('Заполните все поля'); // Изменяем текст кнопки на "Доставлено"
+                    setTimeout(function () {
+                        $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
+                    }, 1500); // Через 1.5 секунды
+                }
             });
         });
 
+
         function loadCaptchaImage() {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/HomeNew/GetCapcha', true);
+            xhr.open('POST', '/HomeNew/GetCaptcha', true);
             xhr.responseType = 'blob';
             xhr.onload = function () {
                 if (xhr.status === 200) {
-                    var url = URL.createObjectURL(xhr.response);
-                    var img = document.createElement('img');
-                    img.src = url;
-                    document.getElementById('imageContainer').innerHTML = '';
-                    document.getElementById('imageContainer').appendChild(img);
+                    var blob = xhr.response;
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        //caphca img
+                        var url = reader.result;
+                        var img = document.createElement('img');
+                        img.src = url;
+
+                        img.classList.add('image-capcha', 'mt-2', 'mb-2', 'rounded-3');
+
+                        document.getElementById('imageContainer').innerHTML = '';
+                        document.getElementById('imageContainer').appendChild(img);
+
+                        //button
+                        var button = $('<button>', {
+                            'type': 'button',
+                            'class': 'image-capcha-update-button m-1 rounded ps-1 pb-1 pe-1',
+                            'id': 'imageButtonCapcha'
+                        });
+
+                        button.click(loadCaptchaImage);
+
+                        $('#imageContainer').append(button);
+
+                        //buttonSVG
+                        var buttonSvg = $('<img>', {
+                            'src': '../pictures/vectors/update.svg',
+                            'class': 'image-capcha-svg-button btn-close-white rounded-3 bg-br'
+                        });
+
+                        $('#imageButtonCapcha').append(buttonSvg);
+
+                        //capcha logo
+                        var logo = $('<div>', {
+                            'class': 'image-capcha-logo m-1 ps-2 pe-2 rounded-3 fs-6 noselect',
+                            'text': 'J˙S˙ capcha'
+                        })
+
+                        $('#imageContainer').append(logo);
+
+                        $('#captchaMessage').text('');
+                    };
+                    reader.readAsDataURL(blob);
                 } else {
                     console.error('Ошибка загрузки изображения:', xhr.statusText);
                 }
@@ -245,39 +300,6 @@
             };
             xhr.send();
         }
-
-        document.getElementById('loadImageBtn').addEventListener('click', loadCaptchaImage);
-
-        document.getElementById('captchaForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var formData = new FormData(this);
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/HomeNew/CheckCapcha', true);
-            xhr.responseType = 'json';
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    var isValid = xhr.response;
-                    if (!isValid) {
-                        var message = document.getElementById('captchaMessage');
-                        message.textContent = 'Неверная капча';
-                        // Если капча неверная, загружаем новую капчу
-                        loadCaptchaImage();
-                    } else {
-                        // Если капча верна, производим редирект на страницу HomeNew/Home
-                        window.location.href = '/HomeNew/Home';
-                    }
-                } else {
-                    console.error('Ошибка проверки капчи:', xhr.statusText);
-                }
-            };
-            xhr.onerror = function () {
-                console.error('Ошибка выполнения запроса на сервер');
-            };
-            xhr.send(formData);
-        });
-
-        // При загрузке страницы загружаем первую капчу
-        window.onload = loadCaptchaImage;
 
     </script>
 

@@ -1,6 +1,8 @@
 using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.PrivateServices.PrivateBackgroundServices;
 using JevKrayPersonalSite.Routing;
+using JevKrayPersonalSite.Services.ServiceInterfaces;
+using JevKrayPersonalSite.Services;
 using JevKrayPersonalSite.Workers;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHostedService<Worker>(); // Регистрируем Worker как HostedService
 builder.Services.AddScoped<GitHubLogger>();
+builder.Services.AddScoped<ICaptchaService, CaptchaService>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<JevkSiteDbContext>(options =>
 {

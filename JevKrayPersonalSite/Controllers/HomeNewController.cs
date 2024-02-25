@@ -2,6 +2,7 @@
 using JevKrayPersonalSite.Models;
 using JevKrayPersonalSite.PrivateServices.MailSender;
 using JevKrayPersonalSite.Services;
+using JevKrayPersonalSite.Services.ServiceInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Drawing.Imaging;
@@ -11,11 +12,13 @@ namespace JevKrayPersonalSite.Controllers
 {
     public class HomeNewController : Controller
     {
+        private readonly ICaptchaService _captchaService;
         private readonly JevkSiteDbContext _dbContext;
         private readonly ILogger<HomeNewController> _logger;
 
-        public HomeNewController(ILogger<HomeNewController> logger, JevkSiteDbContext dbContext)
+        public HomeNewController(ILogger<HomeNewController> logger, JevkSiteDbContext dbContext, ICaptchaService captchaService)
         {
+            _captchaService = captchaService;
             _dbContext = dbContext;
             _logger = logger;
         }
@@ -51,9 +54,9 @@ namespace JevKrayPersonalSite.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetCapcha()
+        public async Task<IActionResult> GetCaptcha()
         {
-            var captchaResult = await CapchaGenerator.CreateCapchaAsync(); // Ваш метод для создания капчи
+            var captchaResult = await _captchaService.CreateCaptchaAsync(); // Ваш метод для создания капчи
 
             // Преобразование изображения в массив байтов в формате PNG
             byte[] imageBytes;
@@ -86,71 +89,6 @@ namespace JevKrayPersonalSite.Controllers
 
             return File(imageBytes, "image/png");
         }
-
-        [HttpPost]
-        public async Task<bool> CheckCapcha(string capcha)
-        {
-            if (Request.Cookies["CapchaSessionId"] != "")
-            {
-#pragma warning disable CS8600 // Преобразование литерала, допускающего значение NULL или возможного значения NULL в тип, не допускающий значение NULL.
-                string sessionId = Request.Cookies["CapchaSessionId"];
-#pragma warning restore CS8600 // Преобразование литерала, допускающего значение NULL или возможного значения NULL в тип, не допускающий значение NULL.
-
-#pragma warning disable CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
-                bool isValidCapcha = await IsValidCapcha(capcha.ToLower(), sessionId);
-#pragma warning restore CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
-
-                Response.Cookies.Delete("CapchaSessionId");
-
-                var capchaSession = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
-
-                if (capchaSession != null)
-                {
-                    _dbContext.CapchaSessions.Remove(capchaSession);
-                    await _dbContext.SaveChangesAsync();
-                }
-                return isValidCapcha;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-#pragma warning disable CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
-        public async Task<bool> IsValidCapcha(string capcha, string sessionId)
-#pragma warning restore CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
-        {
-            var capchaSessionModel = _dbContext.CapchaSessions.FirstOrDefault(c => c.SessionId == sessionId);
-
-            if (capchaSessionModel != null)
-            {
-                string inputCapchaHash = CacherService.CalculateMD5Hash(capcha);
-                bool isValid = inputCapchaHash == capchaSessionModel.CapchaCache;
-
-                return isValid;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        [HttpPost]
-        public IActionResult SendEmail(string Username, string Email, string Title, string Message)
-        {
-            try
-            {
-                MailMessage mail = CodeMail.CreatieMail(Username, Email, Title, Message);
-                CodeMail.SendMail(mail);
-                return Json(new { success = true });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { success = false, error = ex.Message });
-            }
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
