@@ -26,21 +26,21 @@
 
                         var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
 
-                        <div class="nav-brand col-3 fs-3">
-                            <a class="a-link text-white text-decoration-none logo-main @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home"><span></span></a>
+                        <div class="nav-brand col-3 fs-3 @(currentPage == "Home" ? "a-active" : "")">
+                            <a class="a-link text-white text-decoration-none logo-main" asp-controller="HomeNew" asp-action="Home"><span></span></a>
                         </div>
                         <div class="col-9 d-none d-md-flex align-items-center">
-                            <div class="nav-item ms-auto ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Education" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Education">Education</a>
+                            <div class="nav-item ms-auto ps-3 pe-3 fs-4 @(currentPage == "Education" ? "a-active" : "")">
+                                <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Education">Education</a>
                             </div>
-                            <div class="nav-item ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Skills" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Skills">Skills</a>
+                            <div class="nav-item ps-3 pe-3 fs-4 @(currentPage == "Skills" ? "a-active" : "")">
+                                <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Skills">Skills</a>
                             </div>
-                            <div class="nav-item ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Projects" ? "a-active" : "")" asp-controller="ProjectsNew" asp-action="Projects">Projects</a>
+                            <div class="nav-item ps-3 pe-3 fs-4 @(currentPage == "Projects" ? "a-active" : "")">
+                                <a class="a-link text-white text-decoration-none" asp-controller="ProjectsNew" asp-action="Projects">Projects</a>
                             </div>
-                            <div class="nav-item ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Info" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Info">Info</a>
+                            <div class="nav-item ps-3 pe-3 fs-4 @(currentPage == "Info" ? "a-active" : "")">
+                                <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Info">Info</a>
                             </div>
                         </div>
 

@@ -157,14 +157,17 @@ body {
 
 .a-link {
     cursor: pointer;
-    margin-left: 3px;
-    transition: margin 0.1s linear;
     white-space: nowrap;
 }
 
-    .a-link:hover {
-        margin-left: 0px;
-        margin-right: 3px;
+.nav-item {
+    cursor: pointer;
+    transition: transform 0.1s linear !important;
+    white-space: nowrap;
+}
+
+    .nav-item:hover {
+        transform: translateX(-3px) !important;
     }
 
 .a-active {
