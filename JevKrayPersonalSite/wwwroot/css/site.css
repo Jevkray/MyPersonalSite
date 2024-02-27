@@ -160,14 +160,12 @@ body {
     white-space: nowrap;
 }
 
-.nav-item {
-    cursor: pointer;
+.translate-3-text {
     transition: transform 0.1s linear !important;
-    white-space: nowrap;
 }
 
-    .nav-item:hover {
-        transform: translateX(-3px) !important;
+    .translate-3-text:hover {
+        transform: rotate(0deg) translate(-0.15rem);
     }
 
 .a-active {
@@ -186,13 +184,13 @@ body {
     border-top: 0;
 }
 
-.modal-input-field:focus-visible {
-    border-width: 0.1rem;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    outline:none;
-}
+    .modal-input-field:focus-visible {
+        border-width: 0.1rem;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        outline: none;
+    }
 
 .margin-input-button {
     background-color: rgb(74,86,234);
@@ -242,7 +240,7 @@ body {
         fill: white;
     }
 
-.image-capcha{
+.image-capcha {
     width: 100%;
 }
 
