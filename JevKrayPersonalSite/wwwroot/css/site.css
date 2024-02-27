@@ -13,6 +13,14 @@ body {
     flex: 1 1 auto;
 }
 
+.bg-dr2{
+    background-color:  rgb(40,40,40);
+}
+
+.text-dr2 {
+    color: rgb(40,40,40);
+}
+
 .bg-def {
     background-color: rgb(74,86,234);
 }
@@ -157,14 +165,15 @@ body {
 
 .a-link {
     cursor: pointer;
-    margin-left: 3px;
-    transition: margin 0.1s linear;
     white-space: nowrap;
 }
 
-    .a-link:hover {
-        margin-left: 0px;
-        margin-right: 3px;
+.translate-3-text {
+    transition: transform 0.1s linear !important;
+}
+
+    .translate-3-text:hover {
+        transform: rotate(0deg) translate(-0.15rem);
     }
 
 .a-active {
@@ -183,13 +192,13 @@ body {
     border-top: 0;
 }
 
-.modal-input-field:focus-visible {
-    border-width: 0.1rem;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    outline:none;
-}
+    .modal-input-field:focus-visible {
+        border-width: 0.1rem;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        outline: none;
+    }
 
 .margin-input-button {
     background-color: rgb(74,86,234);
@@ -239,7 +248,7 @@ body {
         fill: white;
     }
 
-.image-capcha{
+.image-capcha {
     width: 100%;
 }
 

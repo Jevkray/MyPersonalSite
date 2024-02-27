@@ -26,21 +26,29 @@
 
                         var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
 
-                        <div class="nav-brand col-3 fs-3">
-                            <a class="a-link text-white text-decoration-none logo-main @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home"><span></span></a>
+                        <div class="nav-brand col-3 fs-3 ">
+                            <a class="a-link text-white text-decoration-none logo-main translate-3-text @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home"><span></span></a>
                         </div>
                         <div class="col-9 d-none d-md-flex align-items-center">
-                            <div class="nav-item ms-auto ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Education" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Education">Education</a>
+                            <div class="nav-item ms-auto ps-3 pe-3 fs-4 ">
+                                <div class="translate-3-text  @(currentPage == "Education" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Education">Education</a>
+                                </div>
+                            </div>
+                            <div class="nav-item ps-3 pe-3 fs-4 ">
+                                <div class="translate-3-text @(currentPage == "Skills" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none " asp-controller="HomeNew" asp-action="Skills">Skills</a>
+                                </div>
                             </div>
                             <div class="nav-item ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Skills" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Skills">Skills</a>
+                                <div class="translate-3-text @(currentPage == "Projects" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="ProjectsNew" asp-action="Projects">Projects</a>
+                                </div>
                             </div>
-                            <div class="nav-item ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Projects" ? "a-active" : "")" asp-controller="ProjectsNew" asp-action="Projects">Projects</a>
-                            </div>
-                            <div class="nav-item ps-3 pe-3 fs-4">
-                                <a class="a-link text-white text-decoration-none @(currentPage == "Info" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Info">Info</a>
+                            <div class="nav-item ps-3 pe-3 fs-4 ">
+                                <div class="translate-3-text @(currentPage == "Info" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Info">Info</a>
+                                </div>
                             </div>
                         </div>
 
@@ -93,18 +101,26 @@
             <div class="fs-4 p-3 pt-2 pb-2 bg-def text-white container-fluid rounded-top">
                 <div class="row d-none d-md-flex text-center">
                     <div class="col-3">
-                        <a class="a-link text-white text-decoration-none" href="https://t.me/eugenekray"><img src="~/pictures/vectors/tg.svg" class="logo-img">  Telegram</a>
+                        <div class="d-flex justify-content-center">
+                            <a class="a-link translate-3-text text-white text-decoration-none" href="https://t.me/eugenekray"><img src="~/pictures/vectors/tg.svg" class="logo-img">  Telegram</a>
+                        </div>
                     </div>
                     <div class="col-3">
-                        <a class="a-link text-white text-decoration-none" href="https://github.com/Jevkray"><img src="~/pictures/vectors/gh.svg" class="logo-img">  GitHub</a>
+                        <div class="d-flex justify-content-center">
+                            <a class="a-link translate-3-text text-white text-decoration-none" href="https://github.com/Jevkray"><img src="~/pictures/vectors/gh.svg" class="logo-img">  GitHub</a>
+                        </div>
                     </div>
                     <div class="col-3">
-                        <a class="a-link text-white text-decoration-none" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img">  LinkedIn</a>
+                        <div class="d-flex justify-content-center">
+                            <a class="a-link translate-3-text text-white text-decoration-none" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img">  LinkedIn</a>
+                        </div>
                     </div>
                     <div class="col-3">
-                        <a href="#" class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
-                            <img src="~/pictures/vectors/msg.svg" class="logo-img">  Mail me
-                        </a>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="a-link translate-3-text text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
+                                <img src="~/pictures/vectors/msg.svg" class="logo-img">  Mail me
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -112,18 +128,26 @@
 
                 <div class="row d-md-none text-center">
                     <div class="logo-item col-3">
-                        <a class="a-link" href="https://t.me/eugenekray"><img src="~/pictures/vectors/tg.svg" class="logo-img"></a>
+                        <div class="d-flex justify-content-center">
+                            <a class="a-link translate-3-text" href="https://t.me/eugenekray"><img src="~/pictures/vectors/tg.svg" class="logo-img"></a>
+                        </div>
                     </div>
                     <div class="logo-item col-3">
-                        <a class="a-link" href="https://github.com/Jevkray"><img src="~/pictures/vectors/gh.svg" class="logo-img"></a>
+                        <div class="d-flex justify-content-center">
+                            <a class="a-link translate-3-text" href="https://github.com/Jevkray"><img src="~/pictures/vectors/gh.svg" class="logo-img"></a>
+                        </div>
                     </div>
                     <div class="logo-item col-3">
-                        <a class="a-link" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img"></a>
+                        <div class="d-flex justify-content-center">
+                            <a class="a-link translate-3-text" href="https://www.linkedin.com/in/eugene-krasovsky-164b60277/"><img src="~/pictures/vectors/lnkd.svg" class="logo-img"></a>
+                        </div>
                     </div>
                     <div class="logo-item col-3">
-                        <a href="#" class="a-link text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
-                            <img src="~/pictures/vectors/msg.svg" class="logo-img">
-                        </a>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="a-link translate-3-text text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
+                                <img src="~/pictures/vectors/msg.svg" class="logo-img">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

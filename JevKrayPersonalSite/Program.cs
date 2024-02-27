@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddHostedService<Worker>(); // Регистрируем Worker как HostedService
+builder.Services.AddHostedService<Worker>();
 builder.Services.AddScoped<GitHubLogger>();
 builder.Services.AddScoped<ICaptchaService, CaptchaService>();
 builder.Services.AddHttpContextAccessor();
