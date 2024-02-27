@@ -6,6 +6,23 @@
     <link rel="stylesheet" href="~/css/home/resume.css" />
 }
 
-<div class="fs-5">
-    Resume
+<div id="loader-wrapper">
+    <div class="myElement text-white" id="loader">Загрузка...</div>
 </div>
+
+<div class="row p-0 bg-dr">
+    <div class="pt-3 p-0">
+        <iframe id="resumeFrame" class="bg-br" src="https://drive.google.com/file/d/1BOYVSEBeKQ6Z_Icnb241fxK1PNiOqBME/preview" allow="autoplay"></iframe>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        var frame = document.getElementById('resumeFrame');
+
+        frame.onload = function () {
+            document.getElementById('loader-wrapper').style.display = 'none'; // скрываем анимацию загрузки после загрузки iframe
+            frame.style.display = 'block'; // отображаем iframe после загрузки
+        };
+    });
+</script>

@@ -13,6 +13,14 @@ body {
     flex: 1 1 auto;
 }
 
+.bg-dr2{
+    background-color:  rgb(40,40,40);
+}
+
+.text-dr2 {
+    color: rgb(40,40,40);
+}
+
 .bg-def {
     background-color: rgb(74,86,234);
 }
