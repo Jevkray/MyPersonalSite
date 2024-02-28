@@ -1,9 +1,4 @@
-﻿.inner-text {
-    text-shadow: -2.5px -1px 0.5px #000000, -2.5px 1px #ffffff;
-    color: #fff;
-    transition: all 0.1s;
-}
-
+﻿
 .animated-button-inner {
     padding: 0 0.5rem 0.25rem 0;
     transition: padding 0.1s ease;
@@ -12,8 +7,3 @@
     .animated-button-inner:hover {
         padding: 0 0.25rem 0.25rem 0;
     }
-
-        .animated-button-inner:hover .inner-text {
-            text-shadow: -1px -1px 0.5px #090909, 1px 1px 0 #ffffff;
-            color: #fff;
-        }
