@@ -13,12 +13,12 @@ body {
     flex: 1 1 auto;
 }
 
-.bg-dr2{
-    background-color:  rgb(40,40,40);
+.bg-dr2 {
+    background-color: rgb(66, 66, 66)
 }
 
 .text-dr2 {
-    color: rgb(40,40,40);
+    color: rgb(66, 66, 66)
 }
 
 .bg-def {
@@ -310,4 +310,8 @@ body {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+.fade {
+    transition: opacity 0.2s ease-in-out; /* cubic-bezier - новая функция easing */
 }

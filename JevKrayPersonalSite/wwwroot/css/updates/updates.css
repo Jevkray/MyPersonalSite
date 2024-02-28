@@ -3,5 +3,5 @@
     transition: padding 0.1s linear;
 }
 .animated-update-window:hover {
-    padding: 0rem 0.5rem 0.5rem 0rem;
+    padding: 0rem 0.75rem 0.25rem 0rem;
 }

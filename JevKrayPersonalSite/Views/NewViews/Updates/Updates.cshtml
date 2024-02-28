@@ -6,51 +6,58 @@
     <link rel="stylesheet" href="~/css/updates/updates.css" />
 }
 
-<div class="row p-0">
-    <div class="p-0">
-        <div class="fs-4 text-white bg-def mt-3 mb-3 animated-update-window rounded-3">
-            <div class="p-3 rounded-3 bg-dr2">
-                <span>Здесь вы можете увидеть последние обновления моего сайта, а также посмотреть историю изменений проекта на GitHub.</span>
-            </div>
-        </div>
-
-
-        @{
-            foreach (var commit in Model)
-            {
-                <div class="fs-4 text-white bg-def mt-3 mb-3 rounded-3 animated-update-window">
-                    <div class="p-3 rounded-3 bg-dr2">
-                        <div class="d-flex pb-2">
-                            <div><b>Author:</b> @commit.AuthorName</div>
-                            <div class="ms-auto translate-3-text"><a class="text-decoration-none text-center mt-3 rounded-3 p-2 bg-def text-white" href="@commit.Link">Github</a></div>
-
-                        </div>
-                        @if (commit.Name != "")
-                        {
-                            <div class="overflow-auto">
-                                <b>Name:</b> @Html.Raw(commit.Name.Replace("\n", "<br />").ToString())
-                            </div>
-                        }
-                        <div class="ms-4 overflow-auto p-3">
-                            <ul class="m-0">
-                                @{
-                                    // Разделяем сообщение на строки
-                                    var lines = commit.Message.Split(new[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-                                    // Выводим каждую строку как отдельный элемент списка
-                                    foreach (var line in lines)
-                                    {
-                                        <li class="text-break">@line</li>
-                                    }
-                                }
-                            </ul>
-                        </div>
-
-                        <div class=""><b>Date:</b> @commit.Date.ToString("yyyy/MM/dd в HH:mm")</div>
-                    </div>
+<div class="p-0">
+    <div class="row p-0">
+        <div class="p-0">
+            <div class="fs-4 text-white bg-def mt-3 mb-3 animated-update-window rounded-3">
+                <div class="p-3 rounded-3 bg-dr2">
+                    <span>Здесь вы можете увидеть последние обновления моего сайта, а также посмотреть историю изменений проекта на GitHub.</span>
                 </div>
-            }
-        }
+            </div>
 
+
+            @{
+                foreach (var commit in Model)
+                {
+                    <div class="fs-4 text-white bg-def mt-3 mb-3 rounded-3 animated-update-window">
+                        <div class="p-3 rounded-3 bg-dr2">
+                            <div class="d-flex pb-2">
+                                <div class="pt-2 pb-2 pe-2"><b>Author:</b> @commit.AuthorName</div>
+                                <div class="bg-dr2 rounded-3 ms-auto">
+                                    <a class="text-decoration-none text-dr bg-white w-100" href="@commit.Link">
+                                        <div class="text-center rounded-3 p-2 bg-white w-100">
+                                            Github
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            @if (commit.Name != "")
+                            {
+                                <div class="overflow-auto">
+                                    <b>Name:</b> @Html.Raw(commit.Name.Replace("\n", "<br />").ToString())
+                                </div>
+                            }
+                            <div class="ms-4 overflow-auto p-3">
+                                <ul class="m-0">
+                                    @{
+                                        // Разделяем сообщение на строки
+                                        var lines = commit.Message.Split(new[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                                        // Выводим каждую строку как отдельный элемент списка
+                                        foreach (var line in lines)
+                                        {
+                                            <li class="text-break">@line</li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+
+                            <div class=""><b>Date:</b> @commit.Date.ToString("yyyy/MM/dd в HH:mm")</div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
     </div>
 </div>
