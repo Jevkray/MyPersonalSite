@@ -1,7 +1,17 @@
-﻿.animated-update-window{
+﻿.animated-update-window {
     padding: 0rem 0.25rem 0.25rem 0rem;
     transition: padding 0.1s linear;
 }
-.animated-update-window:hover {
-    padding: 0rem 0.75rem 0.25rem 0rem;
+
+    .animated-update-window:hover {
+        padding: 0rem 0.75rem 0.25rem 0rem;
+    }
+
+.animated-github-button {
+    padding: 0rem 0.25rem 0.25rem 0rem;
+    transition: padding 0.1s linear;
 }
+
+    .animated-github-button:hover {
+        padding: 0rem 0.5rem 0.25rem 0rem;
+    }

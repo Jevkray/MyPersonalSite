@@ -21,12 +21,16 @@
                 {
                     <div class="fs-4 text-white bg-def mt-3 mb-3 rounded-3 animated-update-window">
                         <div class="p-3 rounded-3 bg-dr2">
-                            <div class="d-flex pb-2">
-                                <div class="pt-2 pb-2 pe-2"><b>Author:</b> @commit.AuthorName</div>
+                            <div class="d-flex pb-1">
+                                <div class="p-1"><b>Author:</b> @commit.AuthorName</div>
                                 <div class="bg-dr2 rounded-3 ms-auto">
                                     <a class="text-decoration-none text-dr bg-white w-100" href="@commit.Link">
-                                        <div class="text-center rounded-3 p-2 bg-white w-100">
-                                            Github
+                                        <div class="ps-2 d-flex">
+                                            <div class="bg-def rounded-3 animated-github-button">
+                                                <div class="p-2 pb-1 pt-1 bg-dr text-white rounded-3 text-center">
+                                                    Github
+                                                </div>
+                                            </div>
                                         </div>
                                     </a>
                                 </div>
@@ -37,7 +41,7 @@
                                     <b>Name:</b> @Html.Raw(commit.Name.Replace("\n", "<br />").ToString())
                                 </div>
                             }
-                            <div class="ms-4 overflow-auto p-3">
+                            <div class="ms-4 overflow-auto p-3 @(commit.Name != "" ? "pt-3" : "pt-1")">
                                 <ul class="m-0">
                                     @{
                                         // Разделяем сообщение на строки
