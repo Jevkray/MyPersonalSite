@@ -25,7 +25,7 @@
 
 .animated-button-github {
     transition: padding 0.1s linear;
-    transition: border 1s linear;
+    transition: border 0.5s linear;
     border: 1px solid rgb(66,66,66);
     border-radius: 0.3rem;
 }
