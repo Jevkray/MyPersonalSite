@@ -4,14 +4,41 @@
 }
 
     .animated-update-window:hover {
-        padding: 0rem 0.75rem 0.25rem 0rem;
+        padding: 0rem 0.5rem 0.25rem 0rem;
     }
 
-.animated-github-button {
-    padding: 0rem 0.25rem 0.25rem 0rem;
+        .animated-update-window:hover .animated-github-button-outside {
+            padding: 0.25rem 0rem 0 0.5rem;
+        }
+
+.animated-github-button-outside {
+    padding: 0.25rem 0rem 0 0.25rem;
     transition: padding 0.1s linear;
 }
 
-    .animated-github-button:hover {
-        padding: 0rem 0.5rem 0.25rem 0rem;
+.animated-github-button-inside {
+    background-color: rgb(56, 56, 56);
+    transition: background-color 0.1s linear;
+    padding: 0.5rem 1rem 0.25rem 1rem;
+    transition: padding 0.1s linear;
+}
+
+.animated-button-github {
+    transition: padding 0.1s linear;
+    transition: border 1s linear;
+    border: 1px solid rgb(66,66,66);
+    border-radius: 0.3rem;
+}
+
+    .animated-button-github:hover {
+        border: 1px solid rgb(74,86,234);
     }
+
+        .animated-button-github:hover .animated-github-button-outside {
+            padding: 0rem 0rem 0rem 0rem;
+        }
+
+        .animated-button-github:hover .animated-github-button-inside {
+            padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+            background-color: rgb(66, 66, 66);
+        }
