@@ -11,6 +11,30 @@
             padding: 0.25rem 0rem 0 0.5rem;
         }
 
+.update-window {
+    padding: 0rem 0.25rem 0.25rem 0rem;
+    transition: padding 0.1s linear;
+}
+
+.pagination-outside {
+    padding: 0.25rem 0rem 0 0.25rem;
+    transition: padding 0.1s linear;
+}
+
+.pagination-inside {
+    background-color: rgb(56, 56, 56);
+    transition: background-color 0.1s linear;
+    padding: 0.5rem 1rem 0.25rem 1rem;
+    transition: padding 0.1s linear;
+}
+
+.pagination {
+    transition: padding 0.1s linear;
+    transition: border 0.5s linear;
+    border: 1px solid rgb(66,66,66);
+    border-radius: 0.3rem;
+}
+
 .animated-github-button-outside {
     padding: 0.25rem 0rem 0 0.25rem;
     transition: padding 0.1s linear;
@@ -42,3 +66,8 @@
             padding: 0.5rem 1.25rem 0.5rem 1.25rem;
             background-color: rgb(66, 66, 66);
         }
+
+.selected-page{
+    pointer-events: none;
+    text-decoration: none;
+}

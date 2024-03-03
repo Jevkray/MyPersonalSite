@@ -1,5 +1,6 @@
 ﻿using JevKrayPersonalSite.DAL;
 using JevKrayPersonalSite.Models;
+using JevKrayPersonalSite.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -9,6 +10,8 @@ namespace JevKrayPersonalSite.Controllers
 {
     public class UpdatesNewController : Controller
     {
+        private const int pageSize = 10;
+
         private readonly ILogger<UpdatesNewController> _logger;
         private readonly JevkSiteDbContext _dbContext;
 
@@ -18,13 +21,26 @@ namespace JevKrayPersonalSite.Controllers
             _logger = logger;
         }
 
-        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
-        public async Task<IActionResult> Updates()
+        public async Task<IActionResult> Updates(int page = 1)
         {
-            var commits = await _dbContext.Commits.ToListAsync();
+            var totalCount = await _dbContext.Commits.CountAsync();
+            var commits = await _dbContext.Commits
+                .OrderByDescending(c => c.Date)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
 
-            return View(commits);
+            var viewModel = new UpdatesViewModel
+            {
+                Commits = commits,
+                TotalCount = totalCount,
+                PageSize = pageSize,
+                CurrentPage = page
+            };
+
+            return View(viewModel);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
