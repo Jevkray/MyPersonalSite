@@ -75,10 +75,10 @@
 
                         if (Model.CurrentPage > 1)
                         {
-                            <a class="text-white text-decoration-none pe-2" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage-1})">
+                            <a class="text-white text-decoration-none pe-1 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage-1})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
-                                        <div class="rounded-2 pagination-inside">
+                                        <div class="rounded-2 pagination-inside ps-3 pe-3">
                                             <div class="text-white rounded-2 text-center ">
                                                 &lt;
                                             </div>
@@ -104,7 +104,7 @@
 
                         if (Model.CurrentPage > 2)
                         {
-                            <a class="text-white text-decoration-none pe-2 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage-2})">
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage-2})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
                                         <div class="rounded-2 pagination-inside">
@@ -119,7 +119,7 @@
 
                         if (Model.CurrentPage > 1)
                         {
-                            <a class="text-white text-decoration-none pe-2 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage-1})">
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage-1})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
                                         <div class="rounded-2 pagination-inside">
@@ -132,7 +132,7 @@
                             </a>
                         }
 
-                        <a class="selected-page text-white text-decoration-none pe-2" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage })">
+                        <a class="selected-page text-white text-decoration-none pe-1" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage })">
                             <div class="pagination">
                                 <div class="bg-def rounded-3 pagination-outside">
                                     <div class="rounded-2 pagination-inside">
@@ -146,7 +146,7 @@
 
                         if (Model.CurrentPage < lastPage)
                         {
-                            <a class="text-white text-decoration-none pe-2 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage+1})">
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage+1})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
                                         <div class="rounded-2 pagination-inside">
@@ -161,7 +161,7 @@
 
                         if (Model.CurrentPage < lastPage - 1)
                         {
-                            <a class="text-white text-decoration-none pe-2 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage+2})">
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage+2})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
                                         <div class="rounded-2 pagination-inside">
@@ -190,10 +190,10 @@
 
                         if (Model.CurrentPage < Math.Ceiling((double)Model.TotalCount / Model.PageSize))
                         {
-                            <a class="text-white text-decoration-none pe-2" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage+1})">
+                            <a class="text-white text-decoration-none pe-1 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage+1})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
-                                        <div class="rounded-2 pagination-inside">
+                                        <div class="rounded-2 pagination-inside ps-3 pe-3">
                                             <div class="text-white rounded-2 text-center ">
                                                 &gt;
                                             </div>
