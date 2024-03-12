@@ -35,8 +35,7 @@
     }
 
 .pagination-outside {
-    background-color: rgb(74,86,234);
-    padding: 0 0.25rem 0.25rem 0;
+    padding: 0.25rem 0 0 0.25rem;
     transition: padding 0.1s linear;
 }
 
@@ -57,7 +56,7 @@
 }
 
 .animated-github-button-outside {
-    padding: 0.25rem 0rem 0 0.25rem;
+    padding: 0.25rem 0 0 0.25rem;
     transition: padding 0.1s linear;
 }
 
