@@ -6,6 +6,7 @@
 
 @section Sprites {
     <link rel="stylesheet" href="~/css/updates/updates.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" asp-append-version="true" />
 }
 
 <div class="p-0">
@@ -69,7 +70,7 @@
             }
 
             <div class="fs-4 text-white bg-def mt-3 mb-3 update-window rounded-3">
-                <div class="p-3 rounded-3 bg-dr2 d-flex justify-content-center">
+                <div class="p-3 rounded-3 bg-dr2 d-flex justify-content-center roboto-mono-400">
                     @{
                         int lastPage = Convert.ToInt32(Math.Ceiling((double)Model.TotalCount / Model.PageSize));
 
@@ -78,7 +79,7 @@
                             <a class="text-white text-decoration-none pe-1 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage-1})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
-                                        <div class="rounded-2 pagination-inside ps-3 pe-3">
+                                        <div class="rounded-2 pagination-inside">
                                             <div class="text-white rounded-2 text-center ">
                                                 &lt;
                                             </div>
@@ -193,7 +194,7 @@
                             <a class="text-white text-decoration-none pe-1 d-none d-sm-block" href="@Url.Action("Updates", "UpdatesNew", new { page = Model.CurrentPage+1})">
                                 <div class="pagination">
                                     <div class="bg-def rounded-3 pagination-outside">
-                                        <div class="rounded-2 pagination-inside ps-3 pe-3">
+                                        <div class="rounded-2 pagination-inside">
                                             <div class="text-white rounded-2 text-center ">
                                                 &gt;
                                             </div>

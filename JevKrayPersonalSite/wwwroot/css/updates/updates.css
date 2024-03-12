@@ -16,18 +16,44 @@
     transition: padding 0.1s linear;
 }
 
-.pagination-outside {
-    padding: 0 0.25rem 0.25rem 0;
-}
-
-.pagination-inside {
-    background-color: rgb(56, 56, 56);
-    padding: 0.5rem 0.75rem 0.25rem 0.75rem;
+.roboto-mono-400 {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .pagination {
     border: 1px solid rgb(66,66,66);
     border-radius: 0.3rem;
+    transition: padding 0.1s linear;
+    transition: border 0.5s ease;
+}
+
+    .pagination:hover {
+        border: 1px solid rgb(74,86,234);
+    }
+
+.pagination-outside {
+    background-color: rgb(74,86,234);
+    padding: 0 0.25rem 0.25rem 0;
+    transition: padding 0.1s linear;
+}
+
+.pagination-inside {
+    background-color: rgb(56, 56, 56);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    transition: background-color 0.1s linear;
+    transition: padding 0.1s linear;
+}
+
+.pagination:hover .pagination-outside {
+    padding: 0;
+}
+
+.pagination:hover .pagination-inside {
+    background-color: rgb(66, 66, 66);
+    padding: 0.625rem 1.125rem 0.625rem 1.125rem;
 }
 
 .animated-github-button-outside {
@@ -62,7 +88,7 @@
             background-color: rgb(66, 66, 66);
         }
 
-.selected-page{
+.selected-page {
     pointer-events: none;
     text-decoration: none;
 }
