@@ -1,3 +1,5 @@
+@model JevKrayPersonalSite.ViewModels.ProjectViewModel
+
 @{
     ViewData["Title"] = "Projects";
 }
@@ -6,6 +8,51 @@
     <link rel="stylesheet" href="~/css/projects/projects.css" />
 }
 
-<div class="fs-5">
-    Projects
+<div class="fs-5 justify-content-center row">
+    <div class="col-6 text-white p-3">
+        @foreach (var project in Model.Projects.Where((project, index) => index % 2 == 0))
+        {
+            <div class="p-2">@project.Name</div>
+            <br />
+            <div class="p-2">@project.Description</div>
+            <br />
+            <div class="p-2">@project.AuthorName</div>
+            <br />
+            <div class="p-2">@project.AdditionDate</div>
+            <br />
+            <div class="row">
+                @if (project.ProjectPictures.Any())
+                {
+                    var picture = project.ProjectPictures.FirstOrDefault(p => p.Number == 1);
+                    if (picture != null)
+                    {
+                        <img src="@picture.ImageLink" alt="Project Image" />
+                    }
+                }
+            </div>
+        }
+    </div>
+    <div class="col-6 text-white p-3">
+        @foreach (var project in Model.Projects.Where((project, index) => index % 2 != 0))
+        {
+            <div class="p-2">@project.Name</div>
+            <br />
+            <div class="p-2">@project.Description</div>
+            <br />
+            <div class="p-2">@project.AuthorName</div>
+            <br />
+            <div class="p-2">@project.AdditionDate</div>
+            <br />
+            <div class="row">
+                @if (project.ProjectPictures.Any())
+                {
+                    var picture = project.ProjectPictures.FirstOrDefault(p => p.Number == 1);
+                    if (picture != null)
+                    {
+                        <img src="@picture.ImageLink" alt="Project Image" />
+                    }
+                }
+            </div>
+        }
+    </div>
 </div>

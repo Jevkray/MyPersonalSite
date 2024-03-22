@@ -1,5 +1,8 @@
-﻿using JevKrayPersonalSite.Models;
+﻿using JevKrayPersonalSite.DAL;
+using JevKrayPersonalSite.Models;
+using JevKrayPersonalSite.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace JevKrayPersonalSite.Controllers
@@ -7,15 +10,26 @@ namespace JevKrayPersonalSite.Controllers
     public class ProjectsController : Controller
     {
         private readonly ILogger<ProjectsController> _logger;
+        private readonly JevkSiteDbContext _dbContext;
 
-        public ProjectsController(ILogger<ProjectsController> logger)
+        public ProjectsController(ILogger<ProjectsController> logger, JevkSiteDbContext dbContext)
         {
             _logger = logger;
+            _dbContext = dbContext;
         }
 
-        public IActionResult Projects()
+        public async Task<IActionResult> Projects()
         {
-            return View();
+            var projects = await _dbContext.Projects.ToListAsync();
+            var projectPictures = await _dbContext.ProjectPictures.ToListAsync();
+
+            var viewModel = new ProjectViewModel
+            {
+                Projects = projects,
+                Pictures = projectPictures,
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult GazorpGameStore()

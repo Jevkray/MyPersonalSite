@@ -9,6 +9,10 @@ namespace JevKrayPersonalSite.DAL
 
         public DbSet<CapchaSessionModel> CapchaSessions { get; set; }
 
+        public DbSet<ProjectModel> Projects { get; set; }
+
+        public DbSet<ProjectPictureModel> ProjectPictures { get; set; }
+
         public JevkSiteDbContext(DbContextOptions<JevkSiteDbContext> options) : base(options)
         {
 
@@ -16,6 +20,11 @@ namespace JevKrayPersonalSite.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ProjectModel>()
+                .HasMany(p => p.ProjectPictures)
+                .WithOne()
+                .HasForeignKey(p => p.ProjectId);
+
             modelBuilder.Entity<CommitModel>().HasData(
                 new CommitModel { Id = 1, AuthorName = "test", Date = DateTime.Now, Link = "https://google.com", Name = "test", Message = "test" }
                 );
