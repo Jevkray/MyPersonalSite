@@ -25,44 +25,44 @@
                 //Home Controller
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=HomeNew}/{action=Home}/{id?}");
+                    pattern: "{controller=Home}/{action=Home}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "education",
                     pattern: "Education",
-                    defaults: new { controller = "HomeNew", action = "Education" });
+                    defaults: new { controller = "Home", action = "Education" });
 
                 endpoints.MapControllerRoute(
                     name: "info",
                     pattern: "Info",
-                    defaults: new { controller = "HomeNew", action = "Info" });
+                    defaults: new { controller = "Home", action = "Info" });
 
                 endpoints.MapControllerRoute(
                     name: "privacy",
                     pattern: "Privacy",
-                    defaults: new { controller = "HomeNew", action = "Privacy" });
+                    defaults: new { controller = "Home", action = "Privacy" });
 
                 endpoints.MapControllerRoute(
                     name: "resume",
                     pattern: "Resume",
-                    defaults: new { controller = "HomeNew", action = "Resume" });
+                    defaults: new { controller = "Home", action = "Resume" });
 
                 endpoints.MapControllerRoute(
                     name: "skills",
                     pattern: "Skills",
-                    defaults: new { controller = "HomeNew", action = "Skills" });
+                    defaults: new { controller = "Home", action = "Skills" });
 
                 //Projects Controller
                 endpoints.MapControllerRoute(
                     name: "projects",
                     pattern: "Projects",
-                    defaults: new { controller = "ProjectsNew", action = "Projects" });
+                    defaults: new { controller = "Projects", action = "Projects" });
 
                 //Updates Controller
                 endpoints.MapControllerRoute(
                     name: "updates",
                     pattern: "Updates",
-                    defaults: new { controller = "UpdatesNew", action = "Updates" });
+                    defaults: new { controller = "Updates", action = "Updates" });
             }
 
             endpoints.MapControllerRoute(

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace JevKrayPersonalSite.Controllers.OldControllers
+namespace JevKrayPersonalSite.Controllers.ProjectsControllers.OldControllers
 {
     public class AboutMeOldController : Controller
     {

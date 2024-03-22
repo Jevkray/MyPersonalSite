@@ -8,14 +8,14 @@ using System.Text;
 
 namespace JevKrayPersonalSite.Controllers
 {
-    public class UpdatesNewController : Controller
+    public class UpdatesController : Controller
     {
         private const int pageSize = 10;
 
-        private readonly ILogger<UpdatesNewController> _logger;
+        private readonly ILogger<UpdatesController> _logger;
         private readonly JevkSiteDbContext _dbContext;
 
-        public UpdatesNewController(JevkSiteDbContext dbContext, ILogger<UpdatesNewController> logger)
+        public UpdatesController(JevkSiteDbContext dbContext, ILogger<UpdatesController> logger)
         {
             _dbContext = dbContext;
             _logger = logger;

@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace JevKrayPersonalSite.Controllers
 {
-    public class ProjectsNewController : Controller
+    public class ProjectsController : Controller
     {
-        private readonly ILogger<ProjectsNewController> _logger;
+        private readonly ILogger<ProjectsController> _logger;
 
-        public ProjectsNewController(ILogger<ProjectsNewController> logger)
+        public ProjectsController(ILogger<ProjectsController> logger)
         {
             _logger = logger;
         }

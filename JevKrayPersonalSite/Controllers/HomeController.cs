@@ -10,13 +10,13 @@ using System.Net.Mail;
 
 namespace JevKrayPersonalSite.Controllers
 {
-    public class HomeNewController : Controller
+    public class HomeController : Controller
     {
         private readonly ICaptchaService _captchaService;
         private readonly JevkSiteDbContext _dbContext;
-        private readonly ILogger<HomeNewController> _logger;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeNewController(ILogger<HomeNewController> logger, JevkSiteDbContext dbContext, ICaptchaService captchaService)
+        public HomeController(ILogger<HomeController> logger, JevkSiteDbContext dbContext, ICaptchaService captchaService)
         {
             _captchaService = captchaService;
             _dbContext = dbContext;
