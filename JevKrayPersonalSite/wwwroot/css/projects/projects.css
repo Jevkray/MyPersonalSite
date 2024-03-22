@@ -1,4 +1,4 @@
-﻿.image-block-projects{
+﻿.image-block-projects {
     height: 30vh;
 }
 
@@ -14,9 +14,7 @@
     }
 }
 
-
-
-.image-projects{
+.image-projects {
     width: 100%;
     height: 100%;
     object-fit: contain;
