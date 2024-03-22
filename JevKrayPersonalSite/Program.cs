@@ -6,8 +6,6 @@ using JevKrayPersonalSite.Services;
 using JevKrayPersonalSite.Workers;
 using Microsoft.EntityFrameworkCore;
 
-bool useNewVersion = true;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,7 +21,7 @@ builder.Services.AddDbContext<JevkSiteDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-ViewEngineOptionsConfiguration.ConfigureViewEngineOptions(services: builder.Services, useNewVersion);
+ViewEngineOptionsConfiguration.ConfigureViewEngineOptions(services: builder.Services);
 
 var app = builder.Build();
 
@@ -44,7 +42,7 @@ app.UseAuthorization();
 #pragma warning disable ASP0014
 app.UseEndpoints(endpoints =>
 {
-    RoutingConfiguration.ConfigureRoutes(endpoints, useNewVersion);
+    RoutingConfiguration.ConfigureRoutes(endpoints);
 });
 #pragma warning restore ASP0014
 
