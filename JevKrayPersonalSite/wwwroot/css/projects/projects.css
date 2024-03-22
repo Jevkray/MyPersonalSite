@@ -1,1 +1,23 @@
-﻿
+﻿.image-block-projects{
+    height: 30vh;
+}
+
+@media (min-width: 768px) {
+    .image-block-projects {
+        height: 50vh;
+    }
+}
+
+@media (min-width: 576px) {
+    .image-block-projects {
+        height: 40vh;
+    }
+}
+
+
+
+.image-projects{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
