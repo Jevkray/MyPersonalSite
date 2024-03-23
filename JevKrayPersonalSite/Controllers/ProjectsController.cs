@@ -32,6 +32,18 @@ namespace JevKrayPersonalSite.Controllers
             return View(viewModel);
         }
 
+        public async Task<IActionResult> ProjectPreview(int Id)
+        {
+            var project = await _dbContext.Projects.FirstOrDefaultAsync(p => p.Id == Id);
+
+            if (project == null)
+            {
+                return Error();
+            }
+
+            return View(project);
+        }
+
         public IActionResult GazorpGameStore()
         {
             return View();

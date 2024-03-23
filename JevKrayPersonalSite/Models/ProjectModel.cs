@@ -11,6 +11,8 @@ namespace JevKrayPersonalSite.Models
         public DateTimeOffset AdditionDate { get; set; }
         public string Description { get; set; }
 
+        public bool HasPreview { get; set; }
+
         public List<ProjectPictureModel> ProjectPictures { get; set; }
     }
 }

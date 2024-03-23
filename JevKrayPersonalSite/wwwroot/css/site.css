@@ -315,3 +315,9 @@ body {
 .fade {
     transition: opacity 0.2s ease-in-out; /* cubic-bezier - новая функция easing */
 }
+
+.overflow-dotted {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

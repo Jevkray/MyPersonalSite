@@ -12,26 +12,42 @@
     @{
         bool isProjectEven = false;
 
-        @foreach (var project in Model.Projects)
+        var revercedProjects = Model.Projects;
+        revercedProjects.Reverse();
+
+        @foreach (var project in revercedProjects)
         {
             <div class="col-12 ps-0 pe-0 @(project == Model.Projects.First() ? "pt-3" : "pt-1") @(project == Model.Projects.Last() ? "pb-3": "pb-1") d-md-none">
                 <div class="bg-dr2 rounded-3">
                     <div class="p-3">
-                        <div class="bg-def rounded-3 pe-2 pb-1">
-                            <div class="p-md-2 p-2 fs-5 bg-white montserrat-semibold text-dr rounded-3 ps-3 ps-md-3">
-                                @project.Name
+                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = Model.Projects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                            <div class="bg-def rounded-3 projects-link">
+                                <div class="p-md-2 p-2 fs-6 bg-white montserrat-semibold text-dr rounded-3 d-flex">
+                                    <div class="ps-2 pe-2 overflow-dotted">
+                                        @project.Name
+                                    </div>
+                                    @if (project.HasPreview)
+                                    {
+                                        <div class="ms-auto fs-6 align-self-center ps-2 pe-2">
+                                            Preview
+                                        </div>
+                                        <div class="circle justify-content-center align-self-center">
+                                            <span></span>
+                                        </div>
+                                    }
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div>
-                        @if (project.ProjectPictures.Any())
+                        @if (project.ProjectPictures != null)
                         {
                             var picture = project.ProjectPictures.FirstOrDefault(p => p.Number == 1);
                             if (picture != null)
                             {
                                 <div class="">
                                     <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
-                                        <div class="image-block-projects text-center rounded-3 bg-dr">
+                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex">
                                             <img src="@picture.ImageLink" alt="Project Image" class="image-projects rounded-3" />
                                         </div>
                                     </div>
@@ -39,9 +55,24 @@
                             }
                             else
                             {
-                                <div>
+                                <div class="">
+                                    <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
+                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                            <div class="align-self-center">No image</div>
+                                        </div>
+                                    </div>
                                 </div>
                             }
+                        }
+                        else
+                        {
+                            <div class="">
+                                <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
+                                    <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                        <div class="align-self-center">No image</div>
+                                    </div>
+                                </div>
+                            </div>
                         }
                     </div>
 
@@ -55,14 +86,27 @@
             <div class="d-none d-md-block col-6 @(project == Model.Projects.First() || project == Model.Projects.Skip(1).First() ? "pt-3" : "pt-1") @(project == Model.Projects.Last() ? "pb-3": "pb-1") @(isProjectEven == false ? "ps-0 pe-1" : "ps-1 pe-0")">
                 <div class="bg-dr2 rounded-3">
                     <div class="p-3">
-                        <div class="bg-def rounded-3 pe-2 pb-1">
-                            <div class="p-md-2 p-2 fs-5 bg-white montserrat-semibold text-dr rounded-3 ps-3 ps-md-3">
-                                @project.Name
+                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = Model.Projects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                            <div class="bg-def rounded-3 projects-link">
+                                <div class="p-md-2 p-2 fs-6 bg-white montserrat-semibold text-dr rounded-3 d-flex">
+                                    <div class="ps-2 pe-2 overflow-dotted">
+                                        @project.Name
+                                    </div>
+                                    @if (project.HasPreview)
+                                    {
+                                        <div class="ms-auto fs-6 align-self-center ps-2 pe-2">
+                                            Preview
+                                        </div>
+                                        <div class="circle justify-content-center align-self-center">
+                                            <span></span>
+                                        </div>
+                                    }
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div>
-                        @if (project.ProjectPictures.Any())
+                        @if (project.ProjectPictures != null)
                         {
                             var picture = project.ProjectPictures.FirstOrDefault(p => p.Number == 1);
                             if (picture != null)
@@ -77,10 +121,26 @@
                             }
                             else
                             {
-                                <div>
+                                <div class="">
+                                    <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
+                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                            <div class="align-self-center">No image</div>
+                                        </div>
+                                    </div>
                                 </div>
                             }
                         }
+                        else
+                        {
+                            <div class="">
+                                <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
+                                    <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                        <div class="align-self-center">No image</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
                     </div>
 
                     <div class="d-flex">
