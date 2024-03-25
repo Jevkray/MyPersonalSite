@@ -34,7 +34,9 @@ namespace JevKrayPersonalSite.Controllers
 
         public async Task<IActionResult> ProjectPreview(int Id)
         {
-            var project = await _dbContext.Projects.FirstOrDefaultAsync(p => p.Id == Id);
+            var project = await _dbContext.Projects
+                .Include(p => p.ProjectPictures)
+                .FirstOrDefaultAsync(p => p.Id == Id);
 
             if (project == null)
             {
@@ -42,6 +44,15 @@ namespace JevKrayPersonalSite.Controllers
             }
 
             return View(project);
+        }
+
+        public async Task<string> GetProjectImage(int number, int id)
+        {
+            var project = await _dbContext.Projects
+                .Include(p => p.ProjectPictures)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            return project.ProjectPictures.FirstOrDefault(p=>p.Number == number).ImageLink;
         }
 
         public IActionResult GazorpGameStore()
