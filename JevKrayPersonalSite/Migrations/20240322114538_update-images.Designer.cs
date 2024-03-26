@@ -4,6 +4,7 @@ using JevKrayPersonalSite.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JevKrayPersonalSite.Migrations
 {
     [DbContext(typeof(JevkSiteDbContext))]
-    partial class JevkSiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240322114538_update-images")]
+    partial class updateimages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +85,7 @@ namespace JevKrayPersonalSite.Migrations
                         {
                             Id = 1,
                             AuthorName = "test",
-                            Date = new DateTimeOffset(new DateTime(2024, 3, 23, 11, 1, 16, 49, DateTimeKind.Unspecified).AddTicks(7289), new TimeSpan(0, 3, 0, 0, 0)),
+                            Date = new DateTimeOffset(new DateTime(2024, 3, 22, 14, 45, 38, 638, DateTimeKind.Unspecified).AddTicks(200), new TimeSpan(0, 3, 0, 0, 0)),
                             Link = "https://google.com",
                             Message = "test",
                             Name = "test"
@@ -107,9 +110,6 @@ namespace JevKrayPersonalSite.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("HasPreview")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

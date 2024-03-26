@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
-namespace JevKrayPersonalSite.Controllers.OldControllers
+namespace JevKrayPersonalSite.Controllers.ProjectsControllers.OldControllers
 {
     public class UpdatesOldController : Controller
     {

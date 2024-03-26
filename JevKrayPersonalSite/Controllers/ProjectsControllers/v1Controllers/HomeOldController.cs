@@ -2,38 +2,39 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace JevKrayPersonalSite.Controllers.OldControllers
+namespace JevKrayPersonalSite.Controllers.ProjectsControllers.OldControllers
 {
-    public class ProjectsOldController : Controller
+    public class HomeOldController : Controller
     {
-        private readonly ILogger<ProjectsOldController> _logger;
+        private readonly ILogger<HomeOldController> _logger;
 
-        public ProjectsOldController(ILogger<ProjectsOldController> logger)
+        public HomeOldController(ILogger<HomeOldController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Projects()
+        public IActionResult Privacy()
         {
             return View();
         }
 
-        public IActionResult GazorpGameStore()
+        public IActionResult Education()
         {
             return View();
         }
 
-        public IActionResult Ferma()
+        public IActionResult Skills()
         {
             return View();
         }
 
-        public IActionResult WPumper()
+        public IActionResult Info()
         {
             return View();
         }
 
-        public IActionResult SteamChecker()
+
+        public IActionResult Resume()
         {
             return View();
         }

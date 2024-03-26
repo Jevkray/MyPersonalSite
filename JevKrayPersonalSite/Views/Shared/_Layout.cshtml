@@ -8,6 +8,7 @@
     <link rel="icon" href="~/pictures/Icon.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/pictures/vectors/" asp-append-version="true" />
     <link rel="stylesheet" href="~/JevKrayPersonalSite.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin asp-append-version="true" />
@@ -27,27 +28,27 @@
                         var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
 
                         <div class="nav-brand col-3 fs-3 ">
-                            <a class="a-link text-white text-decoration-none logo-main translate-3-text @(currentPage == "Home" ? "a-active" : "")" asp-controller="HomeNew" asp-action="Home"><span></span></a>
+                            <a class="a-link text-white text-decoration-none logo-main translate-3-text @(currentPage == "Home" ? "a-active" : "")" asp-controller="Home" asp-action="Home"><span></span></a>
                         </div>
                         <div class="col-9 d-none d-md-flex align-items-center">
                             <div class="nav-item ms-auto ps-3 pe-3 fs-4 ">
                                 <div class="translate-3-text  @(currentPage == "Education" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Education">Education</a>
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Education">Education</a>
                                 </div>
                             </div>
                             <div class="nav-item ps-3 pe-3 fs-4 ">
                                 <div class="translate-3-text @(currentPage == "Skills" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none " asp-controller="HomeNew" asp-action="Skills">Skills</a>
+                                    <a class="a-link text-white text-decoration-none " asp-controller="Home" asp-action="Skills">Skills</a>
                                 </div>
                             </div>
                             <div class="nav-item ps-3 pe-3 fs-4">
                                 <div class="translate-3-text @(currentPage == "Projects" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none" asp-controller="ProjectsNew" asp-action="Projects">Projects</a>
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Projects" asp-action="Projects">Projects</a>
                                 </div>
                             </div>
                             <div class="nav-item ps-3 pe-3 fs-4 ">
                                 <div class="translate-3-text @(currentPage == "Info" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none" asp-controller="HomeNew" asp-action="Info">Info</a>
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Info">Info</a>
                                 </div>
                             </div>
                         </div>
@@ -59,19 +60,19 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end drop-nav bg-dr">
 
-                            <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Education">
+                            <a class="text-white text-decoration-none" asp-controller="Home" asp-action="Education">
                             <li class="drop-nav-li dropdown-element rounded-3">
                                 <div class="ms-auto ps-3 pe-3 fs-4">Education</div>
                             </li>
                             </a>
 
-                            <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Skills">
+                            <a class="text-white text-decoration-none" asp-controller="Home" asp-action="Skills">
                             <li class="drop-nav-li dropdown-element rounded-3">
                                 <div class="ps-3 pe-3 fs-4">Skills</div>
                             </li>
                             </a>
 
-                            <a class="text-white text-decoration-none" asp-controller="ProjectsNew" asp-action="Projects">
+                            <a class="text-white text-decoration-none" asp-controller="Projects" asp-action="Projects">
                             <li class="drop-nav-li dropdown-element rounded-3">
                                 <div class="ps-3 pe-3 fs-4">
                                     Projects
@@ -79,7 +80,7 @@
                             </li>
                             </a>
 
-                            <a class="text-white text-decoration-none" asp-controller="HomeNew" asp-action="Info">
+                            <a class="text-white text-decoration-none" asp-controller="Home" asp-action="Info">
                             <li class="drop-nav-li dropdown-element rounded-3">
                                 <div class="ps-3 pe-3 fs-4">Info</div>
                             </li>
@@ -144,7 +145,7 @@
                     </div>
                     <div class="logo-item col-3">
                         <div class="d-flex justify-content-center">
-                            <a href="#" class="a-link translate-3-text text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
+                            <a href="#" class="a-link translate-3-text text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal" id="showModalButton">
                                 <img src="~/pictures/vectors/msg.svg" class="logo-img">
                             </a>
                         </div>
@@ -155,7 +156,7 @@
     </div>
 
     <!--Modal-->
-    <div class="modal" id="callBackModal" tabindex="-1" role="dialog" aria-labelledby="callBackModalLabel" aria-hidden="true">
+    <div class="modal fade" id="callBackModal" tabindex="-1" role="dialog" aria-labelledby="callBackModalLabel" aria-hidden="true">
         <div class="modal-dialog rounded-3" role="document">
             <div class="modal-content border-modal">
                 <div class="modal-header bg-def modal-header-down">
@@ -268,7 +269,7 @@
 
         function loadCaptchaImage() {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/HomeNew/GetCaptcha', true);
+            xhr.open('POST', '/Home/GetCaptcha', true);
             xhr.responseType = 'blob';
             xhr.onload = function () {
                 if (xhr.status === 200) {
@@ -298,7 +299,7 @@
 
                         //buttonSVG
                         var buttonSvg = $('<img>', {
-                            'src': '../pictures/vectors/update.svg',
+                            'src': '/pictures/vectors/update.svg',
                             'class': 'image-capcha-svg-button btn-close-white rounded-3 bg-br'
                         });
 

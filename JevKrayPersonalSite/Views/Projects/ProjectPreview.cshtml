@@ -1,0 +1,94 @@
+﻿@model JevKrayPersonalSite.Models.ProjectModel
+
+@{
+    ViewData["Title"] = "Проект: " + Model.Name;
+}
+
+@section Sprites {
+    <link rel="stylesheet" href="~/css/projects/projectspreview.css" asp-append-version="true" />
+}
+
+@{
+    int imgNumber = 1;
+}
+
+<div class="row">
+    <div class="col-12 p-0 pt-3 pb-2 position-relative">
+        <div class="bg-dr2 rounded-3 text-white p-3 rounded-3 image-container">
+            <div class="d-block position-relative">
+                <div class="image-box-preview d-flex justify-content-center rounded-3">
+                    @if (Model.ProjectPictures.Count != 0)
+                    {
+                        <button class="btn btn-left p-0 border-0 project-minus" onclick="changeImage(-1)"></button>
+                        <button class="btn btn-right p-0 border-0 project-plus" onclick="changeImage(1)"></button>
+
+                        <div id="loadingAnimation" class="loading-animation"></div>
+
+                        <img id="projectImage" src="@Model.ProjectPictures.FirstOrDefault(p => p.Number == imgNumber).ImageLink" alt="Project Image" class="image-preview rounded-3" loading="lazy" />
+                    }
+                    else
+                    {
+                        <div class="align-self-center">No image</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 p-0 pt-2 pb-3">
+        <div class="bg-dr2 rounded-3 text-white p-3 ps-4 pe-4 fs-5">
+            <div class="pb-3">
+                <b>Проект:</b> @Model.Name
+            </div>
+            <div class="pb-3">
+                <b>Описание:</b> 
+                <ul class="pt-2">
+                    @Html.Raw(Model.Description)
+                </ul>
+            </div>
+            <div class="d-flex">
+                <div>
+                    <b>Автор:</b> @Model.AuthorName
+                </div>
+                <div class="ms-auto">
+                    <b>Был добавлен:</b> @Model.AdditionDate.ToString("dd MMMMMM, yyyyг.")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        window.addEventListener('load', function () {
+            var loadingAnimation = document.getElementById('loadingAnimation');
+            loadingAnimation.style.display = 'none';
+        });
+
+        var imgNumber = 1;
+        var maxNumber = @Model.ProjectPictures.Count;
+        var id = @Model.Id;
+
+        function changeImage(offset) {
+            imgNumber += offset;
+
+            if (imgNumber < 1) {
+                imgNumber = maxNumber;
+            } else if (imgNumber > maxNumber) {
+                imgNumber = 1;
+            }
+
+            // Показываем анимацию загрузки
+            document.getElementById("loadingAnimation").style.display = "block";
+
+            fetch(`@Url.Action("GetProjectImage", "Projects")?number=${imgNumber}&id=${id}`)
+                .then(response => response.text())
+                .then(imageLink => {
+                    const image = document.getElementById("projectImage");
+                    image.src = imageLink;
+                    // Скрываем анимацию загрузки после загрузки изображения
+                    document.getElementById("loadingAnimation").style.display = "none";
+                });
+        }
+
+    </script>
+}

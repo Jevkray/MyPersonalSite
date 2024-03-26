@@ -37,6 +37,6 @@ iframe {
     width: 100%;
     height: calc(100vh - 144px);
     background-color: rgb(56, 56, 56);
-    border-radius: 0.25rem;
+    border-radius: 0.3rem;
     border: 0;
 }

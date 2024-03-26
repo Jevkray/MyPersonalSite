@@ -1,1 +1,9 @@
 ﻿
+.animated-button-inner {
+    padding: 0 0.5rem 0.25rem 0;
+    transition: padding 0.1s ease;
+}
+
+    .animated-button-inner:hover {
+        padding: 0 0.25rem 0.25rem 0;
+    }

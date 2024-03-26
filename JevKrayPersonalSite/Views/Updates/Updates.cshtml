@@ -1,0 +1,213 @@
+@model JevKrayPersonalSite.ViewModels.UpdatesViewModel
+
+@{
+    ViewData["Title"] = "Updates";
+}
+
+@section Sprites {
+    <link rel="stylesheet" href="~/css/updates/updates.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="p-0">
+    <div class="row p-0">
+        <div class="p-0">
+            <div class="fs-4 text-white bg-def mt-3 mb-3 update-window rounded-3">
+                <div class="p-3 rounded-3 bg-dr2">
+                    <span>Здесь вы можете увидеть последние обновления моего сайта, а также посмотреть историю изменений проекта на GitHub.</span>
+                </div>
+            </div>
+
+
+            @{
+                foreach (var commit in Model.Commits)
+                {
+                    <div class="fs-4 text-white bg-def mt-3 mb-3 rounded-3 animated-update-window">
+                        <div class="p-3 rounded-3 bg-dr2">
+                            <div class="d-flex pb-1">
+                                <div class="p-1"><b>Author:</b> @commit.AuthorName</div>
+                                <div class="bg-dr2 rounded-3 ms-auto">
+                                    <a class="text-decoration-none text-dr bg-white w-100" href="@commit.Link">
+                                        <div class="ps-2 d-flex">
+                                            <div class="animated-button-github">
+                                                <div class="bg-def rounded-3 animated-github-button-outside">
+                                                    <div class="rounded-2 animated-github-button-inside">
+                                                        <div class="text-white rounded-2 text-center">
+                                                            Github
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            @if (commit.Name != "")
+                            {
+                                <div class="overflow-auto">
+                                    <b>Name:</b> @Html.Raw(commit.Name.Replace("\n", "<br />").ToString())
+                                </div>
+                            }
+                            <div class="ms-4 overflow-auto p-3 @(commit.Name != "" ? "pt-3" : "pt-1")">
+                                <ul class="m-0">
+                                    @{
+                                        // Разделяем сообщение на строки
+                                        var lines = commit.Message.Split(new[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                                        // Выводим каждую строку как отдельный элемент списка
+                                        foreach (var line in lines)
+                                        {
+                                            <li class="text-break">@line</li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+
+                            <div class=""><b>Date:</b> @commit.Date.ToString("yyyy/MM/dd в HH:mm")</div>
+                        </div>
+                    </div>
+                }
+            }
+
+            <div class="fs-4 text-white bg-def mt-3 mb-3 update-window rounded-3">
+                <div class="p-3 rounded-3 bg-dr2 d-flex justify-content-center roboto-mono-400">
+                    @{
+                        int lastPage = Convert.ToInt32(Math.Ceiling((double)Model.TotalCount / Model.PageSize));
+
+                        if (Model.CurrentPage > 1)
+                        {
+                            <a class="text-white text-decoration-none pe-1 d-none d-sm-block" href="@Url.Action("Updates", "Updates", new { page = Model.CurrentPage-1})">
+                                <div class="pagination">
+                                    <div class="bg-def rounded-3 pagination-outside">
+                                        <div class="rounded-2 pagination-inside">
+                                            <div class="text-white rounded-2 text-center ">
+                                                &lt;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+
+                        // if (Model.CurrentPage > 3)
+                        // {
+                        //     <div class="p-2">
+                        //         <a href="@Url.Action("Updates", "UpdatesNew", new { page = 1})">1</a>
+                        //     </div>
+
+                        //     if (Model.CurrentPage > 4)
+                        //     {
+                        //         <div class="p-2">
+                        //             ...
+                        //         </div>
+                        //     }
+                        // }
+
+                        if (Model.CurrentPage > 2)
+                        {
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "Updates", new { page = Model.CurrentPage-2})">
+                                <div class="pagination">
+                                    <div class="bg-def rounded-3 pagination-outside">
+                                        <div class="rounded-2 pagination-inside">
+                                            <div class="text-white rounded-2 text-center ">
+                                                @(Model.CurrentPage - 2)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+
+                        if (Model.CurrentPage > 1)
+                        {
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "Updates", new { page = Model.CurrentPage-1})">
+                                <div class="pagination">
+                                    <div class="bg-def rounded-3 pagination-outside">
+                                        <div class="rounded-2 pagination-inside">
+                                            <div class="text-white rounded-2 text-center ">
+                                                @(Model.CurrentPage - 1)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+
+                        <a class="selected-page text-white text-decoration-none pe-1" href="@Url.Action("Updates", "Updates", new { page = Model.CurrentPage })">
+                            <div class="pagination">
+                                <div class="bg-def rounded-3 pagination-outside">
+                                    <div class="rounded-2 pagination-inside">
+                                        <div class="text-white rounded-2 text-center ">
+                                            <div class="opacity-50">@Model.CurrentPage</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        if (Model.CurrentPage < lastPage)
+                        {
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "Updates", new { page = Model.CurrentPage+1})">
+                                <div class="pagination">
+                                    <div class="bg-def rounded-3 pagination-outside">
+                                        <div class="rounded-2 pagination-inside">
+                                            <div class="text-white rounded-2 text-center ">
+                                                @(Model.CurrentPage + 1)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+
+                        if (Model.CurrentPage < lastPage - 1)
+                        {
+                            <a class="text-white text-decoration-none pe-1" href="@Url.Action("Updates", "Updates", new { page = Model.CurrentPage+2})">
+                                <div class="pagination">
+                                    <div class="bg-def rounded-3 pagination-outside">
+                                        <div class="rounded-2 pagination-inside">
+                                            <div class="text-white rounded-2 text-center ">
+                                                @(Model.CurrentPage + 2)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+
+                        // if (Model.CurrentPage < lastPage - 2)
+                        // {
+                        //     if (Model.CurrentPage < lastPage - 3)
+                        //     {
+                        //         <div class="p-2">
+                        //             ...
+                        //         </div>
+                        //     }
+
+                        //     <div class="p-2">
+                        //         <a href="@Url.Action("Updates", "UpdatesNew", new { page = lastPage})">@lastPage</a>
+                        //     </div>
+                        // }
+
+                        if (Model.CurrentPage < Math.Ceiling((double)Model.TotalCount / Model.PageSize))
+                        {
+                            <a class="text-white text-decoration-none pe-1 d-none d-sm-block" href="@Url.Action("Updates", "Updates", new { page = Model.CurrentPage+1})">
+                                <div class="pagination">
+                                    <div class="bg-def rounded-3 pagination-outside">
+                                        <div class="rounded-2 pagination-inside">
+                                            <div class="text-white rounded-2 text-center ">
+                                                &gt;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

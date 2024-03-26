@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Info";
+}
+
+@section Sprites {
+    <link rel="stylesheet" href="~/css/home/info.css" />
+}
+
+<div class="container-lg p-0">
+    <div class="row">
+        <div class="col-md-8 p-0">
+            <div class="bg-def pb-1 pe-2 rounded-3">
+                <div class="fs-3 text-dr bg-white pt-3 pb-3 ps-4 mt-3 rounded-3 montserrat-medium">Ќемного о сайте</div>
+            </div>
+            <div class="fs-4 text-white pt-3 ps-0">
+                <ul>
+                    <li class="pb-3">
+                        <span>ƒанный сайт был разработан мной c помощью технологии .NET вкупе с html, css, JS, MS SQL.</span>
+                        <br />
+                        <span>Custom'на€ архитектура сайта с закосом* под MVC включает в себ€ ViewModel, а также микросервисы и Worker'ы, работающие в фоновом режиме.</span>
+                    </li>
+                    <li class="pb-3">
+                        <span>—айт создан с целью демонстрации моих способностей, а также с целью привлечени€ работодателей.</span>
+                    </li>
+                    <li class="pb-3">
+                        <span>—айт €вл€етс€ Open-Source проектом, все его последние обновлени€ вы можете посмотреть во вкладке "Updates".</span>
+                    </li>
+                    <li class="pb-3">
+                        <span>¬о вкладке "Resume" вы также можете посмотреть и скачать мое резюме.</span>
+                    </li>
+                    <li class="pb-1">
+                        <span> Ќа этом основные моменты закрыты, и мне хотелось бы передать большое спасибо тебе за посещение моего сайта, € буду очень рад любым комментари€м, отзывам и рекомендаци€м (ты можешь оставить их, кликнув в нижней панели на "Mail Me")</span>
+                    </li>   
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4 p-0">
+
+            <div class="p-3 pt-0 pt-md-3 bg-dr ps-md-3 pe-md-3 ps-0 pe-0">
+                <div class="bg-def rounded-3 animated-button-inner">
+                    <a class="text-decoration-none" asp-controller="Updates" asp-action="Updates">
+                        <div class="fs-3 p-3 text-dr bg-white rounded-3 d-flex justify-content-center align-self-center text-center">
+                            <span class="inner-text montserrat-medium">Updates</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="p-3 pt-0 pt-md-3 bg-dr ps-md-3 pe-md-3 ps-0 pe-0">
+                <div class="bg-def rounded-3 animated-button-inner">
+                    <a class="text-decoration-none" asp-controller="Home" asp-action="Resume">
+                        <div class="fs-3 p-3 text-dr bg-white rounded-3 d-flex justify-content-center align-self-center text-center">
+                            <span class="inner-text montserrat-medium">Resume</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="p-3 pt-0 pt-md-3 bg-dr ps-md-3 pe-md-3 ps-0 pe-0">
+                <div class="bg-def rounded-3 animated-button-inner">
+                    <a class="text-decoration-none" asp-controller="Home" asp-action="Privacy">
+                        <div class="fs-3 p-3 text-dr bg-white rounded-3 d-flex justify-content-center align-self-center text-center">
+                            <span class="inner-text montserrat-medium">Privacy</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

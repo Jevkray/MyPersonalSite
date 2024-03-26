@@ -1,11 +1,9 @@
 ﻿.progress-bar {
-    background-color: white;
-}
-
-.progress {
     background-color: rgb(74,86,234);
 }
 
-.text-skills{
+.progress {
+    background-color: white;
+}
 
 }
