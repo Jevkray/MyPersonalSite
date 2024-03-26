@@ -40,7 +40,10 @@
                 <b>Проект:</b> @Model.Name
             </div>
             <div class="pb-3">
-                <b>Описание:</b> @Model.Description
+                <b>Описание:</b> 
+                <ul class="pt-2">
+                    @Html.Raw(Model.Description)
+                </ul>
             </div>
             <div class="d-flex">
                 <div>
