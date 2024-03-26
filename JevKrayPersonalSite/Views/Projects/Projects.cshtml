@@ -12,15 +12,18 @@
     @{
         bool isProjectEven = false;
 
-        var revercedProjects = Model.Projects;
+        var sortedProjects = Model.Projects.OrderByDescending(p => p.AdditionDate);
+
+        var revercedProjects = sortedProjects;
+
         revercedProjects.Reverse();
 
         @foreach (var project in revercedProjects)
         {
-            <div class="col-12 ps-0 pe-0 @(project == Model.Projects.First() ? "pt-3" : "pt-1") @(project == Model.Projects.Last() ? "pb-3": "pb-1") d-md-none">
+            <div class="col-12 ps-0 pe-0 @(project == sortedProjects.First() ? "pt-3" : "pt-1") @(project == sortedProjects.Last() ? "pb-3": "pb-1") d-md-none">
                 <div class="bg-dr2 rounded-3">
                     <div class="p-3">
-                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = Model.Projects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
                             <div class="bg-def rounded-3 projects-link">
                                 <div class="p-md-2 p-2 fs-6 bg-white montserrat-semibold text-dr rounded-3 d-flex">
                                     <div class="ps-2 pe-2 overflow-dotted">
@@ -83,10 +86,10 @@
                 </div>
             </div>
 
-            <div class="d-none d-md-block col-6 @(project == Model.Projects.First() || project == Model.Projects.Skip(1).First() ? "pt-3" : "pt-1") @(project == Model.Projects.Last() ? "pb-3": "pb-1") @(isProjectEven == false ? "ps-0 pe-1" : "ps-1 pe-0")">
+            <div class="d-none d-md-block col-6 @(project == sortedProjects.First() || project == sortedProjects.Skip(1).First() ? "pt-3" : "pt-1") @(project == sortedProjects.Last() ? "pb-3": "pb-1") @(isProjectEven == false ? "ps-0 pe-1" : "ps-1 pe-0")">
                 <div class="bg-dr2 rounded-3">
                     <div class="p-3">
-                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = Model.Projects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
                             <div class="bg-def rounded-3 projects-link">
                                 <div class="p-md-2 p-2 fs-6 bg-white montserrat-semibold text-dr rounded-3 d-flex">
                                     <div class="ps-2 pe-2 overflow-dotted">

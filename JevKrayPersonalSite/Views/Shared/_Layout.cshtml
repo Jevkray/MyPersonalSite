@@ -255,6 +255,7 @@
                             setTimeout(function () {
                                 $('#sendButton').prop('disabled', false).removeClass('opacity-75').val('Отправить'); // Восстанавливаем кнопку отправки
                             }, 1500); // Через 1.5 секунды
+                            loadCaptchaImage();
                         }
                     });
                 } else {
