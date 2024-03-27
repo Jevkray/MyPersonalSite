@@ -1,7 +1,7 @@
 @model JevKrayPersonalSite.ViewModels.UpdatesViewModel
 
 @{
-    ViewData["Title"] = "Updates";
+    ViewData["Title"] = "Обновления";
 }
 
 @section Sprites {
@@ -25,7 +25,7 @@
                     <div class="fs-4 text-white bg-def mt-3 mb-3 rounded-3 animated-update-window">
                         <div class="p-3 rounded-3 bg-dr2">
                             <div class="d-flex pb-1">
-                                <div class="p-1"><b>Author:</b> @commit.AuthorName</div>
+                                <div class="p-1"><b>Автор:</b> @commit.AuthorName</div>
                                 <div class="bg-dr2 rounded-3 ms-auto">
                                     <a class="text-decoration-none text-dr bg-white w-100" href="@commit.Link">
                                         <div class="ps-2 d-flex">
@@ -45,10 +45,10 @@
                             @if (commit.Name != "")
                             {
                                 <div class="overflow-auto">
-                                    <b>Name:</b> @Html.Raw(commit.Name.Replace("\n", "<br />").ToString())
+                                    <b>Название:</b> @Html.Raw(commit.Name.Replace("\n", "<br />").ToString())
                                 </div>
                             }
-                            <div class="ms-4 overflow-auto p-3 @(commit.Name != "" ? "pt-3" : "pt-1")">
+                            <div class="ms-sm-4 ms-0 overflow-auto p-3 @(commit.Name != "" ? "pt-3" : "pt-1")">
                                 <ul class="m-0">
                                     @{
                                         // Разделяем сообщение на строки
@@ -63,7 +63,7 @@
                                 </ul>
                             </div>
 
-                            <div class=""><b>Date:</b> @commit.Date.ToString("yyyy/MM/dd в HH:mm")</div>
+                            <div class=""><b>Дата публикации:</b> @commit.Date.ToString("yyyy/MM/dd в HH:mm")</div>
                         </div>
                     </div>
                 }
