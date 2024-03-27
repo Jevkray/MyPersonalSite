@@ -19,8 +19,12 @@
                 <div class="image-box-preview d-flex justify-content-center rounded-3">
                     @if (Model.ProjectPictures.Count != 0)
                     {
-                        <button class="btn btn-left p-0 border-0 project-minus" onclick="changeImage(-1)"></button>
-                        <button class="btn btn-right p-0 border-0 project-plus" onclick="changeImage(1)"></button>
+                        <button class="field p-0 border-0 project-minus text-start rounded-3" onclick="changeImage(-1)">
+                            <div class="fs-4 p-md-5 p-sm-4 p-3 btn-left rounded-3"><b>❮</b></div>
+                        </button>
+                        <button class="field p-0 border-0 project-plus text-end rounded-3" onclick="changeImage(1)">
+                            <div class="fs-4 p-md-5 p-sm-4 p-3 btn-right rounded-3"><b>❯</b></div>
+                        </button>
 
                         <div id="loadingAnimation" class="loading-animation"></div>
 
@@ -40,7 +44,7 @@
                 <b>Проект:</b> @Model.Name
             </div>
             <div class="pb-3">
-                <b>Описание:</b> 
+                <b>Описание:</b>
                 <ul class="pt-2">
                     @Html.Raw(Model.Description)
                 </ul>
