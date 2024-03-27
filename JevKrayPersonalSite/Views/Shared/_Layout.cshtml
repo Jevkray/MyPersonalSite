@@ -28,27 +28,27 @@
                         var currentPage = ViewData["Title"] as string; // Здесь мы присваиваем значение Титла* страницы чтобы определеить на какой странцие мы находимся
 
                         <div class="nav-brand col-3 fs-3 ">
-                            <a class="a-link text-white text-decoration-none logo-main translate-3-text @(currentPage == "Home" ? "a-active" : "")" asp-controller="Home" asp-action="Home"><span></span></a>
+                            <a class="a-link text-white text-decoration-none logo-main translate-3-text @(currentPage == "Главная" ? "a-active" : "")" asp-controller="Home" asp-action="Home"><span></span></a>
                         </div>
                         <div class="col-9 d-none d-md-flex align-items-center">
                             <div class="nav-item ms-auto ps-3 pe-3 fs-4 ">
-                                <div class="translate-3-text  @(currentPage == "Education" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Education">Education</a>
+                                <div class="translate-3-text  @(currentPage == "Образование" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Education">Образование</a>
                                 </div>
                             </div>
                             <div class="nav-item ps-3 pe-3 fs-4 ">
-                                <div class="translate-3-text @(currentPage == "Skills" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none " asp-controller="Home" asp-action="Skills">Skills</a>
+                                <div class="translate-3-text @(currentPage == "Навыки" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none " asp-controller="Home" asp-action="Skills">Навыки</a>
                                 </div>
                             </div>
                             <div class="nav-item ps-3 pe-3 fs-4">
-                                <div class="translate-3-text @(currentPage == "Projects" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none" asp-controller="Projects" asp-action="Projects">Projects</a>
+                                <div class="translate-3-text @(currentPage == "Проекты" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Projects" asp-action="Projects">Проекты</a>
                                 </div>
                             </div>
                             <div class="nav-item ps-3 pe-3 fs-4 ">
-                                <div class="translate-3-text @(currentPage == "Info" ? "a-active" : "")">
-                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Info">Info</a>
+                                <div class="translate-3-text @(currentPage == "Инфо" ? "a-active" : "")">
+                                    <a class="a-link text-white text-decoration-none" asp-controller="Home" asp-action="Info">Инфо</a>
                                 </div>
                             </div>
                         </div>
@@ -62,27 +62,27 @@
 
                             <a class="text-white text-decoration-none" asp-controller="Home" asp-action="Education">
                             <li class="drop-nav-li dropdown-element rounded-3">
-                                <div class="ms-auto ps-3 pe-3 fs-4">Education</div>
+                                <div class="ms-auto ps-3 pe-3 fs-4">Образование</div>
                             </li>
                             </a>
 
                             <a class="text-white text-decoration-none" asp-controller="Home" asp-action="Skills">
                             <li class="drop-nav-li dropdown-element rounded-3">
-                                <div class="ps-3 pe-3 fs-4">Skills</div>
+                                <div class="ps-3 pe-3 fs-4">Навыки</div>
                             </li>
                             </a>
 
                             <a class="text-white text-decoration-none" asp-controller="Projects" asp-action="Projects">
                             <li class="drop-nav-li dropdown-element rounded-3">
                                 <div class="ps-3 pe-3 fs-4">
-                                    Projects
+                                    Проекты
                                 </div>
                             </li>
                             </a>
 
                             <a class="text-white text-decoration-none" asp-controller="Home" asp-action="Info">
                             <li class="drop-nav-li dropdown-element rounded-3">
-                                <div class="ps-3 pe-3 fs-4">Info</div>
+                                <div class="ps-3 pe-3 fs-4">Инфо</div>
                             </li>
                             </a>
 
@@ -119,7 +119,7 @@
                     <div class="col-3">
                         <div class="d-flex justify-content-center">
                             <a href="#" class="a-link translate-3-text text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#callBackModal">
-                                <img src="~/pictures/vectors/msg.svg" class="logo-img">  Mail me
+                                <img src="~/pictures/vectors/msg.svg" class="logo-img">  Написать
                             </a>
                         </div>
                     </div>

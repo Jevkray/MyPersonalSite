@@ -1,7 +1,7 @@
 @model JevKrayPersonalSite.ViewModels.ProjectViewModel
 
 @{
-    ViewData["Title"] = "Projects";
+    ViewData["Title"] = "Проекты";
 }
 
 @section Sprites {
@@ -32,7 +32,7 @@
                                     @if (project.HasPreview)
                                     {
                                         <div class="ms-auto fs-6 align-self-center ps-2 pe-2 overflow-dotted">
-                                            Preview coming soon
+                                            Ожидается превью
                                         </div>
                                         <div class="circle justify-content-center align-self-center">
                                             <span></span>
@@ -50,9 +50,11 @@
                             {
                                 <div class="">
                                     <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
-                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex">
-                                            <img src="@picture.ImageLink" alt="Project Image" class="image-projects rounded-3" />
-                                        </div>
+                                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                                            <div class="image-block-projects text-center rounded-3 bg-dr d-flex">
+                                                <img src="@picture.ImageLink" alt="Project Image" class="image-projects rounded-3" />
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             }
@@ -60,9 +62,11 @@
                             {
                                 <div class="">
                                     <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
-                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
-                                            <div class="align-self-center">No image</div>
-                                        </div>
+                                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                                            <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                                <div class="align-self-center">No image</div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             }
@@ -71,9 +75,11 @@
                         {
                             <div class="">
                                 <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
-                                    <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
-                                        <div class="align-self-center">No image</div>
-                                    </div>
+                                    <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                            <div class="align-self-center">No image</div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         }
@@ -98,7 +104,7 @@
                                     @if (project.HasPreview)
                                     {
                                         <div class="ms-auto fs-6 align-self-center ps-2 pe-2 overflow-dotted">
-                                            Preview coming soon
+                                            Ожидается превью
                                         </div>
                                         <div class="circle justify-content-center align-self-center">
                                             <span></span>
@@ -116,9 +122,11 @@
                             {
                                 <div class="">
                                     <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
-                                        <div class="image-block-projects text-center rounded-3 bg-dr">
-                                            <img src="@picture.ImageLink" alt="Project Image" class="image-projects rounded-3" />
-                                        </div>
+                                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                                            <div class="image-block-projects text-center rounded-3 bg-dr">
+                                                <img src="@picture.ImageLink" alt="Project Image" class="image-projects rounded-3" />
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             }
@@ -126,9 +134,11 @@
                             {
                                 <div class="">
                                     <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
-                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
-                                            <div class="align-self-center">No image</div>
-                                        </div>
+                                        <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                                            <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                                <div class="align-self-center">No image</div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             }
@@ -137,9 +147,11 @@
                         {
                             <div class="">
                                 <div class="p-3 pb-0 pt-0 justify-content-center align-content-center">
-                                    <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
-                                        <div class="align-self-center">No image</div>
-                                    </div>
+                                    <a class="a-link text-white text-decoration-none" href="@Url.Action("ProjectPreview", "Projects", new { id = sortedProjects.FirstOrDefault(p =>p.Id == project.Id).Id})">
+                                        <div class="image-block-projects text-center rounded-3 bg-dr d-flex justify-content-center">
+                                            <div class="align-self-center">No image</div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         }
